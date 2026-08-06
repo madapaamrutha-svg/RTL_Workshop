@@ -10,9 +10,7 @@ Welcome to Day 1 of the RTL Design Workshop. In this session, I learned the basi
 2. Getting Started with Iverilog
 3. Lab: Simulating a 2-to-1 Multiplexer
 4. Verilog Code Analysis
-5. Introduction to Yosys & Gate Libraries
-6. Synthesis using Yosys
-7. Summary
+5. Summary
 
 ---
 
@@ -94,7 +92,7 @@ gtkwave tb_good_mux.vcd
 
 
 
-# 7. Summary
+# 5. Summary
 
 - Learned Verilog RTL basics.
 - Understood Simulator, Design, and Testbench.
