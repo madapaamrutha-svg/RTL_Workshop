@@ -3,7 +3,7 @@
 ## Overview
 Welcome to Day 1 of the RTL Design Workshop. In this session, I learned the basics of Verilog RTL Design, simulation using Icarus Verilog (iverilog), waveform analysis using GTKWave, and logic synthesis using Yosys.
 
----
+
 
 ## Table of Contents
 1. What is a Simulator, Design, and Testbench?
@@ -12,7 +12,7 @@ Welcome to Day 1 of the RTL Design Workshop. In this session, I learned the basi
 4. Verilog Code Analysis
 5. Summary
 
----
+
 
 # 1. What is a Simulator, Design, and Testbench?
 
@@ -73,7 +73,7 @@ gtkwave tb_good_mux.vcd
 **Image: GTKWave Output**
 <img width="1920" height="940" alt="mux wave" src="https://github.com/user-attachments/assets/0bd68e56-52d8-40ad-b0bb-f821ed3408aa" />
 
----
+
 
 # 4. Verilog Code Analysis
 
