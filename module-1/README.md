@@ -1,4 +1,4 @@
-# Day 1: Introduction to Verilog RTL Design & Synthesis
+# Introduction to Verilog RTL Design & Synthesis
 
 ## Overview
 Welcome to Day 1 of the RTL Design Workshop. In this session, I learned the basics of Verilog RTL Design, simulation using Icarus Verilog (iverilog), waveform analysis using GTKWave, and logic synthesis using Yosys.
@@ -10,7 +10,9 @@ Welcome to Day 1 of the RTL Design Workshop. In this session, I learned the basi
 2. Getting Started with Iverilog
 3. Lab: Simulating a 2-to-1 Multiplexer
 4. Verilog Code Analysis
-5. Summary
+5. Introduction to yosys
+6. Takeawyas
+7. Author
 
 
 
@@ -90,9 +92,9 @@ gtkwave tb_good_mux.vcd
 - If sel = 1, output = i1
 - If sel = 0, output = i0
 
-## 3. Introduction to Yosys and Logic Synthesis
+## 5. Introduction to Yosys and Logic Synthesis
 
-### 3.1 What Synthesis Does
+### 5.1 What Synthesis Does
 
 Simulation is used to check whether the RTL design behaves as expected. However, simulation alone does not convert the RTL description into hardware. Synthesis is the process of translating the Verilog RTL design into a gate-level representation using standard cells from a target technology library.
 
@@ -102,7 +104,7 @@ The basic synthesis flow is:
 
 **Verilog RTL Design → Yosys → Gate-Level Netlist**
 
-### 3.2 Lab: Synthesizing the Design
+### 5.2 Lab: Synthesizing the Design
 
 The synthesis process was performed using Yosys. First, Yosys was launched from the terminal.
 
@@ -132,7 +134,8 @@ show
 ```
 This schematic represents the RTL design using standard cells such as flip-flops and logic gates.
 
-3.3 Generating the Gate-Level Netlist
+###5.3 Generating the Gate-Level Netlist
+
 After completing synthesis and technology mapping, the synthesized design can be written into a Verilog gate-level netlist.
 ```bash
 write_verilog -noattr
@@ -140,12 +143,14 @@ good_shift_reg_netlist.v
 ```
 The generated netlist describes the design using cells from the target technology library. This provides a representation of how the RTL design can be implemented using actual standard cells.
 
-3.4 Synthesis Flow
+###5.4 Synthesis Flow
+
 The complete synthesis flow followed in this module is:
 RTL Verilog Design → Read Library → Read Verilog → Synthesis → Technology Mapping → Gate-Level Schematic → Gate-Level Netlist
 This helped in understanding how a high-level Verilog RTL description is converted into a hardware-oriented gate-level representation.
 
-4. Takeaways
+##6. Takeaways
+
 Understood the purpose of RTL synthesis.
 Learned how Yosys is used for open-source RTL synthesis.
 Loaded the SKY130 standard-cell library for synthesis.
@@ -156,7 +161,7 @@ Viewed the resulting gate-level schematic.
 Generated a gate-level Verilog netlist.
 Understood the overall flow from RTL design to gate-level implementation.
 
-6. Author
+##7. Author
 Amrutha Madapa
 B.Tech – Electronics & Communication Engineering
 Anurag University
