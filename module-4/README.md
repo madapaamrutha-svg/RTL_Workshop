@@ -56,9 +56,7 @@ Blocking (`=`) and non-blocking (`<=`) assignments are fundamental concepts in V
 
 A 2×1 multiplexer was implemented using the Verilog ternary operator to understand combinational logic design. The RTL design was simulated using Icarus Verilog, and the output waveform was verified using GTKWave. The experiment demonstrates how the output changes based on the select signal and validates the functional correctness of the multiplexer before synthesis.
 
-### 🖥️ Verilog Implementation
 
-(Paste Verilog Code)
 
 ### ⚙️ Simulation Commands
 ```bash
@@ -82,7 +80,7 @@ The RTL simulation confirmed the correct functionality of the 2×1 multiplexer.
 
 # 2️⃣ Technology Mapping of the Multiplexer
 
-## 📖 Experiment Overview
+## 📖  Overview
 
 The multiplexer design was synthesized using Yosys and mapped to the SKY130 standard-cell library. During synthesis, the RTL description was optimized and converted into a technology-specific multiplexer cell, reducing hardware complexity while preserving functionality.
 
@@ -114,7 +112,7 @@ The multiplexer was successfully mapped to the SKY130 standard-cell library.
 
 # 3️⃣ Functional Verification Using Simulation Waveform
 
-## 📖 Experiment Overview
+## 📖  Overview
 
 The simulation waveform verifies that the multiplexer output correctly follows the selected input. Different input combinations were applied to validate the functionality of the design under various conditions before synthesis.
 
@@ -140,13 +138,11 @@ The waveform confirmed correct multiplexer operation for all input combinations.
 
 # 4️⃣ Analysis of an Incorrect Multiplexer Design
 
-## 📖 Experiment Overview
+## 📖  Overview
 
 This experiment demonstrates an improperly coded multiplexer that leads to synthesis-simulation mismatch. Incomplete assignments inside the always block may infer latches during synthesis, resulting in hardware behavior different from RTL simulation.
 
-### 🖥️ Verilog Implementation
 
-(Paste Verilog Code)
 
 ### ⚙️ Simulation Commands
 ```bash
@@ -170,7 +166,7 @@ The incorrect coding style produced unexpected output behavior during simulation
 
 # 5️⃣ Verification of Bad Multiplexer Behavior
 
-## 📖 Experiment Overview
+## 📖 Overview
 
 The waveform illustrates the behavior of the incorrectly implemented multiplexer. Missing assignments cause previous output values to be retained, resulting in latch inference and mismatch between simulation and synthesized hardware.
 
@@ -195,13 +191,11 @@ The waveform demonstrated synthesis-simulation mismatch caused by improper RTL c
 
 # 6️⃣ Simulation of Blocking Assignment Behavior
 
-## 📖 Experiment Overview
+## 📖  Overview
 
 Blocking assignments execute statements sequentially within an always block. This experiment illustrates their behavior during simulation and explains why they are mainly recommended for combinational logic. Incorrect usage in sequential circuits may produce unexpected results.
 
-### 🖥️ Verilog Implementation
 
-(Paste Verilog Code)
 
 ### ⚙️ Simulation Commands
 ```bash
@@ -224,7 +218,7 @@ The simulation demonstrated the sequential execution behavior of blocking assign
 
 # 7️⃣ Synthesis of Blocking Assignment Circuit
 
-## 📖 Experiment Overview
+## 📖Overview
 
 The blocking assignment circuit was synthesized using Yosys to compare RTL simulation with the generated hardware. The synthesized circuit illustrates how the Verilog description is interpreted and mapped to the SKY130 standard-cell library.
 
@@ -255,8 +249,7 @@ The synthesized hardware accurately represented the intended circuit implementat
 ## 8️⃣ Blocking Assignment Using Past Value
 
 This experiment demonstrates how blocking assignments (=) use the updated value immediately within the same procedural block. The simulation illustrates how the output depends on the sequence of statements and the previously assigned values. This helps in understanding the behavior of blocking assignments and why they can sometimes lead to unexpected results if used in sequential logic. Therefore, blocking assignments are generally recommended for combinational logic, while non-blocking assignments (<=) are preferred for sequential circuits.
-💻 Verilog Code
-(Paste the blocking_caveat.v code used for this experiment.)
+
 ### ⚙️ Commands
 ```bash
 iverilog -o blocking_past blocking_caveat.v tb_blocking_caveat.v
