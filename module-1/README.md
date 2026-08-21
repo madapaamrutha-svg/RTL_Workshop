@@ -12,7 +12,7 @@ Welcome to Day 1 of the RTL Design Workshop. In this session, I learned the basi
 4. Verilog Code Analysis
 5. Introduction to yosys
 6. Takeawyas
-<img width="897" height="324" alt="Screenshot (60)" src="https://github.com/user-attachments/assets/79089bdf-3b44-4eaa-bcce-a946dcf685d8" />
+
 
 
 
