@@ -11,7 +11,7 @@ This module focuses on synthesis optimization techniques in Verilog HDL using th
 - 1 – Incomplete IF Statement
 - 2 – RTL Schematic of Incomplete IF Statement
 - 3 – RTL Simulation of Incomplete IF Statement
-- 4 – Incomplete Case Statement
+- 4 – RTL Schematic of Incomplete IF-ELSE Statement 
 - 5 – Incomplete Case Statement
 - 6–  Complete Case Statement
 - 7 – Partial Case Assignment
