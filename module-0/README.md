@@ -50,10 +50,10 @@ The local setup uses a Linux-based environment such as Ubuntu. Ubuntu may be ins
 2.2 Installing Icarus Verilog and GTKWave
 
 Icarus Verilog is used for compiling and simulating Verilog designs, while GTKWave is used to view simulation waveforms.
-'''bash
+```bash
 sudo apt install iverilog
 sudo apt install gtkwave
-'''
+```
 
 2.3 Installing Yosys
 
