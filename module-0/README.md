@@ -46,6 +46,8 @@ The cloud environment provides the required software and can be accessed through
 2.1 System Requirements
 
 The local setup uses a Linux-based environment such as Ubuntu. Ubuntu may be installed directly or used through a virtual machine such as Oracle VM VirtualBox.
+<img width="1080" height="968" alt="WhatsApp Image 2026-08-21 at 5 52 55 PM" src="https://github.com/user-attachments/assets/330181ef-7359-4093-a0ac-213cd228a37d" />
+
 
 2.2 Installing Icarus Verilog and GTKWave
 
@@ -74,6 +76,8 @@ gtkwave --version
 yosys -V
 ```
 These commands confirm that the required tools are installed and accessible from the terminal.
+<img width="1080" height="968" alt="WhatsApp Image 2026-08-21 at 5 52 55 PM" src="https://github.com/user-attachments/assets/1a2600d0-88c4-4b70-9ac9-881ce1f977f2" />
+
 
 ---
 
