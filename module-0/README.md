@@ -58,21 +58,21 @@ sudo apt install gtkwave
 2.3 Installing Yosys
 
 Yosys is an open-source synthesis tool used to synthesize RTL designs and analyze the resulting hardware representation.
-
+```bash
 sudo apt install yosys
-
+```
 The workshop repository can also be cloned using:
-
+```bash
 git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
-
+```
 2.4 Checking the Installation
 
 After installation, the tools can be checked using their version commands:
-
+```bash
 iverilog -V
 gtkwave --version
 yosys -V
-
+```
 These commands confirm that the required tools are installed and accessible from the terminal.
 
 ---
