@@ -160,7 +160,7 @@ gtkwave bad_mux.vcd
 <img width="958" height="930" alt="bad mux 4th image" src="https://github.com/user-attachments/assets/8bbf014c-9a57-41c5-90ba-aebf14aadb27" />
 
 
-(Paste Image 4)
+
 
 ### ✅ Observation
 
@@ -175,12 +175,17 @@ The incorrect coding style produced unexpected output behavior during simulation
 The waveform illustrates the behavior of the incorrectly implemented multiplexer. Missing assignments cause previous output values to be retained, resulting in latch inference and mismatch between simulation and synthesized hardware.
 
 ### ⚙️ Simulation Commands
+```bash
+iverilog -o bad_mux bad_mux.v tb_bad_mux.v
 
-(Paste Commands)
+gtkwave bad_mux.vcd
+```
+
 
 ### 📷 Output Waveform
+<img width="958" height="930" alt="bad mux 5th" src="https://github.com/user-attachments/assets/858948b8-86c5-4915-b4de-6b1564d53740" />
 
-(Paste Image 5)
+
 
 ### ✅ Observation
 
@@ -199,12 +204,17 @@ Blocking assignments execute statements sequentially within an always block. Thi
 (Paste Verilog Code)
 
 ### ⚙️ Simulation Commands
+```bash
+iverilog -o blocking blocking_caveat.v tb_blocking_caveat.v
 
-(Paste Commands)
+gtkwave blocking_caveat.vcd
+```
 
 ### 📷 Output Waveform
+<img width="958" height="930" alt="blockin caveat 6th" src="https://github.com/user-attachments/assets/ebc6762c-0679-49f4-9346-b01a3aa67573" />
 
-(Paste Image 6)
+
+
 
 ### ✅ Observation
 
@@ -219,18 +229,45 @@ The simulation demonstrated the sequential execution behavior of blocking assign
 The blocking assignment circuit was synthesized using Yosys to compare RTL simulation with the generated hardware. The synthesized circuit illustrates how the Verilog description is interpreted and mapped to the SKY130 standard-cell library.
 
 ### ⚙️ Synthesis Commands
+```bash
+yosys
 
-(Paste Commands)
+read_verilog blocking_caveat.v
+
+synth -top blocking_caveat
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+```
+
 
 ### 📷 Technology-Mapped Circuit
+<img width="958" height="930" alt="blocking cavaet 7th" src="https://github.com/user-attachments/assets/ba29e4c8-a690-4fc4-b0d9-2dd8e1efc9a8" />
 
-(Paste Image 7)
+
 
 ### ✅ Observation
 
 The synthesized hardware accurately represented the intended circuit implementation.
 
 ---
+## 8️⃣ Blocking Assignment Using Past Value
+
+This experiment demonstrates how blocking assignments (=) use the updated value immediately within the same procedural block. The simulation illustrates how the output depends on the sequence of statements and the previously assigned values. This helps in understanding the behavior of blocking assignments and why they can sometimes lead to unexpected results if used in sequential logic. Therefore, blocking assignments are generally recommended for combinational logic, while non-blocking assignments (<=) are preferred for sequential circuits.
+💻 Verilog Code
+(Paste the blocking_caveat.v code used for this experiment.)
+### ⚙️ Commands
+```bash
+iverilog -o blocking_past blocking_caveat.v tb_blocking_caveat.v
+
+gtkwave blocking_caveat.vcd
+```
+🖼️ Output
+<img width="958" height="930" alt="blocking caveat looks past value 8th" src="https://github.com/user-attachments/assets/a44b2749-ce64-4ec0-b89d-d9136ed310e7" />
+
+✅ Result
+The waveform shows that blocking assignments execute sequentially and immediately update variable values within the same procedural block. This demonstrates how statement ordering influences simulation behavior and highlights the importance of using blocking assignments appropriately.
 
 # 🎯 Overall Result
 
