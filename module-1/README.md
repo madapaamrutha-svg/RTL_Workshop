@@ -12,7 +12,7 @@ Welcome to Day 1 of the RTL Design Workshop. In this session, I learned the basi
 4. Verilog Code Analysis
 5. Introduction to yosys
 6. Takeawyas
-7. Author
+<img width="897" height="324" alt="Screenshot (60)" src="https://github.com/user-attachments/assets/79089bdf-3b44-4eaa-bcce-a946dcf685d8" />
 
 
 
@@ -103,6 +103,8 @@ Yosys is an open-source RTL synthesis tool used to perform this conversion. In t
 The basic synthesis flow is:
 
 **Verilog RTL Design → Yosys → Gate-Level Netlist**
+<img width="897" height="324" alt="Screenshot (60)" src="https://github.com/user-attachments/assets/d2a2442b-91f8-475a-b8ea-8c5626fc9350" />
+
 
 ### 5.2 Lab: Synthesizing the Design
 
@@ -132,6 +134,8 @@ The synthesized design was then viewed as a gate-level schematic.
 ```bash
 show
 ```
+<img width="958" height="292" alt="yosysblockdiagram" src="https://github.com/user-attachments/assets/4712fea6-798b-4a72-b867-94e2df2e32a0" />
+
 This schematic represents the RTL design using standard cells such as flip-flops and logic gates.
 
 ### 5.3 Generating the Gate-Level Netlist
@@ -161,9 +165,8 @@ Viewed the resulting gate-level schematic.
 Generated a gate-level Verilog netlist.
 Understood the overall flow from RTL design to gate-level implementation.
 
-## 7. Author
+👤 Author
 Amrutha Madapa
 B.Tech – Electronics & Communication Engineering
 Anurag University
-🔗 RTL Workshop Repository
-
+RTL Workshop Repository
