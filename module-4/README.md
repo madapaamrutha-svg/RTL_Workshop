@@ -52,7 +52,7 @@ Blocking (`=`) and non-blocking (`<=`) assignments are fundamental concepts in V
 
 # 1️⃣ RTL Simulation of a 2×1 Multiplexer
 
-## 📖 Experiment Overview
+## 📖 Overview
 
 A 2×1 multiplexer was implemented using the Verilog ternary operator to understand combinational logic design. The RTL design was simulated using Icarus Verilog, and the output waveform was verified using GTKWave. The experiment demonstrates how the output changes based on the select signal and validates the functional correctness of the multiplexer before synthesis.
 
