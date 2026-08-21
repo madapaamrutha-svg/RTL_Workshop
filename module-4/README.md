@@ -35,18 +35,17 @@ Blocking (`=`) and non-blocking (`<=`) assignments are fundamental concepts in V
 
 # 📚 Table of Contents
 
-1. Introduction
-2. Objectives
-3. Tools and Technologies Used
-4. RTL Simulation of a 2×1 Multiplexer
-5. Technology Mapping of the Multiplexer
-6. Functional Verification Using Simulation Waveform
-7. Analysis of an Incorrect Multiplexer Design
-8. Verification of Bad Multiplexer Behavior
-9. Simulation of Blocking Assignment Behavior
-10. Synthesis of Blocking Assignment Circuit
-11. Overall Result
-12. Conclusion
+
+1. RTL Simulation of a 2×1 Multiplexer
+2. Technology Mapping of the Multiplexer
+3. Functional Verification Using Simulation Waveform
+4. Analysis of an Incorrect Multiplexer Design
+5. Verification of Bad Multiplexer Behavior
+6. Simulation of Blocking Assignment Behavior
+7. Synthesis of Blocking Assignment Circuit
+8. Blocking Assignment Using Past Value
+9. Overall Result
+10. Conclusion
 
 ---
 
