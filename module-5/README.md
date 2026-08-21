@@ -15,7 +15,7 @@ This module focuses on synthesis optimization techniques in Verilog HDL using th
 - 5 – Incomplete Case Statement
 - 6–  Complete Case Statement
 - 7 – Partial Case Assignment
-- 8 – RTL Simulation Verification
+- 8 – Bad Case Assignment
 - 9 – Multiplexer 
 - 10 – Demultiplexer
 - 11 – Ripple Carry Adder
@@ -251,11 +251,26 @@ The GTKWave simulation confirms the synthesized behavior. The waveform shows tha
 
 The RTL simulation confirms the behavior of the partial case statement. The waveform shows that the output holds its previous state whenever the case statement does not assign a new value, demonstrating latch inference.
 
-## 8 – RTL Simulation Verification
+## 8 – Bad Case Assignmrnt
 ### Overview
 This experiment verifies the RTL functionality of the implemented design using GTKWave. Different input combinations are applied through the testbench to ensure the circuit behaves as expected before synthesis.
 <img width="958" height="930" alt="11th image" src="https://github.com/user-attachments/assets/fa936eb8-adfb-4bfa-a8a5-a29689682b1b" />
 
+### code
+```verilog
+module bad_case (input i0, input i1, input i2, input i3, input [1:0] sel, output reg y);
+always @(*)
+begin
+    case(sel)
+        2'b00: y = i0;
+        2'b01: y = i1;
+        2'b10: y = i2;
+        2'b11: y = i3;
+        //2'b11: y = i3;
+    endcase
+end
+endmodule
+```
 
 ### Observation
 The waveform shows that the output changes correctly for every valid input combination. No unexpected behavior is observed during RTL simulation.
