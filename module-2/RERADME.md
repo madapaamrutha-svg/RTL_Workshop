@@ -198,3 +198,217 @@ gtkwave tb_dff_async_set.vcd
 
 ### Result
 The asynchronous-set D flip-flop was successfully simulated, and its expected behavior was confirmed through the generated waveform.
+
+## 3.3 🔵 Synchronous Reset D Flip-Flop
+
+A synchronous reset affects the flip-flop only when the active clock edge occurs. The reset signal is therefore evaluated along with the input data at the clock edge.
+
+### Verilog Code
+
+```verilog
+module dff_syncres (
+    input clk,
+    input sync_reset,
+    input d,
+    output reg q
+);
+
+always @(posedge clk)
+    if (sync_reset)
+        q <= 1'b0;
+    else
+        q <= d;
+
+endmodule
+```
+### Working
+At every rising edge of clk:
+When sync_reset is high, q is cleared to 0.
+When sync_reset is low, the value of d is stored in q.
+Unlike asynchronous reset, a change in sync_reset alone does not immediately affect the output.
+### Simulation Commands
+```bash
+iverilog dff_syncres.v tb_dff_syncres.v
+./a.out
+gtkwave tb_dff_syncres.vcd
+```
+
+🖼️ Figure: Synchronous-reset D flip-flop simulation waveform
+### Result
+The synchronous-reset D flip-flop was successfully simulated, and its clock-dependent operation was verified using GTKWave.
+
+# 4. 🧪 RTL Simulation and Synthesis Flow
+
+After completing the RTL coding, the designs were verified through simulation and then synthesized to obtain their gate-level representation.
+
+The overall flow followed in this module is:
+
+```text
+Verilog RTL
+     ↓
+Icarus Verilog
+     ↓
+Simulation
+     ↓
+GTKWave
+     ↓
+Yosys Synthesis
+     ↓
+Gate-Level Design
+     ↓
+SKY130 Technology Mapping
+```
+
+The simulation stage helps verify the functional behavior of the RTL before moving to synthesis.
+### Main Steps
+Compile the Verilog design and testbench.
+Execute the simulation.
+Generate the waveform file.
+Inspect signal transitions using GTKWave.
+Synthesize the verified RTL using Yosys.
+Map the synthesized logic to SKY130 standard cells.
+
+## 4.1 🧪 RTL Simulation Using Icarus Verilog
+
+Icarus Verilog was used to compile and simulate the RTL design along with its corresponding testbench.
+
+### Compilation
+
+```bash
+iverilog dff_asyncres.v
+ tb_dff_asyncres.v
+```
+## Run The Simulation
+```bash
+./a.out
+```
+The simulation generates a VCD file containing the signal activity of the design.
+### View the Waveform
+```bash
+gtkwave tb_dff_asyncres.vcd
+```
+The waveform was examined to verify the behavior of:
+Clock signal
+Reset or set signal
+Data input
+Flip-flop output
+
+🖼️ Figure: RTL simulation waveform observed in GTKWave
+### Result
+The RTL simulation was completed successfully, and the generated waveform confirmed the expected operation of the flip-flop.
+
+## 4.2 ⚡ RTL Synthesis Using Yosys
+
+Yosys was used to convert the verified Verilog RTL into a synthesized gate-level representation.
+
+### Start Yosys
+
+```bash
+yosys
+```
+
+### Read the Verilog Design
+```bash
+read_verilog dff_asyncres.v
+```
+### Select the Top Module
+```bash
+hierarchy -top dff_asyncres
+```
+### Process the RTL
+```bash
+proc
+```
+
+### Optimize the Design
+```bash
+opt
+```
+### Technology Mapping
+```bash
+techmap
+opt
+```
+
+These steps transform the RTL description into an optimized gate-level structure that can be further mapped to the required standard-cell library.
+🖼️ Figure: Yosys synthesis output
+
+### Result
+The RTL design was successfully processed and synthesized using Yosys, producing a gate-level representation of the original Verilog design.
+
+## 5️⃣ Interesting Optimization
+
+RTL synthesis tools optimize a design while preserving its required functionality. This section shows how Yosys simplifies constant multiplication into efficient hardware.
+
+### 5.1 `mul2` Optimization
+
+```verilog
+module mul2 (
+    input [2:0] a,
+    output [3:0] y
+);
+
+assign y = a * 2;
+
+endmodule
+```
+
+The input a is multiplied by 2 and assigned to output y.
+```text
+yosys
+read_verilog mul2.v
+prep -top mul2
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_5v.lib
+show
+write_verilog -noattr mul2_net.v
+gvim mul2_net.v
+```
+### Result: The mul2 design was successfully synthesized. Yosys optimized the multiplication into pure wiring (a left shift) and generated the corresponding synthesized Verilog netlist.
+## 5.2 mult8 Optimization
+```
+module mult8 (
+    input [2:0] a,
+    output [5:0] y
+);
+
+assign y = a * 9;
+
+endmodule
+```
+The input a is multiplied by 9 and assigned to output y.
+```text
+yosys
+read_verilog mult8.v
+prep -top mult8
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_5v.lib
+show
+write_verilog -noattr mult8_net.v
+gvim mult8_net.v
+```
+### Result: 
+The mult8 design was successfully synthesized and optimized. The generated netlist shows the optimized hardware representation obtained from the original RTL code.
+## 5.3 Generated Synthesized Netlists
+```text
+write_verilog -noattr mul2_net.v
+write_verilog -noattr mult8_net.v
+gvim mul2_net.v
+gvim mult8_net.v
+```
+### Result:
+The synthesized Verilog netlists were successfully generated and examined, showing how the original RTL code was converted into an optimized hardware representation.
+
+## 🏁 Overall Result
+
+- ✅ The SKY130 timing library was explored and its operating conditions understood.
+- ✅ Hierarchical and flattened synthesis approaches were studied and compared.
+- ✅ Three D flip-flop coding styles (async reset, async set, sync reset) were implemented and verified.
+- ✅ RTL designs were simulated using Icarus Verilog and GTKWave.
+- ✅ Designs were synthesized and technology-mapped using Yosys with the SKY130 standard-cell library.
+- ✅ Constant-multiplication optimizations (`×2`, `×9`) were shown to resolve into pure wiring instead of multiplier hardware.
+
+  ## 📌 Conclusion
+
+Module 2 provided practical experience with timing libraries, synthesis techniques, flip-flop coding styles, RTL simulation, waveform analysis, and technology mapping — building a clear understanding of how an RTL design is converted into an optimized gate-level implementation using standard-cell libraries.
+
+---
+
