@@ -76,7 +76,7 @@ gtkwave --version
 yosys -V
 ```
 These commands confirm that the required tools are installed and accessible from the terminal.
-<img width="1080" height="968" alt="WhatsApp Image 2026-08-21 at 5 52 55 PM" src="https://github.com/user-attachments/assets/1a2600d0-88c4-4b70-9ac9-881ce1f977f2" />
+<img width="1080" height="968" alt="WhatsApp Image 2026-08-21 at 5 52 55 PM" src="https://github.com/user-attachments/assets/95633a82-d924-49d8-9a35-8584a3b32a5e" />
 
 
 ---
