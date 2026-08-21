@@ -357,3 +357,11 @@ The logic optimization experiments were successfully implemented using Verilog H
 # 📝 Conclusion
 
 This module provided practical knowledge of logic optimization, RTL simulation, technology mapping, and gate-level synthesis. Different optimization techniques such as constant propagation, logic simplification, and counter optimization were successfully demonstrated. The synthesized netlists confirmed that redundant hardware was removed without affecting circuit behavior, achieving efficient digital circuit implementation.
+
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
+
