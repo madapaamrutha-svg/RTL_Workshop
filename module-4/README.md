@@ -61,12 +61,18 @@ A 2×1 multiplexer was implemented using the Verilog ternary operator to underst
 (Paste Verilog Code)
 
 ### ⚙️ Simulation Commands
+```bash
+iverilog -o mux mux_generate.v tb_mux_generate.v
 
-(Paste Commands)
+gtkwave mux_generate.vcd
+```
+
 
 ### 📷 Output Waveform
+<img width="958" height="930" alt="2x1 mux 1st image" src="https://github.com/user-attachments/assets/a4ddaf60-f4fc-4c1f-b23d-b1f25bbe9fba" />
 
-(Paste Image 1)
+
+
 
 ### ✅ Observation
 
@@ -81,12 +87,24 @@ The RTL simulation confirmed the correct functionality of the 2×1 multiplexer.
 The multiplexer design was synthesized using Yosys and mapped to the SKY130 standard-cell library. During synthesis, the RTL description was optimized and converted into a technology-specific multiplexer cell, reducing hardware complexity while preserving functionality.
 
 ### ⚙️ Synthesis Commands
+```bash
+yosys
 
-(Paste Commands)
+read_verilog mux_generate.v
+
+synth -top mux_generate
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+```
+
 
 ### 📷 Synthesized Circuit
+<img width="958" height="930" alt="mux diag image2" src="https://github.com/user-attachments/assets/ab5e482f-c11c-4cc5-9bf7-3a2e49f7025e" />
 
-(Paste Image 2)
+
+
 
 ### ✅ Observation
 
@@ -101,12 +119,18 @@ The multiplexer was successfully mapped to the SKY130 standard-cell library.
 The simulation waveform verifies that the multiplexer output correctly follows the selected input. Different input combinations were applied to validate the functionality of the design under various conditions before synthesis.
 
 ### ⚙️ Simulation Commands
+```bash
+iverilog -o mux mux_generate.v tb_mux_generate.v
 
-(Paste Commands)
+gtkwave mux_generate.vcd
+```
+
 
 ### 📷 Output Waveform
+<img width="958" height="930" alt="wave ternary mux 3rd" src="https://github.com/user-attachments/assets/b3df3f5c-d5f3-4b77-94a4-4a4f93c43933" />
 
-(Paste Image 3)
+
+
 
 ### ✅ Observation
 
@@ -125,10 +149,16 @@ This experiment demonstrates an improperly coded multiplexer that leads to synth
 (Paste Verilog Code)
 
 ### ⚙️ Simulation Commands
+```bash
+iverilog -o bad_mux bad_mux.v tb_bad_mux.v
 
-(Paste Commands)
+gtkwave bad_mux.vcd
+```
+
 
 ### 📷 Output
+<img width="958" height="930" alt="bad mux 4th image" src="https://github.com/user-attachments/assets/8bbf014c-9a57-41c5-90ba-aebf14aadb27" />
+
 
 (Paste Image 4)
 
