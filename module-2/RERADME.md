@@ -72,8 +72,7 @@ It provides important data such as:
 - Functional behavior
 
 The file was inspected to understand how standard-cell information is represented and used during the synthesis process.
-
-> 🖼️ **Figure:** SKY130 `.lib` file contents
+<img width="1080" height="486" alt="image" src="https://github.com/user-attachments/assets/a34ea2d9-9890-4f50-952e-75499a7fc326" />
 
 ### Result
 
@@ -88,12 +87,12 @@ Synthesis converts the RTL description into a gate-level hardware representation
 Hierarchical synthesis keeps the original module structure of the RTL design.
 
 The individual modules remain separate, making it easier to identify the relationship between different blocks and debug the synthesized design.
+<img width="1080" height="484" alt="image" src="https://github.com/user-attachments/assets/923e03ee-6776-4b6e-81bb-ebcfd6ef52df" />
+
 
 ### Result
 
 The design was synthesized while preserving the module hierarchy and the connections between the submodules.
-
-> 🖼️ **Figure:** Hierarchical synthesis result
 
 ## 2.2 🌐 Flattened Synthesis
 
@@ -106,6 +105,9 @@ The following command is used in Yosys to flatten the design:
 ```bash
 flatten
 ```
+
+<img width="1080" height="555" alt="image" src="https://github.com/user-attachments/assets/d13fdd2d-bbd1-46ae-90e0-09d41e918a5a" />
+
 ## 2.3 ⚖️ Comparison of Synthesis Methods
 
 Hierarchical and flattened synthesis differ mainly in how the original RTL module structure is handled during the synthesis process.
@@ -160,6 +162,8 @@ iverilog dff_asyncres.v tb_dff_asyncres.v
 ./a.out
 gtkwave tb_dff_asyncres.vcd
 ```
+<img width="1080" height="539" alt="image" src="https://github.com/user-attachments/assets/e15a4aae-1eac-466f-b6da-cb512a3b9cae" />
+
 
 ### Result
 The asynchronous-reset D flip-flop was successfully simulated, and the waveform was verified using GTKWave.
@@ -189,6 +193,8 @@ endmodule
 ### Working
 When async_set is high, the output q is immediately set to 1.
 When the set signal is inactive, the input d is transferred to q at the rising edge of the clock.
+<img width="1080" height="1005" alt="image" src="https://github.com/user-attachments/assets/3ebde68c-1884-4319-b607-c0c8f35b9259" />
+
 ### Simulation Commands
 ```bash
 iverilog dff_async_set.v tb_dff_async_set.v
@@ -226,6 +232,8 @@ At every rising edge of clk:
 When sync_reset is high, q is cleared to 0.
 When sync_reset is low, the value of d is stored in q.
 Unlike asynchronous reset, a change in sync_reset alone does not immediately affect the output.
+<img width="1080" height="550" alt="image" src="https://github.com/user-attachments/assets/4c645bf3-f57e-41f6-9d22-f6e25de01210" />
+
 ### Simulation Commands
 ```bash
 iverilog dff_syncres.v tb_dff_syncres.v
@@ -233,7 +241,6 @@ iverilog dff_syncres.v tb_dff_syncres.v
 gtkwave tb_dff_syncres.vcd
 ```
 
-🖼️ Figure: Synchronous-reset D flip-flop simulation waveform
 ### Result
 The synchronous-reset D flip-flop was successfully simulated, and its clock-dependent operation was verified using GTKWave.
 
@@ -293,7 +300,6 @@ Reset or set signal
 Data input
 Flip-flop output
 
-🖼️ Figure: RTL simulation waveform observed in GTKWave
 ### Result
 The RTL simulation was completed successfully, and the generated waveform confirmed the expected operation of the flip-flop.
 
@@ -363,6 +369,8 @@ show
 write_verilog -noattr mul2_net.v
 gvim mul2_net.v
 ```
+<img width="322" height="97" alt="image" src="https://github.com/user-attachments/assets/09cf1f88-24bb-42ba-b20d-60e603f79fff" />
+
 ### Result: The mul2 design was successfully synthesized. Yosys optimized the multiplication into pure wiring (a left shift) and generated the corresponding synthesized Verilog netlist.
 ## 5.2 mult8 Optimization
 ```
@@ -385,6 +393,8 @@ show
 write_verilog -noattr mult8_net.v
 gvim mult8_net.v
 ```
+<img width="355" height="74" alt="image" src="https://github.com/user-attachments/assets/49b685f8-18fe-41e8-8222-f5363ae7031a" />
+
 ### Result: 
 The mult8 design was successfully synthesized and optimized. The generated netlist shows the optimized hardware representation obtained from the original RTL code.
 ## 5.3 Generated Synthesized Netlists
@@ -394,6 +404,8 @@ write_verilog -noattr mult8_net.v
 gvim mul2_net.v
 gvim mult8_net.v
 ```
+<img width="1054" height="893" alt="image" src="https://github.com/user-attachments/assets/be4425b0-1f15-48f4-b490-d95f4ef2c3e9" />
+
 ### Result:
 The synthesized Verilog netlists were successfully generated and examined, showing how the original RTL code was converted into an optimized hardware representation.
 
