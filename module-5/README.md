@@ -319,3 +319,11 @@ All Verilog designs were successfully simulated and synthesized. Functional veri
 # ✅ Conclusion
 
 Module 5 provided practical experience in synthesis optimization using Verilog and Yosys. Different optimization techniques were explored through multiple design examples, demonstrating how synthesis tools transform RTL descriptions into optimized hardware implementations. The experiments improved understanding of efficient digital design, RTL synthesis, and technology mapping for ASIC design using the SKY130 standard-cell library.
+
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
+
