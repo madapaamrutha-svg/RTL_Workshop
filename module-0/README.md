@@ -9,6 +9,8 @@ Module 0 introduces the RTL Design Workshop environment and prepares the require
 | Tools | Lab Environment | Prerequisites |
 |---|---|---|
 | Icarus Verilog, GTKWave, Yosys | Cloud Lab / Ubuntu Linux | Linux-based environment or virtual machine |
+
+
 📑 Table of Contents
 
 1. "Workshop Introduction" (#1-workshop-introduction)
