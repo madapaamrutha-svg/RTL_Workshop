@@ -97,7 +97,7 @@ show
 ```
 <img width="958" height="930" alt="norgate mod3 2nd" src="https://github.com/user-attachments/assets/fe49600c-e152-4be2-8f05-9f0a6bdbdcd3" />
 
-📷 Image 4: norgate mod3 2nd.png
+
 ### Result
 The OR gate was synthesized successfully and mapped to the SKY130 or2 standard cell.
 
@@ -127,7 +127,7 @@ show
 ### Result
 The three-input AND gate was successfully synthesized and mapped to the SKY130 and3 standard cell.
 
-## 4. Verilog Code for D Flip-Flop Constant Propagation
+## 6. Verilog Code for D Flip-Flop Constant Propagation
 Description
 This Verilog code demonstrates sequential constant propagation using two D Flip-Flop designs (dff_const1 and dff_const2). The output is assigned constant values to observe optimization during synthesis.
 ```verilog
@@ -163,7 +163,7 @@ Output
 <img width="958" height="930" alt="code 4th image" src="https://github.com/user-attachments/assets/f9222591-7c82-484d-a1a6-489039067849" />
 
 
-## 5. Simulation Waveform – dff_const1
+## 7. Simulation Waveform – dff_const1
 Description
 Simulation waveform showing the behavior of dff_const1. The output changes according to the reset signal.
 ### Commands
@@ -176,7 +176,7 @@ Output
 <img width="958" height="930" alt="wave 5th" src="https://github.com/user-attachments/assets/54c5497a-2444-4b3b-be37-2906dd7e0ea6" />
 
 
-## 6. Simulation Waveform – dff_const2
+## 8. Simulation Waveform – dff_const2
 Description
 Simulation waveform of dff_const2 showing constant output after optimization.
 ### Commands
@@ -189,7 +189,7 @@ Output
 <img width="958" height="930" alt="6th" src="https://github.com/user-attachments/assets/81fa31f8-9500-41a5-b01c-2d2de2b22f1e" />
 
 
-## 7. D Flip-Flop Netlist Before Optimization
+## 9. D Flip-Flop Netlist Before Optimization
 Description
 The synthesized netlist before applying sequential optimization.
 ### Commands
@@ -206,7 +206,7 @@ Output
 
 
 
-## 8. Sequential Logic Optimization Result
+## 10. Sequential Logic Optimization Result
 Description
 The optimized circuit after sequential constant propagation. Redundant logic is removed by the synthesis tool.
 ### Commands
@@ -223,7 +223,7 @@ Output
 
 
 
-## 9. D Flip-Flop Constraint Simulation
+## 11. D Flip-Flop Constraint Simulation
 Information
 This experiment demonstrates the simulation of a D Flip-Flop with constant propagation. The waveform verifies the behavior of the flip-flop during reset and clock transitions.
 ### Code
@@ -252,7 +252,7 @@ Output
 <img width="958" height="930" alt="dffconst3 9th" src="https://github.com/user-attachments/assets/564760ac-8465-4be7-8a5c-6b452d4f041b" />
 
 
-## 10. Synthesized D Flip-Flop Circuit
+## 12. Synthesized D Flip-Flop Circuit
 Information
 The D Flip-Flop design is synthesized using Yosys. The generated circuit is mapped to SKY130 standard cells.
 ### Commands
@@ -269,7 +269,7 @@ Output
 <img width="958" height="930" alt="2ff is there set and reset 10th image" src="https://github.com/user-attachments/assets/fbcd222c-c976-47e5-8ee4-94cc75efc218" />
 
 
-## 11. Counter Optimization
+## 13. Counter Optimization
 Information
 This experiment demonstrates optimization by removing unused outputs from a counter circuit.
 ### Code
@@ -304,7 +304,7 @@ show
 ```
 
 
-## 12. Counter Optimization Result
+## 14. Counter Optimization Result
 Information
 The synthesized counter retains only the required logic after optimization.
 ### Commands
@@ -322,7 +322,7 @@ Output
 
 
 
-## 13. Optimized Counter Circuit
+## 15. Optimized Counter Circuit
 Information
 The optimized gate-level implementation contains only the necessary flip-flops and logic.
 ### Commands
@@ -336,7 +336,7 @@ Output
 
 
 
-## 14. Optimized Counter Netlist
+## 16. Optimized Counter Netlist
 Information
 The generated netlist shows the optimized hardware after synthesis.
 ### Commands
