@@ -8,17 +8,17 @@ This module focuses on synthesis optimization techniques in Verilog HDL using th
 
 # 📑 Table of Contents
 
- 1 – Constant Propagation
- 2 – Boolean Optimization
- 3 – Resource Sharing
-  4 – Incomplete Case Statement
-  5 – Complete Case Statement
-  6 – Partial Case Assignment
-  7 – Multiplexer Generator
-  8 – Demultiplexer
-  9 – Ripple Carry Adder
-  10- Overall Results
-  11- Conclusion 
+- 1 – Constant Propagation
+- 2 – Boolean Optimization
+- 3 – Resource Sharing
+- 4 – Incomplete Case Statement
+- 5 – Complete Case Statement
+- 6 – Partial Case Assignment
+- 7 – Multiplexer Generator
+-  8 – Demultiplexer
+-  9 – Ripple Carry Adder
+-  10- Overall Results
+-  11- Conclusion 
 
 ---
 
