@@ -271,3 +271,11 @@ The experiments successfully demonstrated the implementation of multiplexers, bl
 # 📌 Conclusion
 
 This module provided a comprehensive understanding of blocking and non-blocking assignments, multiplexer implementation, and synthesis-simulation mismatch. Through simulation, synthesis, and technology mapping, the experiments emphasized the importance of proper RTL coding practices for generating reliable and optimized digital hardware. The complete RTL-to-GDS front-end flow using Icarus Verilog, GTKWave, Yosys, and SKY130 was successfully demonstrated.
+
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
+
