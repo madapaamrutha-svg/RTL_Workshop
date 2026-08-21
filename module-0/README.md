@@ -86,3 +86,10 @@ These commands confirm that the required tools are installed and accessible from
 - ✅ Set up the required RTL simulation and synthesis tools.
 - ✅ Installed Icarus Verilog, GTKWave, and Yosys.
 - ✅ Verified the installed tools before beginning the RTL design modules.
+
+- ## 👤 Author
+
+*Amrutha Madapa*  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[GitHub Profile](https://github.com/madapaamrutha-svg)
