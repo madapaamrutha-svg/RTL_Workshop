@@ -423,4 +423,11 @@ The synthesized Verilog netlists were successfully generated and examined, showi
 Module 2 provided practical experience with timing libraries, synthesis techniques, flip-flop coding styles, RTL simulation, waveform analysis, and technology mapping — building a clear understanding of how an RTL design is converted into an optimized gate-level implementation using standard-cell libraries.
 
 ---
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
+
 
