@@ -1,4 +1,16 @@
-1. # 🔍 Introduction to Logic Optimizations
+ # 🔍 Module-3 Introduction to Combinational And Sequential Optimization
+ ## Objectives
+ 
+To understand the concept of logic optimization in digital circuits.
+To study combinational and sequential logic optimization techniques.
+To perform synthesis using the Yosys synthesis tool.
+To map Verilog designs to the SKY130 standard-cell library.
+To simulate Verilog designs using Icarus Verilog (Icarus Verilog).
+To verify circuit behavior using GTKWave.
+To analyze optimized gate-level netlists generated after synthesis.
+
+
+1.Introduction to Logic Optimizations
 Logic optimization reduces the hardware area, power consumption, and delay while preserving the original functionality of the design. In this module, combinational and sequential optimization techniques are studied using the SKY130 standard-cell library and Yosys synthesis tool.
 📷 Image 1: Screenshot(69).png (Constant Propagation Example)
 Result
