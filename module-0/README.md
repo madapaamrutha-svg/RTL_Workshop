@@ -87,9 +87,9 @@ These commands confirm that the required tools are installed and accessible from
 - ✅ Installed Icarus Verilog, GTKWave, and Yosys.
 - ✅ Verified the installed tools before beginning the RTL design modules.
 
-- ## 👤 Author
+## 👤 Author
 
-*Amrutha Madapa*  
+**Amrutha Madapa**  
 B.Tech – Electronics & Communication Engineering  
 Anurag University  
-[GitHub Profile](https://github.com/madapaamrutha-svg)
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
