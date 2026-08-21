@@ -302,8 +302,6 @@ opt_clean
 
 show
 ```
-Output
-<img width="958" height="930" alt="unused op optimization 11 image" src="https://github.com/user-attachments/assets/53b8fc3f-3a6a-4937-a479-a029e2507987" />
 
 
 ## 12. Counter Optimization Result
@@ -320,7 +318,8 @@ synth -top counter_opt
 show
 ```
 Output
-<img width="958" height="930" alt="counter dff 3bit but 1flop there 12th image" src="https://github.com/user-attachments/assets/6d05c5ac-b53f-4dd9-87b2-4980300107a1" />
+<img width="958" height="930" alt="unused op optimization 11 image" src="https://github.com/user-attachments/assets/53b8fc3f-3a6a-4937-a479-a029e2507987" />
+
 
 
 ## 13. Optimized Counter Circuit
@@ -333,7 +332,8 @@ write_verilog -noattr counter_opt_net.v
 gvim counter_opt_net.v
 ```
 Output
-<img width="958" height="930" alt="opt2 counter 13thimage" src="https://github.com/user-attachments/assets/bfc5cf2c-211c-41fe-b7f9-374725b41489" />
+<img width="958" height="930" alt="counter dff 3bit but 1flop there 12th image" src="https://github.com/user-attachments/assets/6d05c5ac-b53f-4dd9-87b2-4980300107a1" />
+
 
 
 ## 14. Optimized Counter Netlist
@@ -345,7 +345,9 @@ write_verilog -noattr counter_opt_net.v
 
 gvim counter_opt_net.v
 ```
-output
+
+Output
+<img width="958" height="930" alt="opt2 counter 13thimage" src="https://github.com/user-attachments/assets/bfc5cf2c-211c-41fe-b7f9-374725b41489" />
 
 
 #🎯 Overall Result
