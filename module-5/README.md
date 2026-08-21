@@ -8,17 +8,19 @@ This module focuses on synthesis optimization techniques in Verilog HDL using th
 
 # 📑 Table of Contents
 
-- 1 – Constant Propagation
-- 2 – Boolean Optimization
-- 3 – Resource Sharing
+- 1 – Incomplete IF Statement
+- 2 – RTL Schematic of Incomplete IF Statement
+- 3 – RTL Simulation of Incomplete IF Statement
 - 4 – Incomplete Case Statement
-- 5 – Complete Case Statement
-- 6 – Partial Case Assignment
-- 7 – Multiplexer Generator
--  8 – Demultiplexer
--  9 – Ripple Carry Adder
--  10- Overall Results
--  11- Conclusion 
+- 5 – Incomplete Case Statement
+- 6–  Complete Case Statement
+- 7 – Partial Case Assignment
+- 8 – RTL Simulation Verification
+- 9 – Multiplexer 
+- 10 – Demultiplexer
+- 11 – Ripple Carry Adder
+- 12- Overall Results
+- 13- Conclusion 
 
 ---
 
@@ -46,7 +48,7 @@ This module focuses on synthesis optimization techniques in Verilog HDL using th
 | Ubuntu Linux | Development Environment |
 
 ---
-## 📌  Incomplete IF Statement
+## 📌 1. Incomplete IF Statement
 📖 Overview
 This experiment demonstrates the behavior of an incomplete IF statement in Verilog HDL. An incomplete IF statement assigns the output only when a specific condition is satisfied, leaving the remaining conditions without any assignment. During RTL simulation, the output retains its previous value whenever the condition is false. During synthesis, this behavior results in latch inference, as the synthesis tool inserts a latch to preserve the previous output value. This experiment highlights the importance of assigning outputs under all possible conditions in combinational logic to avoid unintended hardware.
 
@@ -145,7 +147,7 @@ Proper conditional assignments help ensure predictable and optimized hardware ge
 ### ✅ Result
 The RTL schematic was successfully generated for the IF-ELSE design using Yosys. The synthesized circuit accurately represents the Verilog description and demonstrates the importance of correct conditional coding in digital circuit design.
 
-## Experiment 4 – Incomplete Case Statement
+## 5 – Incomplete Case Statement
 
 ### Overview
 This experiment demonstrates the synthesis result of an **incomplete case statement**. Since not all possible input combinations are covered, the synthesis tool infers additional hardware (such as latches) to preserve the previous output value.
@@ -179,7 +181,7 @@ The GTKWave simulation verifies the behavior of the incomplete case implementati
 
 The RTL simulation waveform verifies the behavior of the incomplete case statement. The output retains its previous value for undefined conditions, confirming latch behavior during simulation.
 
-## Experiment 5 – Complete Case Statement
+## 6– Complete Case Statement
 
 ### Overview
 This experiment demonstrates the synthesis of a **complete case statement**, where all possible input conditions are defined. This allows the synthesis tool to generate purely combinational logic without inferring latches.
@@ -209,7 +211,7 @@ The Yosys synthesized schematic shows a combinational implementation of the comp
 
 The synthesized design contains only combinational logic without any inferred latches. Since all input combinations are covered, the circuit is optimized for reliable synthesis and predictable hardware implementation.
 
-## 6 – Partial Case Assignment
+## 7 – Partial Case Assignment
 
 ### Overview
 This experiment demonstrates the effect of **partial assignments** inside a case statement. When the output is not assigned in every branch, synthesis infers latch-based storage to maintain the previous output value.
@@ -249,7 +251,7 @@ The GTKWave simulation confirms the synthesized behavior. The waveform shows tha
 
 The RTL simulation confirms the behavior of the partial case statement. The waveform shows that the output holds its previous state whenever the case statement does not assign a new value, demonstrating latch inference.
 
-## 11 – RTL Simulation Verification
+## 8 – RTL Simulation Verification
 ### Overview
 This experiment verifies the RTL functionality of the implemented design using GTKWave. Different input combinations are applied through the testbench to ensure the circuit behaves as expected before synthesis.
 <img width="958" height="930" alt="11th image" src="https://github.com/user-attachments/assets/fa936eb8-adfb-4bfa-a8a5-a29689682b1b" />
@@ -260,7 +262,7 @@ The waveform shows that the output changes correctly for every valid input combi
 ### Result
 The RTL simulation successfully verifies the functional correctness of the design. The observed waveform matches the expected behavior.
 
-##  12 – Multiplexer (MUX) Verification
+##  9 – Multiplexer (MUX) Verification
 ### Overview
 This experiment demonstrates the operation of a multiplexer. The select lines determine which input is connected to the output.
 <img width="958" height="930" alt="mux 12th" src="https://github.com/user-attachments/assets/ff95c75d-87d0-4f29-8751-25d15fadfdc8" />
@@ -271,7 +273,7 @@ The output follows the selected input as the select signal changes. The waveform
 ### Result
 The multiplexer functions correctly, and the simulation validates proper data selection based on the select inputs.
 
-## 13 – Demultiplexer (DEMUX) Verification
+## 10 – Demultiplexer (DEMUX) Verification
 ### Overview
 This experiment demonstrates the behavior of a demultiplexer, where a single input is routed to one of several output lines based on the select signal.
 
@@ -282,7 +284,7 @@ The waveform shows that only the selected output receives the input signal, whil
 ### Result
 The demultiplexer operates correctly, successfully routing the input to the selected output according to the select lines.
 
-## 14 – Ripple Carry Adder
+## 11 – Ripple Carry Adder
 ### Overview
 This experiment verifies the functionality of an 8-bit Ripple Carry Adder. The design performs binary addition by propagating the carry from one full adder stage to the next.
 <img width="958" height="930" alt="ripple carry adder 14th image" src="https://github.com/user-attachments/assets/f0c2228d-548b-48dd-b195-88b50290579b" />
