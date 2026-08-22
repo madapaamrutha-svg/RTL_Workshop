@@ -91,7 +91,7 @@ endmodule
 ```bash
 yosys
 read_verilog opt_check2.v
-prep -top opt_check2
+synth -top opt_check2
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
@@ -118,7 +118,7 @@ endmodule
 ```bash
 yosys
 read_verilog opt_check3.v
-prep -top opt_check3
+synth -top opt_check3
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
@@ -166,11 +166,23 @@ Output
 ## 7. Simulation Waveform – dff_const1
 Description
 Simulation waveform showing the behavior of dff_const1. The output changes according to the reset signal.
+### Code
+```verilog
+module dff_const1(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+    if(reset)
+        q <= 1'b0;
+    else
+        q <= 1'b1;
+end
+endmodule
+```
+
 ### Commands
 ```bash
-iverilog -o dff_const1.out dff_const1.v dff_const1_tb.v
-vvp dff_const1.out
-gtkwave dump.vcd
+iverilog -o dff_const1.out dff_const1.v tb_dff_const1.v
+gtkwave tb_dff_const1.vcd
 ```
 Output
 <img width="958" height="930" alt="wave 5th" src="https://github.com/user-attachments/assets/54c5497a-2444-4b3b-be37-2906dd7e0ea6" />
@@ -179,11 +191,23 @@ Output
 ## 8. Simulation Waveform – dff_const2
 Description
 Simulation waveform of dff_const2 showing constant output after optimization.
+### Code
+```verilog
+module dff_const2(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+    if(reset)
+        q <= 1'b1;
+    else
+        q <= 1'b1;
+end
+endmodule
+```
+
 ### Commands
 ```bash
-iverilog -o dff_const2.out dff_const2.v dff_const2_tb.v
-vvp dff_const2.out
-gtkwave dump.vcd
+iverilog -o dff_const2.out dff_const2.v tb_dff_const2_.v
+gtkwave tb_dff_const2_.vcd
 ```
 Output
 <img width="958" height="930" alt="6th" src="https://github.com/user-attachments/assets/81fa31f8-9500-41a5-b01c-2d2de2b22f1e" />
@@ -244,8 +268,6 @@ endmodule
 ```bash
 iverilog -o dff_const3.out dff_const3.v dff_const3_tb.v
 
-vvp dff_const3.out
-
 gtkwave dff_const3.vcd
 ```
 Output
@@ -298,7 +320,6 @@ read_verilog counter_opt.v
 
 synth -top counter_opt
 
-opt_clean
 
 show
 ```
