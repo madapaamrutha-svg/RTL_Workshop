@@ -67,7 +67,7 @@ endmodule
 ```bash
 yosys
 read_verilog opt_check.v
-prep -top opt_check
+synth -top opt_check
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
