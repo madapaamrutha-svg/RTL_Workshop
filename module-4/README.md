@@ -59,9 +59,9 @@ A 2×1 multiplexer was implemented using the Verilog ternary operator to underst
 
 ### ⚙️ Simulation Commands
 ```bash
-iverilog -o mux mux_generate.v tb_mux_generate.v
+iverilog -o mux ternary_operator_mux.v tb_ternary_operator_mux.v
 
-gtkwave mux_generate.vcd
+gtkwave ternary_operator_mux.vcd
 ```
 
 
