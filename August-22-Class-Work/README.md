@@ -187,3 +187,10 @@ The August 22 class provided practical experience in RTL design, multiple Verilo
 ## Conclusion
 
 The complete RTL design and verification flow was practiced, starting from Verilog RTL design and continuing through synthesis, netlist visualization, simulation, and waveform analysis. The practical exercises helped in understanding the relationship between RTL code, synthesized hardware, and simulation results.
+
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
