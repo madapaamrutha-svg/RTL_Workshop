@@ -51,6 +51,7 @@ RTL_Workshop/
     ├── module-3/
     ├── module-4/
     └── module-5/
+```
 ---
 
 # 📚 Table of Contents
