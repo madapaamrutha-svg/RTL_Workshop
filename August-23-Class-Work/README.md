@@ -185,3 +185,12 @@ The August 23 class provided practical experience with the BabySoC RTL-to-netlis
 ## Conclusion
 
 The complete synthesis and verification flow of the BabySoC design was practiced during the August 23 class. The activities helped in understanding how RTL Verilog is processed through synthesis, technology mapping, netlist generation, optimization, and post-synthesis simulation using open-source VLSI tools.
+
+
+
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
