@@ -98,16 +98,8 @@ The GLS waveform was analyzed using GTKWave to verify the behavior of the synthe
 
 The RTL and GLS waveforms were compared to verify that the synthesized design maintains the expected functional behavior.
 
-<table>
-  <tr>
-    <th>RTL Waveform</th>
-    <th>GLS Waveform</th>
-  </tr>
-  <tr>
-    <td><img src="images/rtl_waveform.png" width="450"></td>
-    <td><img src="images/gls_waveform.png" width="450"></td>
-  </tr>
-</table>
+<img width="555" height="786" alt="Screenshot (72)" src="https://github.com/user-attachments/assets/ab30a174-6080-4512-b039-d2da8322c9b5" />
+
 
 ## 7. Overall Result
 
