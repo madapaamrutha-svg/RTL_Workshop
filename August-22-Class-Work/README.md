@@ -53,9 +53,10 @@ Yosys was used to read the Verilog source files, perform synthesis, and generate
 
 The synthesized multiple-module design was successfully visualized using the Yosys `show` command.
 
-**Output Screenshot:**
+<img width="1920" height="940" alt="multple modules" src="https://github.com/user-attachments/assets/45842274-d883-4f0a-b8d9-0266b22b2996" />
 
-![Multiple Modules](multiple-modules.png)
+
+
 
 ### Result
 
@@ -73,9 +74,9 @@ The multiple-module design was synthesized and its resulting netlist was observe
 
 ### Output
 
-**Netlist Screenshot:**
+<img width="1920" height="940" alt="mult mod netlist" src="https://github.com/user-attachments/assets/e72f7b32-909f-4cd8-896b-d53382ee1f56" />
 
-![Multiple Module Netlist](mult-mod-netlist.png)
+
 
 ### Result
 
@@ -97,9 +98,9 @@ The design was processed using Yosys and the synthesized representation was view
 
 ### Output
 
-**Output Screenshot:**
+<img width="1920" height="940" alt="comp_case" src="https://github.com/user-attachments/assets/f8023819-45d5-4ce0-8e95-71e0b71a67f2" />
 
-![Combinational Case](comp-case.png)
+
 
 ### Result
 
@@ -127,9 +128,9 @@ The general simulation flow followed during the class was:
 
 ### Output
 
-**Simulation Screenshot:**
+<img width="1920" height="940" alt="simulation" src="https://github.com/user-attachments/assets/d999f753-81d9-494d-8ede-410d8921899c" />
 
-![Simulation](simulation.png)
+
 
 ### Result
 
@@ -157,9 +158,8 @@ gtkwave
 
 ### Output
 
-![Waveform](wave.png)
+<img width="1920" height="940" alt="VirtualBox_vsdworkshop_22_08_2026_12_25_00" src="https://github.com/user-attachments/assets/9369ba5e-2db4-4bff-8d04-96ebd2cdf107" />
 
-![Waveform Analysis](VirtualBox_vsdworkshop_22_08_2026_12_25_00.png)
 
 ### Result
 
