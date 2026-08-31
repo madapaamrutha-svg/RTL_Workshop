@@ -128,8 +128,7 @@ The general simulation flow followed during the class was:
 
 ### Output
 
-<img width="1920" height="940" alt="simulation" src="https://github.com/user-attachments/assets/d999f753-81d9-494d-8ede-410d8921899c" />
-
+<img width="1920" height="940" alt="simulation" src="https://github.com/user-attachments/assets/c24ef774-4601-4d59-9718-5bd214af3657" />
 
 
 ### Result
