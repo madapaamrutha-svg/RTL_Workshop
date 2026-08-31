@@ -62,7 +62,8 @@ RTL_Workshop/
 - Module 3 – Combinational and Sequential Optimization
 - Module 4 – Blocking vs Non-Blocking Assignments & Simulation Mismatch
 - Module 5 – Optimization in Synthesis
-
+- August 22 Class Work - RTL Design,Yosys Synthesis & GTKWave Simulation
+- August 23 Class Work - BabySoc Synthesis,SKY130 Mapping & Post-Synthesis Simulation
 ---
 
 # 📘 Modules Covered
@@ -84,6 +85,13 @@ Blocking vs Non-Blocking Assignments and Synthesis-Simulation Mismatch.
 
 ## Module 5
 Optimization Techniques, Multiplexer, Demultiplexer and Ripple Carry Adder.
+
+## August 22 Class Work 
+RTL Design,Yosys Synthesis & GTKWave Simulation
+## August 23 Class Work
+BabySoc Synthesis,SKY130 Mapping & Post-Synthesis Simulation
+## Assessment 1
+Sequence Detector RTL Design, Synthesis, GLS & Verification.
 
 ---
 
