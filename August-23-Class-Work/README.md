@@ -44,7 +44,10 @@ The `show` command was used to generate a graphical representation of the design
 
 ### Output
 
-![BabySoC Yosys](babysoc.png)
+<img width="1920" height="940" alt="babysoc" src="https://github.com/user-attachments/assets/3dfaf15b-6170-4ea4-8120-c69896f23be2" />
+
+
+
 
 ### Result
 
@@ -60,7 +63,9 @@ After reading the BabySoC RTL design, Yosys was used to visualize the structure 
 
 ### Output
 
-![BabySoC Yosys Design](babysoc%20vsd%20yosys.png)
+<img width="1920" height="940" alt="babysoc vsd yosys" src="https://github.com/user-attachments/assets/85fbb088-f59b-4280-b7d9-3069fae740f5" />
+
+
 
 ### Result
 
@@ -80,7 +85,10 @@ The SKY130 Liberty library was used to provide cell information during the synth
 
 ### Output
 
-![ABC Liberty SKY130 Command](cells%20abc%20liberty%20sky130%20lib%20command.png)
+<img width="1920" height="940" alt="cells abc liberty  sky130 lib command" src="https://github.com/user-attachments/assets/09b57c96-b3fd-42ec-aa12-1524a64fcc1c" />
+
+
+
 
 ### Result
 
@@ -98,7 +106,10 @@ During the class, the BabySoC RTL design was synthesized using Yosys and mapped 
 
 ### Output
 
-![Synthesis](synthesis.png)
+<img width="1920" height="940" alt="synthesis" src="https://github.com/user-attachments/assets/72c28353-4b72-47c0-8798-7199dd7bfdfa" />
+
+
+
 
 ### Result
 
@@ -114,7 +125,9 @@ After synthesis, the resulting design is represented as a netlist containing cel
 
 ### Output
 
-![Synthesized BabySoC](show%20vsdbabysoc.png)
+<img width="1920" height="940" alt="show vsdbabysoc" src="https://github.com/user-attachments/assets/26c695d3-08b5-4fc7-9c9c-2dad97d418c3" />
+
+
 
 ### Result
 
@@ -132,7 +145,9 @@ Yosys statistics were observed after the optimization process to understand the 
 
 ### Output
 
-![After Removing Cells and Wires](after%20removing%20cells%20wires.png)
+<img width="1920" height="940" alt="after removing cells wires" src="https://github.com/user-attachments/assets/0cb0fe62-be3b-4038-9a5e-b459117f1da5" />
+
+
 
 ### Result
 
@@ -153,8 +168,9 @@ During the class, the synthesized BabySoC design was simulated and the generated
 The post-synthesis waveform was observed to verify important signals such as clock, reset, output, and other design signals.
 
 ### Output
+<img width="1920" height="940" alt="post synth" src="https://github.com/user-attachments/assets/529410db-f4fe-430c-9ba0-d0bd4a61f3fc" />
 
-![Post Synthesis Simulation](post%20synth.png)
+
 
 ### Result
 
