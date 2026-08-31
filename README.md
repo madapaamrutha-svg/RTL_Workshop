@@ -40,15 +40,17 @@ This repository contains all the modules completed during the RTL Design Worksho
 
 ```
 RTL_Workshop/
-│── README.md
-│── module-0/
-│── module-1/
-│── module-2/
-│── module-3/
-│── module-4/
-└── module-5/
-```
-
+│
+└── │___ README.md
+    ├── Assessment-1/
+    ├── August-22-Class-Work/
+    ├── August-23-Class-Work/
+    ├── module-0/
+    ├── module-1/
+    ├── module-2/
+    ├── module-3/
+    ├── module-4/
+    └── module-5/
 ---
 
 # 📚 Table of Contents
