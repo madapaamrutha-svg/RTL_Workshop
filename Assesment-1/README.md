@@ -110,3 +110,12 @@ The RTL simulation and GLS results were compared, and the expected sequence dete
 ## 8. Conclusion
 
 The Assessment 1 work successfully demonstrated the complete RTL-to-GLS flow for a Verilog-based Sequence Detector. The design was verified through RTL simulation, synthesized using Yosys, and validated through Gate-Level Simulation using the generated netlist.
+
+
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
+
