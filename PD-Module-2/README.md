@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="Screenshot (117)" src="https://github.com/user-attachments/assets/e90b2858-079e-493b-8864-e4eae218b063" />
+
 # PHYSICAL DESIGN
 
 ## Module 2 – Chip Floorplanning and Power Integrity
