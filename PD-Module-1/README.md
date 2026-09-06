@@ -690,3 +690,12 @@ The project demonstrated the importance of proper floorplanning, placement, cloc
 The study also showed that physical design parameters have a direct impact on important design metrics such as area, timing, utilization, and routability.
 
 Overall, the project provided a practical understanding of the complete ASIC physical implementation methodology and the role of open-source tools in modern VLSI design.
+
+
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
+
