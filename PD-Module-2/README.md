@@ -66,29 +66,31 @@ The main objectives of this project are:
 - 6 - Define Locations of Pre-placed Cells
 - 7 - Placement of Pre-placed Cells
 - 8 - IP Blocks and Floorplanning
-- 9 - Decoupling Capacitors and Power Integrity
-- 10 -Switching Current and Voltage Drop
+- 9 - Surrounded Pre-Placed Cells with Decoupling Capacitors
+- 10 - Switching Current and Voltage Drop
 - 11 - Noise Margin
-- 12 - Decoupling Capacitor Placement
-- 13 - Power Network and Multi-bit Bus
-- 14 - Floorplanning
-- 15 - Power Planning
-- 16 - Power Distribution Network
-- 17 - Picorv32a ASIC Design Flow using OpenLane
-- 18 - OpenLane and SKY130 Configuration
-- 19 - LEF and Technology Files
-- 20 - OpenLane Floorplanning Configuration
-- 21 - Standard Cell Placement
-- 22 - Decoupling Capacitors
-- 23 - Logical Cell Placement Blockage
-- 24 - Tap Cells
-- 25 - OpenLane Configuration
-- 25 - Timing Constraints
-- 26 - OpenROAD / Layout View
-- 27 - Bind Netlist with Physical Library Cells
-- 28 - Placement
-- 29 - Key Learnings
-- 30 - Conclusion
+- 12 - Solution:Add Decoupling Capacitors
+- 13 - Decoupling Capacitor Placement Around Blocks
+- 14 - Decoupling Capacitor Placement in the Floorplan
+- 15 - Power Network,Driver,Load and 16-bit Bus
+- 16 - Floorplanning
+- 17 - Power Planning
+- 18 - Power Distribution Network
+- 19 - Picorv32a ASIC Design Flow using OpenLane
+- 20 - OpenLane Physical Design Configuration
+- 21 - SkyWater PDK LEF File Configuration
+- 22 - OpenLane Floorplanning Configuration
+- 23 - Standard Cell Placement
+- 24 - Decoupling Capacitors
+- 25 - Logical Cell Placement Blockage
+- 26 - Tap Cells
+- 27 - LEF & Technology Files
+- 28 - OpenLane Configuration
+- 29 - Timing Constraints
+- 30 - OpenROAD / Layout View
+- 31 - Bind Netlist with Physical Library Cells
+- 32 - Placement
+
 
 
 # 1. Define Width and Height of Core and Die
