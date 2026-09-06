@@ -1,3 +1,4 @@
+<img width="1920" height="1080" alt="Screenshot (117)" src="https://github.com/user-attachments/assets/e90b2858-079e-493b-8864-e4eae218b063" />
 # PHYSICAL DESIGN
 
 ## Module 2 – Chip Floorplanning and Power Integrity
@@ -21,6 +22,7 @@ The example netlist contains:
 * Data connections
 
 The standard cells and flip-flops in the netlist are later converted into physical dimensions during floorplanning.
+<img width="1920" height="1080" alt="Screenshot (117)" src="https://github.com/user-attachments/assets/99014082-f6ff-4e35-88ee-ec74ea45e9ad" />
 
 ---
 
@@ -37,6 +39,7 @@ The highlighted elements include:
 Each logical cell occupies a certain physical area on the silicon.
 
 Therefore, the total area occupied by all cells must be calculated before determining the core dimensions.
+<img width="1920" height="1080" alt="Screenshot (118)" src="https://github.com/user-attachments/assets/7f6fdf41-93b2-4a8a-a023-0f82d896f96b" />
 
 ---
 
@@ -56,6 +59,7 @@ Area = Width × Height
 ```
 The total area occupied by the netlist is calculated by adding the area of all standard cells and flip-flops.
 This gives the total cell area required inside the core.
+<img width="1920" height="1080" alt="Screenshot (119)" src="https://github.com/user-attachments/assets/d657d5b0-e0b9-4d39-a04f-93521dcb6056" />
 
 
 ## 4. Utilization Factor and Aspect Ratio
@@ -68,12 +72,15 @@ Area Occupied by Netlist
 -------------------------
 Total Area of Core
 ```
+<img width="1920" height="1080" alt="Screenshot (120)" src="https://github.com/user-attachments/assets/211c4821-e0ff-4a35-88b0-c22edb6ab923" />
 
 The utilization factor indicates how much of the core area is occupied by the placed cells.
 Aspect Ratio
 Aspect Ratio = Height / Width
 For the example shown, the core and die dimensions are selected based on the required utilization factor and aspect ratio.
 The diagram illustrates a core of approximately 4 units × 2 units with the die surrounding the core.
+
+
 ## 5. Core and Die Dimension Example
 Another example demonstrates how the dimensions of the core and die change according to the utilization factor.
 The physical dimensions are selected so that sufficient space is available for:
@@ -83,6 +90,7 @@ Power distribution
 Decoupling cells
 Other physical-design requirements
 A lower utilization factor provides more free area inside the core, which can help in reducing placement and routing congestion.
+<img width="1920" height="1080" alt="Screenshot (122)" src="https://github.com/user-attachments/assets/f4c04f0c-9bda-410b-8c49-5ebc565f7a0e" />
 
 ## 6. Define Locations of Pre-placed Cells
 Some cells or blocks cannot be freely placed by the automated placement tool.
@@ -94,6 +102,7 @@ Comparators
 Multiplexers
 Other large IP blocks
 These blocks have user-defined locations and are placed before automated placement and routing.
+<img width="1838" height="580" alt="Screenshot (124)" src="https://github.com/user-attachments/assets/7f1ef943-2c7e-4b80-936b-75a91e54e2b6" />
 
 ## 7. Placement of Pre-placed Cells
 The location of pre-placed cells is important because their position affects the rest of the physical design.
@@ -105,6 +114,8 @@ Routing congestion
 Wire length
 Timing problems
 Unnecessary routing detours
+<img width="869" height="734" alt="Screenshot (125)" src="https://github.com/user-attachments/assets/c3672a74-a831-4d00-9375-848b05389ac1" />
+
 
 ## 8. IP Blocks and Floorplanning
 Modern ASIC designs may contain several pre-designed IP blocks.
@@ -116,6 +127,9 @@ Multiplexer
 The arrangement of these IPs or blocks inside the chip is called floorplanning.
 These IPs have user-defined locations and are placed in the chip before automated placement and routing.
 Therefore, floorplanning determines the physical organization of major blocks inside the chip.
+
+<img width="1175" height="581" alt="Screenshot (127)" src="https://github.com/user-attachments/assets/90606d97-76e4-4046-aea0-fc6383f393e2" />
+
 
 ## 9. Surround Pre-placed Cells with Decoupling Capacitors
 Pre-placed blocks may experience high switching activity and can require a large instantaneous current.
@@ -129,6 +143,9 @@ Block C
 Decoupling capacitor regions
 The decoupling capacitors provide a local source of charge near the blocks.
 This helps reduce supply voltage fluctuations during switching.
+
+<img width="976" height="707" alt="Screenshot (128)" src="https://github.com/user-attachments/assets/649a14fb-7099-47ea-a629-a24f177578f1" />
+
 ## 10. Switching Current and Voltage Drop
 During switching operation, a complex digital circuit may demand a large amount of instantaneous current.
 This is called peak switching current.
@@ -143,8 +160,9 @@ The inductive voltage variation is:
 V = L × di/dt
 ```
 Therefore, because of the resistance and inductance of the power network, the voltage available at the circuit can become lower than the ideal supply voltage.
+<img width="1309" height="700" alt="Screenshot (129)" src="https://github.com/user-attachments/assets/4c5a373c-cb90-42e4-bc8f-f3ad0b2d2792" />
 
-## 11. Noise Margin Summary
+## 11. Noise Margin 
 Noise margin represents the ability of a digital circuit to tolerate unwanted voltage disturbances without changing the interpreted logic value.
 The two important noise margins are:
 Noise Margin High
@@ -158,6 +176,9 @@ NML = VIL(max) − VOL(max)
 The diagram shows different noise-induced bumps and their relationship with the noise-margin levels.
 A small noise bump remains within the acceptable region and does not cause a logic error.
 If the noise exceeds the available noise margin, it may be interpreted as an unwanted logic transition.
+
+<img width="1084" height="584" alt="Screenshot (130)" src="https://github.com/user-attachments/assets/eb0fa1ce-b52d-4bd0-b78b-58f30ebdd24e" />
+
 
 ## 12. Solution: Add Decoupling Capacitors
 One solution for reducing the effect of switching-current demand is to add a decoupling capacitor.
@@ -175,6 +196,9 @@ Power network replenishes the charge
 ```
 This reduces the effect of sudden current demand on the supply voltage.
 
+<img width="1291" height="698" alt="Screenshot (133)" src="https://github.com/user-attachments/assets/45ff5865-832c-46ff-bea8-be3e88695fa6" />
+
+
 ## 13. Decoupling Capacitor Placement Around Blocks
 Decoupling capacitors can be placed around important pre-placed blocks.
 For example:
@@ -189,6 +213,8 @@ For example:
 +--------------------------------+
 The purpose is to keep the decoupling capacitors close to the blocks that require additional instantaneous current.
 This provides a local current source and improves power integrity.
+<img width="1342" height="583" alt="Screenshot (134)" src="https://github.com/user-attachments/assets/37256ea8-fe0c-4be8-b6c9-793212230bb4" />
+
 
 ## 14. Decoupling Capacitor Placement in the Floorplan
 The floorplan can be organized using different regions for blocks and decoupling capacitors.
@@ -204,6 +230,8 @@ DECAP3
 The decoupling capacitors are strategically placed around the pre-placed cells.
 Proper placement helps reduce the distance between the capacitor and the switching circuit.
 A shorter current path helps reduce the impact of parasitic resistance and inductance.
+<img width="973" height="573" alt="Screenshot (135)" src="https://github.com/user-attachments/assets/b7a7290e-28e2-416d-be5e-697e99b83ac1" />
+
 
 ## 15. Power Network, Driver, Load and 16-bit Bus
 The final example illustrates the power network connecting multiple driver and load circuits.
@@ -213,6 +241,8 @@ The diagram also illustrates a signal path representing a multi-bit bus.
 For the given example, the blue path represents a 16-bit bus.
 The key concept is that switching activity across multiple signals can create a large instantaneous current demand.
 Therefore, proper power-network design and decoupling are required to maintain stable supply voltage and reliable circuit operation.
+<img width="1144" height="600" alt="Screenshot (136)" src="https://github.com/user-attachments/assets/20c93dc0-0302-476e-855b-faa3aee40e1c" />
+
 
 ## 📐 16. Floorplanning
 Floorplanning is one of the first major physical-design stages.
