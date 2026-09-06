@@ -1,8 +1,8 @@
-# Physical Design 
+# PHYSICAL DESIGN
 
 ## Project Overview
 
-This project presents the implementation of a digital design using the **ASIC Physical Design flow** with **OpenLane** and the **SkyWater SKY130 PDK**.
+This project presents the implementation of a digital design using the **ASIC PPHYSICAL DESIGNhysical Design flow** with **OpenLane** and the **SkyWater SKY130 PDK**.
 
 The project covers the major stages involved in converting a synthesized digital design into a physically implemented layout. The flow includes floorplanning, power planning, placement, Clock Tree Synthesis (CTS), routing, timing analysis, antenna checking, and physical verification.
 
@@ -114,9 +114,7 @@ The floorplan configuration is controlled using the OpenLane configuration and f
 
 Figure 3: Floorplan configuration parameters used in OpenLane.
 
-### 📷 **Image 3**
-Ikkada **nuvvu last lo pampina `floorplan.tcl` screenshot** pettu.
-
+<img width="1792" height="971" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/ac0877fb-b69b-4be6-983e-550a19eb3485" />
 
 ## 2. Power Planning
 
@@ -130,6 +128,9 @@ The PDN provides reliable connections for:
 - Core power distribution
 
 Proper power planning is important for reliable operation of the implemented design.
+<img width="1920" height="1080" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/9a8de618-5bca-46fe-b357-0405e5d405c0" />
+<img width="1790" height="906" alt="Screenshot (93)" src="https://github.com/user-attachments/assets/0d50ac3f-e9c5-43fe-a05e-23882d779087" />
+
 
 ---
 
@@ -151,6 +152,7 @@ The placement is optimized to improve timing and routing characteristics.
 
 Detailed placement legalizes the cell locations according to the physical constraints of the technology.
 
+<img width="1920" height="1080" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/d2610ebf-ec28-4a70-a43a-284c3080ed6b" />
 
 *Figure 4: Global and detailed placement stages in the physical design flow.*
 
@@ -167,6 +169,7 @@ The main objectives of CTS are:
 - Distribute the clock signal reliably to sequential cells.
 
 Clock buffers and other cells may be inserted during CTS to achieve the required clock distribution.
+<img width="1733" height="903" alt="Screenshot (95)" src="https://github.com/user-attachments/assets/f724ebf5-2401-45dd-b132-34c53b278570" />
 
 
 *Figure 5: Clock Tree Synthesis stage.*
@@ -188,6 +191,7 @@ Detailed routing creates the final physical connections while satisfying the des
 
 Successful routing is necessary for generating a valid physical layout.
 
+<img width="1723" height="840" alt="Screenshot (96)" src="https://github.com/user-attachments/assets/2f4dc4c1-bb8c-4098-9319-d58cfae02bd7" />
 
 
 *Figure 6: Routing stage of the physical design flow.*
@@ -201,6 +205,8 @@ Therefore, antenna violations are checked after routing.
 Antenna violations can be addressed using **antenna diode cells**. The diode provides a discharge path and helps protect the gate during fabrication.
 
 The OpenLane flow supports antenna checking and repair as part of the physical implementation process.
+
+<img width="1701" height="931" alt="Screenshot (112)" src="https://github.com/user-attachments/assets/bff7060f-045a-442e-8d7b-d3eaed75469e" />
 
 
 *Figure 7: Antenna rule violation observed during physical design.*
@@ -245,6 +251,7 @@ The important timing parameters include:
 
 A positive timing slack generally indicates that the corresponding timing constraint is satisfied.
 
+<img width="1598" height="904" alt="Screenshot (115)" src="https://github.com/user-attachments/assets/e997a139-61e9-49e2-ac5f-2513f4c75a88" />
 
 
 *Figure 9: Static Timing Analysis using OpenSTA.*
@@ -329,6 +336,7 @@ LVS compares the extracted layout connectivity with the intended circuit netlist
 A successful LVS indicates that the physical implementation represents the intended circuit correctly.
 
 
+<img width="1766" height="857" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/aa87ef74-8d21-4d96-8702-cf8975b6d5a6" />
 
 *Figure 11: Physical verification stages including DRC and LVS.*
 
@@ -352,6 +360,7 @@ The main metrics considered during exploration include:
 The results can be compared to select a suitable configuration for the design.
 
 
+<img width="1212" height="603" alt="Screenshot (105)" src="https://github.com/user-attachments/assets/bfe05bcf-5c64-4b51-b930-442e476e1324" />
 
 *Figure 12: Synthesis and design-space exploration.*
 
@@ -364,6 +373,9 @@ It provides an automated sequence of synthesis, floorplanning, placement, CTS, r
 
 The flow is designed to simplify ASIC implementation and enable reproducible physical design experiments.
 
+
+
+<img width="1219" height="589" alt="Screenshot (103)" src="https://github.com/user-attachments/assets/debfde85-d360-427a-a17c-ebb72a3355c4" />
 
 
 *Figure 13: OpenLane automated ASIC implementation flow.*
@@ -387,6 +399,7 @@ OpenROAD provides capabilities for:
 Other open-source tools are integrated with OpenLane to complete the overall flow.
 
 
+
 *Figure 14: OpenROAD and supporting tools in the OpenLane flow.*
 
 
@@ -404,6 +417,9 @@ The PDK provides the technology-specific information required by the ASIC implem
 - Physical abstracts
 
 These files allow the design to be synthesized, placed, routed, and verified according to the target semiconductor technology.
+
+<img width="1778" height="968" alt="Screenshot (100)" src="https://github.com/user-attachments/assets/ed3ac07d-3d18-4ac6-8b5d-6a026e70b6c7" />
+
 
 
 *Figure 15: SKY130 PDK support in the OpenLane ASIC flow.*
@@ -459,6 +475,7 @@ Scan-based testing is commonly used to provide controllability and observability
 
 DFT is considered as part of the ASIC implementation flow before final verification.
 
+<img width="1721" height="808" alt="Screenshot (108)" src="https://github.com/user-attachments/assets/ee490ae6-ca55-47be-9799-80f8d6359be5" />
 
 
 
@@ -559,8 +576,8 @@ OpenLane provides design exploration capabilities to study the effect of configu
 For example, changing the core utilization or aspect ratio can influence placement density and routing congestion.
 
 The exploration process helps in selecting a configuration that provides a suitable balance between area, timing, and routability.
+<img width="1750" height="808" alt="Screenshot (106)" src="https://github.com/user-attachments/assets/e6d74730-d544-42f8-a10d-2644b5389858" />
 
-![Design Exploration](images/design_exploration.png)
 
 *Figure 21: Design-space exploration for evaluating different implementation configurations.*
 
@@ -573,7 +590,7 @@ OpenLane provides a regression testing mechanism for evaluating designs across d
 
 This helps improve the reliability and reproducibility of the ASIC implementation flow.
 
-![OpenLane Regression Testing](images/regression_testing.png)
+<img width="1684" height="865" alt="Screenshot (107)" src="https://github.com/user-attachments/assets/9e52a336-587c-4242-8bfb-9a150235e13c" />
 
 *Figure 22: OpenLane regression testing.*
 
