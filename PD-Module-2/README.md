@@ -58,37 +58,37 @@ The main objectives of this project are:
 
 ## 📚 Table of Contents
 
-1. Define Width and Height of Core and Die
-5. [Convert Netlist Symbols into Physical Dimensions](#2-convert-netlist-symbols-into-physical-dimensions)
-6. [Calculate Area Occupied by the Netlist](#3-calculate-area-occupied-by-the-netlist)
-7. [Utilization Factor and Aspect Ratio](#4-utilization-factor-and-aspect-ratio)
-8. [Core and Die Dimension Example](#5-core-and-die-dimension-example)
-9. [Define Locations of Pre-placed Cells](#6-define-locations-of-pre-placed-cells)
-10. [Placement of Pre-placed Cells](#7-placement-of-pre-placed-cells)
-11. [IP Blocks and Floorplanning](#8-ip-blocks-and-floorplanning)
-12. [Decoupling Capacitors and Power Integrity](#9-surround-pre-placed-cells-with-decoupling-capacitors)
-13. [Switching Current and Voltage Drop](#10-switching-current-and-voltage-drop)
-14. [Noise Margin](#11-noise-margin)
-15. [Decoupling Capacitor Placement](#13-decoupling-capacitor-placement-around-blocks)
-16. [Power Network and Multi-bit Bus](#15-power-network-driver-load-and-16-bit-bus)
-17. [Floorplanning](#-16-floorplanning)
-18. [Power Planning](#17-power-planning)
-19. [Power Distribution Network](#18-power-distribution-network-pdn)
-20. [Picorv32a ASIC Design Flow using OpenLane](#19-picorv32a-asic-design-flow-using-openlane)
-21. [OpenLane and SKY130 Configuration](#20-openlane-physical-design-configuration-sky130_fd_sc_hd)
-22. [LEF and Technology Files](#21-LEF and Technology Files)
-23. [OpenLane Floorplanning Configuration](#-22-openlane-floorplanning-configuration)
-24. [Standard Cell Placement](#-23-standard-cell-placement)
-25. [Decoupling Capacitors](#-24-decoupling-capacitors)
-26. [Logical Cell Placement Blockage](#-25-logical-cell-placement-blockage)
-27. [Tap Cells](#-26-tap-cells)
-28. [OpenLane Configuration](#️-28-openlane-configuration)
-29. [Timing Constraints](#-29-timing-constraints)
-30. [OpenROAD / Layout View](#️-30-openroad--layout-view)
-31. [Bind Netlist with Physical Library Cells](#31-bind-netlist-with-physical-library-cells)
-32. [Placement](#32-placement)
-33. [Key Learnings](#key-learnings)
-34. [Conclusion](#conclusion)
+- 1 - Define Width and Height of Core and Die
+- 2 - Convert Netlist Symbols into Physical Dimensions
+- 3 - Calculate Area Occupied by the Netlist
+- 4 - Utilization Factor and Aspect Ratio
+- 5 - Core and Die Dimension Example
+- 6 - Define Locations of Pre-placed Cells
+- 7 - Placement of Pre-placed Cells
+- 8 - IP Blocks and Floorplanning
+- 9 - Decoupling Capacitors and Power Integrity
+- 10 -Switching Current and Voltage Drop
+- 11 - Noise Margin
+- 12 - Decoupling Capacitor Placement
+- 13 - Power Network and Multi-bit Bus
+- 14 - Floorplanning
+- 15 - Power Planning
+- 16 - Power Distribution Network
+- 17 - Picorv32a ASIC Design Flow using OpenLane
+- 18 - OpenLane and SKY130 Configuration
+- 19 - LEF and Technology Files
+- 20 - OpenLane Floorplanning Configuration
+- 21 - Standard Cell Placement
+- 22 - Decoupling Capacitors
+- 23 - Logical Cell Placement Blockage
+- 24 - Tap Cells
+- 25 - OpenLane Configuration
+- 25 - Timing Constraints
+- 26 - OpenROAD / Layout View
+- 27 - Bind Netlist with Physical Library Cells
+- 28 - Placement
+- 29 - Key Learnings
+- 30 - Conclusion
 
 
 # 1. Define Width and Height of Core and Die
