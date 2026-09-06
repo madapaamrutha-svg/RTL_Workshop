@@ -112,7 +112,7 @@ These parameters control the core utilization, aspect ratio, I/O placement, meta
 Floorplan Configuration
 The floorplan configuration is controlled using the OpenLane configuration and floorplan settings.
 
-Figure 3: Floorplan configuration parameters used in OpenLane.
+
 
 <img width="1792" height="971" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/ac0877fb-b69b-4be6-983e-550a19eb3485" />
 
@@ -154,7 +154,6 @@ Detailed placement legalizes the cell locations according to the physical constr
 
 <img width="1920" height="1080" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/d2610ebf-ec28-4a70-a43a-284c3080ed6b" />
 
-*Figure 4: Global and detailed placement stages in the physical design flow.*
 
 
 ## 4. Clock Tree Synthesis
@@ -172,7 +171,6 @@ Clock buffers and other cells may be inserted during CTS to achieve the required
 <img width="1733" height="903" alt="Screenshot (95)" src="https://github.com/user-attachments/assets/f724ebf5-2401-45dd-b132-34c53b278570" />
 
 
-*Figure 5: Clock Tree Synthesis stage.*
 
 
 ## 5. Routing
@@ -194,7 +192,6 @@ Successful routing is necessary for generating a valid physical layout.
 <img width="1723" height="840" alt="Screenshot (96)" src="https://github.com/user-attachments/assets/2f4dc4c1-bb8c-4098-9319-d58cfae02bd7" />
 
 
-*Figure 6: Routing stage of the physical design flow.*
 
 ## 6. Antenna Rule Checking
 
@@ -209,7 +206,6 @@ The OpenLane flow supports antenna checking and repair as part of the physical i
 <img width="1701" height="931" alt="Screenshot (112)" src="https://github.com/user-attachments/assets/bff7060f-045a-442e-8d7b-d3eaed75469e" />
 
 
-*Figure 7: Antenna rule violation observed during physical design.*
 
 ## 7. Antenna Violation Repair
 
@@ -230,7 +226,7 @@ Antenna Re-check
 ```
 
 
- 📷 Image 8
+ 
 
 
 
@@ -254,8 +250,6 @@ A positive timing slack generally indicates that the corresponding timing constr
 <img width="1598" height="904" alt="Screenshot (115)" src="https://github.com/user-attachments/assets/e997a139-61e9-49e2-ac5f-2513f4c75a88" />
 
 
-*Figure 9: Static Timing Analysis using OpenSTA.*
-
 
 ## 9. Parasitic Extraction
 
@@ -278,11 +272,6 @@ Post-route Timing Analysis
 ```
 
 
-### 📷 Image 10
-**Screenshot 115** lo SPEF/STA part already visible kabatti, **same image ni ikkada repeat cheyyalsina avasaram ledu**. Screenshot 115 ni STA section lo matrame use cheyyi. Professional README lo duplicate screenshots avoid cheyyadam better.
-
----
-
 
 ## 10. Logic Equivalence Check
 
@@ -304,10 +293,7 @@ Functional Equivalence
 
 
 
-### 📷 Image 11
-Ikkada **Screenshot 111 – LEC** pettu.
 
----
 
 # 11. Physical Verification
 
@@ -338,7 +324,6 @@ A successful LVS indicates that the physical implementation represents the inten
 
 <img width="1766" height="857" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/aa87ef74-8d21-4d96-8702-cf8975b6d5a6" />
 
-*Figure 11: Physical verification stages including DRC and LVS.*
 
 
 
@@ -362,7 +347,7 @@ The results can be compared to select a suitable configuration for the design.
 
 <img width="1212" height="603" alt="Screenshot (105)" src="https://github.com/user-attachments/assets/bfe05bcf-5c64-4b51-b930-442e476e1324" />
 
-*Figure 12: Synthesis and design-space exploration.*
+
 
 
 ## 13. OpenLane ASIC Flow
@@ -377,8 +362,6 @@ The flow is designed to simplify ASIC implementation and enable reproducible phy
 
 <img width="1219" height="589" alt="Screenshot (103)" src="https://github.com/user-attachments/assets/debfde85-d360-427a-a17c-ebb72a3355c4" />
 
-
-*Figure 13: OpenLane automated ASIC implementation flow.*
 
 
 
@@ -400,7 +383,7 @@ Other open-source tools are integrated with OpenLane to complete the overall flo
 
 
 
-*Figure 14: OpenROAD and supporting tools in the OpenLane flow.*
+
 
 
 ## 15. SKY130 PDK
@@ -422,7 +405,6 @@ These files allow the design to be synthesized, placed, routed, and verified acc
 
 
 
-*Figure 15: SKY130 PDK support in the OpenLane ASIC flow.*
 
 
 ## 16. OpenLane Design Configuration
@@ -444,7 +426,6 @@ Important configuration categories include:
 The configuration is selected according to the requirements of the design and the target technology.
 
 
-*Figure 16: OpenLane configuration and flow setup.*
 
 
 ## 17. Floorplan Configuration Parameters
@@ -519,10 +500,7 @@ Design
 
 ```
 
-### 📷 Image 20
-Ikkada **nee terminal screenshots lo OpenLane setup / `flow.tcl` / run command kanipinche best screenshot** pettu.
 
----
 
 # 21. Physical Design Results
 
@@ -579,7 +557,6 @@ The exploration process helps in selecting a configuration that provides a suita
 <img width="1750" height="808" alt="Screenshot (106)" src="https://github.com/user-attachments/assets/e6d74730-d544-42f8-a10d-2644b5389858" />
 
 
-*Figure 21: Design-space exploration for evaluating different implementation configurations.*
 
 
 # 24. OpenLane Regression Testing
@@ -592,7 +569,7 @@ This helps improve the reliability and reproducibility of the ASIC implementatio
 
 <img width="1684" height="865" alt="Screenshot (107)" src="https://github.com/user-attachments/assets/9e52a336-587c-4242-8bfb-9a150235e13c" />
 
-*Figure 22: OpenLane regression testing.*
+
 
 
 # 25. Final Physical Design Flow
@@ -646,29 +623,36 @@ The following terminal screenshots provide evidence of the commands executed dur
 
 ## 26.1 PDK Directory and Library Setup
 
+<img width="1920" height="944" alt="commands for opening files" src="https://github.com/user-attachments/assets/a8a3b5ec-b2ac-43b3-811b-9c1cd731fd47" />
 
 ## 26.2 Sky130 Standard Cell Library Verification
 
+<img width="1920" height="944" alt="commands 2" src="https://github.com/user-attachments/assets/1511a6a4-d79c-4ee3-9805-35ba77daf128" />
 
 
 ## 26.3 OpenLane Environment Setup
 
 
+<img width="1920" height="944" alt="3" src="https://github.com/user-attachments/assets/63055d56-984d-423b-b45f-b854a97b8d76" />
+
 
 ## 26.4 LEF and Library File Verification
 
 
-
+<img width="958" height="934" alt="commands4" src="https://github.com/user-attachments/assets/47d4cd2f-bf4d-400d-acea-3d675280dcab" />
 ## 26.5 OpenLane Flow Execution
 
+<img width="958" height="934" alt="less merged lef command 5th image" src="https://github.com/user-attachments/assets/cb04b5da-6a0b-4ca3-a46d-0b51dc3d2b6f" />
 
 
 ## 26.6 OpenLane Configuration
 
 
+<img width="958" height="934" alt="less cmds log 6th image" src="https://github.com/user-attachments/assets/a1c296bc-188e-4f0b-9f56-9437b015eaa1" />
+
 
 ## 26.7 Floorplan Configuration – `floorplan.tcl`
-
+<img width="958" height="934" alt="less README md  openlane danlo configuration danlo undi 7th" src="https://github.com/user-attachments/assets/821dbbb2-71aa-4183-9082-214bc288ec2f" />
 
 
 
