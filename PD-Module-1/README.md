@@ -128,7 +128,7 @@ The PDN provides reliable connections for:
 - Core power distribution
 
 Proper power planning is important for reliable operation of the implemented design.
-<img width="1920" height="1080" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/9a8de618-5bca-46fe-b357-0405e5d405c0" />
+
 <img width="1790" height="906" alt="Screenshot (93)" src="https://github.com/user-attachments/assets/0d50ac3f-e9c5-43fe-a05e-23882d779087" />
 
 
