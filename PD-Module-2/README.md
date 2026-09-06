@@ -1,11 +1,95 @@
+# 🏗️ Physical Design – Module 2
+## Chip Floorplanning and Power Integrity
 
-# PHYSICAL DESIGN
+## 📌 Project Overview
 
-## Module 2 – Chip Floorplanning and Power Integrity
+This project is part of the Physical Design (PD) learning journey and focuses on the fundamental concepts of **ASIC Chip Floorplanning and Power Integrity**.
 
-This module covers the fundamental concepts of ASIC physical design, including netlist understanding, core and die dimensions, cell area calculation, utilization factor, aspect ratio, pre-placed cells, floorplanning, switching current, noise margin, and decoupling capacitors.
+The module explores how a logical netlist is transformed into a physical representation by defining the chip core and die dimensions, calculating cell area, setting utilization and aspect ratio, and organizing standard cells and pre-placed IP blocks within the floorplan.
+
+The project also covers important power integrity concepts such as **switching current, IR drop, inductive voltage drop, noise margin, and decoupling capacitors**. In addition, practical aspects of the ASIC physical design flow are explored using the **OpenLane flow**, **OpenROAD-based layout tools**, and the **SKY130 technology and standard-cell library**.
+
+The later stages of the module demonstrate **floorplanning, power planning, PDN creation, standard-cell placement, placement blockages, tap cells, LEF and technology files, timing constraints, and binding logical netlist cells with physical library cells**.
+
+Overall, this project provides a step-by-step understanding of how an ASIC design progresses from a logical netlist to a structured physical layout.
 
 ---
+
+## 🎯 Objectives
+
+The main objectives of this project are:
+
+- Understand the fundamentals of ASIC physical design and chip floorplanning.
+- Analyze a logical netlist and convert logical cells into physical representations.
+- Calculate the area occupied by standard cells and flip-flops.
+- Understand the relationship between **core area, die area, utilization factor, and aspect ratio**.
+- Study the role and placement of **pre-placed cells and IP blocks**.
+- Understand how floorplanning affects routing, congestion, timing, and overall chip performance.
+- Analyze switching current and its impact on power integrity.
+- Understand **IR drop** and inductive voltage variations in the power distribution network.
+- Study **noise margin** and the effect of supply noise on digital circuits.
+- Learn the purpose and placement of **decoupling capacitors**.
+- Explore **power planning and Power Distribution Network (PDN)** concepts.
+- Understand the OpenLane physical design configuration flow.
+- Study the **SKY130 technology, LEF files, and standard-cell libraries**.
+- Understand standard-cell placement, placement blockages, and tap-cell insertion.
+- Learn how logical netlist cells are bound with physical library cells.
+- Visualize the transition from **Netlist → Floorplan → Placement → Physical Layout**.
+
+---
+
+## 🛠️ Tools and Technologies
+
+| Tool / Technology | Purpose |
+|---|---|
+| **OpenLane** | Automated open-source RTL-to-GDSII ASIC design flow |
+| **OpenROAD** | Physical design implementation and layout visualization |
+| **SKY130 PDK** | Open-source 130 nm process design kit |
+| **sky130_fd_sc_hd** | High-density standard-cell library |
+| **LEF Files** | Physical abstraction of standard cells, pins, layers, and obstructions |
+| **Tcl** | Configuration and automation of the OpenLane flow |
+| **Verilog** | Hardware description of the design |
+| **SDC** | Timing and clock constraint definition |
+| **KLayout / Layout Viewer** | Visualization and inspection of physical layouts |
+| **Linux / Ubuntu** | Development and execution environment |
+| **GitHub** | Project documentation and version control |
+
+---
+
+## 📚 Table of Contents
+
+1. Define Width and Height of Core and Die
+5. [Convert Netlist Symbols into Physical Dimensions](#2-convert-netlist-symbols-into-physical-dimensions)
+6. [Calculate Area Occupied by the Netlist](#3-calculate-area-occupied-by-the-netlist)
+7. [Utilization Factor and Aspect Ratio](#4-utilization-factor-and-aspect-ratio)
+8. [Core and Die Dimension Example](#5-core-and-die-dimension-example)
+9. [Define Locations of Pre-placed Cells](#6-define-locations-of-pre-placed-cells)
+10. [Placement of Pre-placed Cells](#7-placement-of-pre-placed-cells)
+11. [IP Blocks and Floorplanning](#8-ip-blocks-and-floorplanning)
+12. [Decoupling Capacitors and Power Integrity](#9-surround-pre-placed-cells-with-decoupling-capacitors)
+13. [Switching Current and Voltage Drop](#10-switching-current-and-voltage-drop)
+14. [Noise Margin](#11-noise-margin)
+15. [Decoupling Capacitor Placement](#13-decoupling-capacitor-placement-around-blocks)
+16. [Power Network and Multi-bit Bus](#15-power-network-driver-load-and-16-bit-bus)
+17. [Floorplanning](#-16-floorplanning)
+18. [Power Planning](#17-power-planning)
+19. [Power Distribution Network](#18-power-distribution-network-pdn)
+20. [Picorv32a ASIC Design Flow using OpenLane](#19-picorv32a-asic-design-flow-using-openlane)
+21. [OpenLane and SKY130 Configuration](#20-openlane-physical-design-configuration-sky130_fd_sc_hd)
+22. [LEF and Technology Files](#21-LEF and Technology Files)
+23. [OpenLane Floorplanning Configuration](#-22-openlane-floorplanning-configuration)
+24. [Standard Cell Placement](#-23-standard-cell-placement)
+25. [Decoupling Capacitors](#-24-decoupling-capacitors)
+26. [Logical Cell Placement Blockage](#-25-logical-cell-placement-blockage)
+27. [Tap Cells](#-26-tap-cells)
+28. [OpenLane Configuration](#️-28-openlane-configuration)
+29. [Timing Constraints](#-29-timing-constraints)
+30. [OpenROAD / Layout View](#️-30-openroad--layout-view)
+31. [Bind Netlist with Physical Library Cells](#31-bind-netlist-with-physical-library-cells)
+32. [Placement](#32-placement)
+33. [Key Learnings](#key-learnings)
+34. [Conclusion](#conclusion)
+
 
 # 1. Define Width and Height of Core and Die
 
