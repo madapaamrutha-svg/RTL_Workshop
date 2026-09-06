@@ -93,7 +93,7 @@ The main objectives of this project are:
 
 
 
-# 1. Define Width and Height of Core and Die
+## 1. Define Width and Height of Core and Die
 
 The first step in physical design is to understand the netlist and convert the logical representation of the design into physical dimensions.
 
@@ -112,7 +112,7 @@ The standard cells and flip-flops in the netlist are later converted into physic
 
 ---
 
-# 2. Convert Netlist Symbols into Physical Dimensions
+## 2. Convert Netlist Symbols into Physical Dimensions
 
 After understanding the netlist, the logical components are represented as physical standard cells.
 
@@ -129,7 +129,7 @@ Therefore, the total area occupied by all cells must be calculated before determ
 
 ---
 
-# 3. Calculate Area Occupied by the Netlist
+## 3. Calculate Area Occupied by the Netlist
 
 For the given example, each standard cell and flip-flop is represented as a unit square.
 
