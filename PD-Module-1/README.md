@@ -68,7 +68,7 @@ Final Layout
 ```
 
 Each stage has a specific role in converting the synthesized design into a physically valid layout.
-# 1. Floorplanning
+## 1. Floorplanning
 Floorplanning is the first major stage of physical design.
 It defines the physical dimensions of the core and die and determines how the design will be organized inside the available area.
 The important floorplanning parameters include:
@@ -89,7 +89,7 @@ Figure 3: Floorplan configuration parameters used in OpenLane.
 Ikkada **nuvvu last lo pampina `floorplan.tcl` screenshot** pettu.
 
 
-# 2. Power Planning
+## 2. Power Planning
 
 Power planning establishes the power distribution network (PDN) required to supply power to the standard cells.
 
@@ -104,7 +104,7 @@ Proper power planning is important for reliable operation of the implemented des
 
 ---
 
-# 3. Placement
+## 3. Placement
 
 Placement determines the physical locations of the standard cells within the floorplan.
 
@@ -126,7 +126,7 @@ Detailed placement legalizes the cell locations according to the physical constr
 *Figure 4: Global and detailed placement stages in the physical design flow.*
 
 
-# 4. Clock Tree Synthesis
+## 4. Clock Tree Synthesis
 
 Clock Tree Synthesis (CTS) creates a clock distribution network for sequential elements in the design.
 
@@ -143,7 +143,7 @@ Clock buffers and other cells may be inserted during CTS to achieve the required
 *Figure 5: Clock Tree Synthesis stage.*
 
 
-# 5. Routing
+## 5. Routing
 
 Routing creates the physical metal connections between the placed standard cells.
 
@@ -163,7 +163,7 @@ Successful routing is necessary for generating a valid physical layout.
 
 *Figure 6: Routing stage of the physical design flow.*
 
-# 6. Antenna Rule Checking
+## 6. Antenna Rule Checking
 
 During the fabrication process, long metal connections can accumulate electrical charge. This can cause damage to the gate oxide of MOS transistors and is known as the **antenna effect**.
 
