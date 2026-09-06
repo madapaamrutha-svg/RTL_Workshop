@@ -1,5 +1,5 @@
 # PHYSICAL DESIGN Module-1
-
+# Complete ASIC Physical Design Flow using OpenLane and and SKY130
 ## Project Overview
 
 This project presents the implementation of a digital design using the **ASIC PPHYSICAL DESIGNhysical Design flow** with **OpenLane** and the **SkyWater SKY130 PDK**.
