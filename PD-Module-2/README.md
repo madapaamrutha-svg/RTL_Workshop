@@ -244,6 +244,9 @@ FP_CORE_UTIL
  determines the approximate percentage of the core area occupied by standard cells.
 A suitable utilization value is important because excessive utilization can make routing difficult, while very low utilization can increase chip area.
 
+<img width="1229" height="583" alt="Screenshot (137)" src="https://github.com/user-attachments/assets/50da70e4-0414-4910-86fd-9266ffe07301" />
+
+
 ## ⚡17. Power Planning
 Power planning creates the power-distribution network (PDN) required to deliver stable supply voltages throughout the chip.
 The screenshots show a power grid consisting of horizontal and vertical metal structures.
@@ -267,6 +270,9 @@ VSS
 ```
 
 The power grid helps reduce voltage drop and provides reliable power delivery to the cells distributed across the core.
+
+<img width="977" height="592" alt="Screenshot (138)" src="https://github.com/user-attachments/assets/6c65e942-8ee9-48a6-9e1b-b0d39fb58b5b" />
+
 ## 🔌18. Power Distribution Network (PDN)
 The project examines the physical organization of power structures across the chip core.
 The PDN consists of:
@@ -281,7 +287,47 @@ Reducing IR drop
 Improving power integrity
 Providing uniform supply voltage
 Supporting reliable standard-cell operation
-## 🧱 19. Standard Cell Placement
+
+<img width="1035" height="582" alt="Screenshot (142)" src="https://github.com/user-attachments/assets/d20df03f-6735-4feb-9788-f91c82fa8c63" />
+
+## 19. Picorv32a ASIC Design Flow using OpenLane
+OpenLane is an automated, open-source RTL-to-GDSII hardware design framework. It automatically transforms human-readable hardware description code (Verilog RTL) into the final physical layout blueprint (GDSII) required to manufacture a physical silicon microchip.The picorv32a is an optimized RISC-V CPU core used as a design benchmark in this automated flow.The config.tcl file acts as the configuration hub for this process. It defines critical hardware parameters—such as target layout names, input file paths, and the required clock speeds—to guide the software engines through synthesis, placement, and routing without human intervention.
+
+## 20. Openlane Physical Design Configuration (sky130_fd_sc_hd)
+In the OpenLane ASIC design flow, the hardware description language (HDL) code is transformed into a physical layout. This process relies heavily on configuration files (.tcl) to define constraints and optimization goals for the synthesis, floorplanning, placement, and routing stages.The configuration snippet specifically targets the sky130_fd_sc_hd standard cell library (SkyWater 130nm High Density) and establishes several foundational parameters:Synthesis & Timing Control: Variables like SYNTH_MAX_FANOUT define the maximum number of digital inputs that a single logic gate output can drive, balancing signal integrity and delay. The CLOCK_PERIOD sets the targeted clock cycle time in nanoseconds, defining the performance constraint for static timing analysis (STA).Floorplanning & Density: The utilization variables specify how much of the core area will be occupied by standard cells. The core utilization (FP_CORE_UTIL) sets the initial budget, while PL_TARGET_DENSITY dynamically calculates the targeted placement density, ensuring cells are optimally packed without causing unroutable congestion during the physical implementation stage.
+
+## 21.SkyWater PDK LEF File Configuration
+This section provides an overview of the structural and physical parameters defined in the merged_upadded.lef file for the SkyWater PDK open-source digital design flow.📝 Theory & File OverviewA LEF (Library Exchange Format) file contains the abstract physical layout information of a cell library. It provides the place-and-route tools with necessary physical data—such as cell boundaries, pin locations, and metal layers—without exposing the internal silicon-level geometric details.The file snippet shown defines foundational technology attributes, manufacturing grids, and macro site definitions required for structural placement:Technology Units: Establishes standard scaling units for the design data, mapping database units to physical physical metrics (e.g., 1000 database microns per millimeter, standard resistance in Ohms, time in nanoseconds, and capacitance in picofarads).Manufacturing Grid: Sets the geometric granularity (0.005 microns) for placing geometry features. All layouts and wiring components must align precisely with this grid.Site Definitions: Outlines the placement row templates for cells. It characterizes standard properties like symmetry, layer types, and core dimensions for both high-density single-height (unithd) and double-height (unithddbl) library cells.
+
+
+## 📜 22.OpenLane Floorplanning Configuration
+This section outlines the primary configuration variables required to control and customize the floorplanning stage within the OpenLane automated RTL-to-GDSII flow.
+### 🔍 Core Configuration Parameters
+### 🏗️ Die & Core Area Definition
+FP_CORE_UTIL: The core utilization percentage. It defines how densely the standard cells are packed within the core area. (Default: 50 percent).
+
+FP_ASPECT_RATIO: Controls the physical shape of the core by setting the ratio of its height to its width. (Default: 1).
+
+FP_SIZING: Dictates the strategy for sizing the core and die area. It determines whether to use a relative scaling method based on core utilization (FP_CORE_UTIL) or an absolute size definition. It accepts both "relative" and "absolute" configurations.
+
+DIE_AREA: Explicitly defines the boundary coordinates of the outer die block for floorplanning. It is specified as a 4-corner rectangle layout. Units are measured in millimeters (mm) or micrometers (μm). (Note: This overrides relative utilization sizing if manually defined).
+### 📌 Pin & IO Placement
+FP_IO_HMETAL: Specifies the specific metal layer assigned to route the horizontal IO pins on the top and bottom edges of the die block. (Default: 4).
+FP_IO_VMETAL: Specifies the specific metal layer assigned to route the vertical IO pins on the left and right sides of the die block. (Default: 3).
+FP_IO_MODE: Determines the strategy for random IO pin placement. Setting it to 0 enables matching node placements, while 1 triggers random but equidistant placement along the core boundaries. (Default: 1).
+FP_IO_MIN_DISTANCE: Sets the absolute minimum physical spacing required between adjacent IO pins to avoid manufacturing design rule errors.
+### ⚡ Power Distribution Network (PDN) & Pitch
+FP_WELLTAP_CELL / FP_ENDCAP_CELL: The specific physical layout cell names used for tap and endcap insertion to prevent latch-up conditions.
+FP_PDN_VOFFSET / FP_PDN_HOFFSET: The offset measurements applied to the vertical and horizontal power stripes relative to the design origin.
+FP_PDN_VPITCH / FP_PDN_HPITCH: The recurring pitch/distance between parallel vertical and horizontal power stripes across the metal stack layers.
+FP_PDN_AUTO_ADJUST: A boolean switch determining if the flow should automatically scale and adjust the power grid layout to match the core boundaries when adjustments are necessary. (Default: 1 [Enabled]).
+### 🧲 Taps, Tie-offs, and IO Extensions
+FP_TAPCELL_DIST: Defines the horizontal distance limits between adjacent welltap columns across the layout row structures. (Default: 14).
+FP_IO_VEXTEND / FP_IO_HEXTEND: Extends the routing pins slightly outside the core/die perimeter to make external macro routing simpler.
+FP_IO_VLENGTH / FP_IO_HLENGTH: Dictates the absolute length of vertical and horizontal physical pins. (Default: 4).
+FP_IO_VTHICKNESS_MULT / FP_IO_HTICKNESS_MULT: A multiplier value scaling the thickness of pins over the standard minimum layer widths. (Default: 2).
+
+## 🧱 23. Standard Cell Placement
 After floorplanning and power planning, logical cells are placed inside the core region.
 The placement process determines the physical location of:
 Combinational cells
@@ -307,7 +353,8 @@ Better timing
 Lower congestion
 Efficient routing
 Lower power consumption
-## 🔋20. Decoupling Capacitors
+
+## 🔋24. Decoupling Capacitors
 The floorplan diagrams also illustrate the placement of decoupling capacitor structures.
 Decap cells help stabilize the local power supply by providing charge close to switching logic.
 They are particularly useful for:
@@ -315,7 +362,8 @@ Reducing local supply noise
 Supporting transient current demand
 Improving power integrity
 The screenshots show decap-related structures distributed within the physical design.
-## 🧩 21. Logical Cell Placement Blockage
+
+## 🧩 25. Logical Cell Placement Blockage
 Placement blockages are used to prevent standard cells from being placed in selected regions.
 The project demonstrates a logical-cell placement blockage region around specific structures.
 Example concept:
@@ -338,12 +386,12 @@ Reserving routing resources
 Managing congestion
 Creating space for macros or other physical structures
 
-## 🧠22. Tap Cells
+## 🧠26. Tap Cells
 Tap cells are an important part of the physical implementation of CMOS designs.
 They provide well/substrate connections required by the standard-cell technology and help prevent issues such as latch-up.
 Tap-cell insertion is therefore an important physical-design step before final routing and verification.
 
-## 📚 23. LEF & Technology Files
+## 📚 27. LEF & Technology Files
 The project uses technology and library information associated with the SKY130A PDK.
 The screenshots show investigation of technology files such as:
 sky130A.tech
@@ -358,7 +406,7 @@ Obstructions
 Physical abstracts
 Technology files describe the physical rules and layers required by the implementation tools.
 
-## ⚙️ 24. OpenLane Configuration
+## ⚙️ 28. OpenLane Configuration
 The project uses Tcl-based OpenLane configuration files to define the physical-design flow.
 Typical configuration variables include:
 ```
@@ -378,7 +426,7 @@ set ::env(FP_ASPECT_RATIO) 1
 ```
 Note: The exact values should be updated to match the final configuration used in the repository.
 
-## 🕒 25. Timing Constraints
+## 🕒 29. Timing Constraints
 The design uses an SDC file to define timing constraints.
 Important timing parameters include:
 Clock period
@@ -395,7 +443,7 @@ create_clock \
 ```
 A correct timing constraint setup is necessary for timing-driven synthesis, placement, and routing.
 
-## 🖥️ 26. OpenROAD / Layout View
+## 🖥️ 30. OpenROAD / Layout View
 The physical layout can be inspected using OpenROAD-based tools.
 The screenshots demonstrate a layout containing:
 Standard-cell rows
@@ -407,11 +455,11 @@ Metal layers
 The layout view allows the physical implementation to be visually inspected before final signoff.
 
 
-## 27.Bind netlist with physical library cells
+## 31.Bind netlist with physical library cells
 Logical cells such as FF1, FF2, etc. are mapped to their corresponding physical standard cells from the technology library.
 
 
-## 28.Placement
+## 32.Placement
 The bound cells are physically positioned inside the floorplan.
 Placement considers connectivity between cells, available rows/sites, blockages, I/O pins, and timing/congestion.
 The examples show the same logical structure represented as: Netlist → Physical placement → Physical view of logic gates.
