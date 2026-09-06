@@ -627,34 +627,33 @@ The following terminal screenshots provide evidence of the commands executed dur
 
 ## 26.2 Sky130 Standard Cell Library Verification
 
-<img width="1920" height="944" alt="commands 2" src="https://github.com/user-attachments/assets/1511a6a4-d79c-4ee3-9805-35ba77daf128" />
+<img width="1920" height="944" alt="3" src="https://github.com/user-attachments/assets/63055d56-984d-423b-b45f-b854a97b8d76" />
+
 
 
 ## 26.3 OpenLane Environment Setup
 
+<img width="958" height="934" alt="commands4" src="https://github.com/user-attachments/assets/47d4cd2f-bf4d-400d-acea-3d675280dcab" />
 
-<img width="1920" height="944" alt="3" src="https://github.com/user-attachments/assets/63055d56-984d-423b-b45f-b854a97b8d76" />
 
 
 ## 26.4 LEF and Library File Verification
-
-
-<img width="958" height="934" alt="commands4" src="https://github.com/user-attachments/assets/47d4cd2f-bf4d-400d-acea-3d675280dcab" />
-## 26.5 OpenLane Flow Execution
-
 <img width="958" height="934" alt="less merged lef command 5th image" src="https://github.com/user-attachments/assets/cb04b5da-6a0b-4ca3-a46d-0b51dc3d2b6f" />
+
+
+## 26.5 OpenLane Flow Execution
+<img width="958" height="934" alt="less cmds log 6th image" src="https://github.com/user-attachments/assets/a1c296bc-188e-4f0b-9f56-9437b015eaa1" />
 
 
 ## 26.6 OpenLane Configuration
 
-
-<img width="958" height="934" alt="less cmds log 6th image" src="https://github.com/user-attachments/assets/a1c296bc-188e-4f0b-9f56-9437b015eaa1" />
-
-
-## 26.7 Floorplan Configuration – `floorplan.tcl`
 <img width="958" height="934" alt="less README md  openlane danlo configuration danlo undi 7th" src="https://github.com/user-attachments/assets/821dbbb2-71aa-4183-9082-214bc288ec2f" />
 
 
+
+
+## 26.7 Floorplan Configuration – `floorplan.tcl`
+<img width="958" height="934" alt="less floorplan tcl  8th image" src="https://github.com/user-attachments/assets/fde3a2ed-7508-4fa4-bf86-ba7e75ba295a
 
 
 # 27. Key Learnings
