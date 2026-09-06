@@ -631,6 +631,12 @@ During switching, large instantaneous current demand can cause voltage fluctuati
 Decoupling capacitors provide local charge during high-current switching events and help maintain supply stability.
 Thus, proper floorplanning, pre-placed-cell placement, power planning, noise-margin analysis, and decoupling-capacitor placement are essential for reliable physical design.
 
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
 
 
 
