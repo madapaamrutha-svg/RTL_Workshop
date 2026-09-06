@@ -293,11 +293,20 @@ Supporting reliable standard-cell operation
 ## 19. Picorv32a ASIC Design Flow using OpenLane
 OpenLane is an automated, open-source RTL-to-GDSII hardware design framework. It automatically transforms human-readable hardware description code (Verilog RTL) into the final physical layout blueprint (GDSII) required to manufacture a physical silicon microchip.The picorv32a is an optimized RISC-V CPU core used as a design benchmark in this automated flow.The config.tcl file acts as the configuration hub for this process. It defines critical hardware parameters—such as target layout names, input file paths, and the required clock speeds—to guide the software engines through synthesis, placement, and routing without human intervention.
 
+<img width="958" height="934" alt="less config tcl 4th" src="https://github.com/user-attachments/assets/6290e875-280f-4602-b43a-8b427850888a" />
+
+
 ## 20. Openlane Physical Design Configuration (sky130_fd_sc_hd)
 In the OpenLane ASIC design flow, the hardware description language (HDL) code is transformed into a physical layout. This process relies heavily on configuration files (.tcl) to define constraints and optimization goals for the synthesis, floorplanning, placement, and routing stages.The configuration snippet specifically targets the sky130_fd_sc_hd standard cell library (SkyWater 130nm High Density) and establishes several foundational parameters:Synthesis & Timing Control: Variables like SYNTH_MAX_FANOUT define the maximum number of digital inputs that a single logic gate output can drive, balancing signal integrity and delay. The CLOCK_PERIOD sets the targeted clock cycle time in nanoseconds, defining the performance constraint for static timing analysis (STA).Floorplanning & Density: The utilization variables specify how much of the core area will be occupied by standard cells. The core utilization (FP_CORE_UTIL) sets the initial budget, while PL_TARGET_DENSITY dynamically calculates the targeted placement density, ensuring cells are optimally packed without causing unroutable congestion during the physical implementation stage.
 
+<img width="958" height="934" alt="less sky130A_sky130_fd_sc_hd_config tcl 5th image" src="https://github.com/user-attachments/assets/9421bc1b-2684-44ce-87c5-92d51a2d3396" />
+
+
+
 ## 21.SkyWater PDK LEF File Configuration
 This section provides an overview of the structural and physical parameters defined in the merged_upadded.lef file for the SkyWater PDK open-source digital design flow.📝 Theory & File OverviewA LEF (Library Exchange Format) file contains the abstract physical layout information of a cell library. It provides the place-and-route tools with necessary physical data—such as cell boundaries, pin locations, and metal layers—without exposing the internal silicon-level geometric details.The file snippet shown defines foundational technology attributes, manufacturing grids, and macro site definitions required for structural placement:Technology Units: Establishes standard scaling units for the design data, mapping database units to physical physical metrics (e.g., 1000 database microns per millimeter, standard resistance in Ohms, time in nanoseconds, and capacitance in picofarads).Manufacturing Grid: Sets the geometric granularity (0.005 microns) for placing geometry features. All layouts and wiring components must align precisely with this grid.Site Definitions: Outlines the placement row templates for cells. It characterizes standard properties like symmetry, layer types, and core dimensions for both high-density single-height (unithd) and double-height (unithddbl) library cells.
+<img width="958" height="934" alt="less merged_upadded lef 6th image" src="https://github.com/user-attachments/assets/7a9cdff1-bfda-46ea-b364-87ba12d0fb88" />
+
 
 
 ## 📜 22.OpenLane Floorplanning Configuration
@@ -327,6 +336,9 @@ FP_IO_VEXTEND / FP_IO_HEXTEND: Extends the routing pins slightly outside the cor
 FP_IO_VLENGTH / FP_IO_HLENGTH: Dictates the absolute length of vertical and horizontal physical pins. (Default: 4).
 FP_IO_VTHICKNESS_MULT / FP_IO_HTICKNESS_MULT: A multiplier value scaling the thickness of pins over the standard minimum layer widths. (Default: 2).
 
+<img width="958" height="934" alt="less README md  openlane danlo configuration danlo undi 7th" src="https://github.com/user-attachments/assets/92a81c0e-8990-4607-b382-06a17cfa4e68" />
+
+
 ## 🧱 23. Standard Cell Placement
 After floorplanning and power planning, logical cells are placed inside the core region.
 The placement process determines the physical location of:
@@ -337,22 +349,18 @@ Inverters
 Logic gates
 Other standard cells
 The screenshots demonstrate the placement of cells in organized rows inside the defined core area.
-+--------------------------------------+
-|                                      |
-|  ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫           |
-|  ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫           |
-|  ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫           |
-|  ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫           |
-|  ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫ ▫           |
-|                                      |
-+--------------------------------------+
-             CORE / DIE
+<img width="1920" height="944" alt="layout 8th" src="https://github.com/user-attachments/assets/c04a62c5-3d6e-4d22-bc0e-28c3c796d419" />
+
+
+<img width="958" height="934" alt="what command 9th image" src="https://github.com/user-attachments/assets/4944eeaf-9a68-40ab-aae3-a18f0be41b88" />
 Good placement is important for achieving:
 Shorter interconnects
 Better timing
 Lower congestion
 Efficient routing
 Lower power consumption
+<img width="1920" height="944" alt="10th" src="https://github.com/user-attachments/assets/1ba203df-ed8d-4240-ba79-c06969145f08" />
+
 
 ## 🔋24. Decoupling Capacitors
 The floorplan diagrams also illustrate the placement of decoupling capacitor structures.
@@ -457,18 +465,24 @@ The layout view allows the physical implementation to be visually inspected befo
 
 ## 31.Bind netlist with physical library cells
 Logical cells such as FF1, FF2, etc. are mapped to their corresponding physical standard cells from the technology library.
+<img width="445" height="540" alt="WhatsApp Image 2026-09-06 at 6 57 22 PM" src="https://github.com/user-attachments/assets/085d9aa5-fe10-43d4-9968-ef8adb81f6f7" />
+<img width="1080" height="552" alt="WhatsApp Image 2026-09-06 at 6 57 22 PM (1)" src="https://github.com/user-attachments/assets/4f5f18e5-28a7-40dc-9bb7-41f2a7d38ae7" />
 
 
 ## 32.Placement
 The bound cells are physically positioned inside the floorplan.
 Placement considers connectivity between cells, available rows/sites, blockages, I/O pins, and timing/congestion.
 The examples show the same logical structure represented as: Netlist → Physical placement → Physical view of logic gates.
+<img width="1080" height="595" alt="WhatsApp Image 2026-09-06 at 6 57 24 PM" src="https://github.com/user-attachments/assets/3dcc51e5-06cc-414d-bce4-2ac7aba59c08" />
+
 and the floorplan containing:
 Standard-cell rows
 Input/output pins such as Din1, Din2, Din3, Din4
 Clock pins Clk1, Clk2
 Fixed/placed cells such as FF1, FF2
 Blockages/macros such as DECAP1, DECAP3, etc.
+<img width="1080" height="586" alt="WhatsApp Image 2026-09-06 at 6 57 24 PM (1)" src="https://github.com/user-attachments/assets/3b1d8217-ee9f-481e-97dd-946f6c1e1fb6" />
+
 
 # Key Learnings
 Through this module, the following concepts were studied:
