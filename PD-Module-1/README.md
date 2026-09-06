@@ -39,7 +39,36 @@ The objectives of this project are:
 | Netgen | Layout Versus Schematic |
 | SPEF | Parasitic extraction and timing analysis |
 
+# 📑 Table of Contents
 
+- 1 - Floorplanning
+- 2 - Power Planning
+- 3 - Placement
+- 4 - Clock Tree Synthesis
+- 5 - Routing
+- 6 - Antenna Rule Checking
+- 7 - Antenna Violation Repair
+- 8 - Static Timing Analysis
+- 9 - Parasitic Extraction
+- 10 - Logic Equivalence Check
+- 11 - Physical Verification
+- 12 - OpenLane Design Exploration
+- 13 - OpenLane ASIC Flow
+- 14 - OpenLane and OpenROAD
+- 15 - SKY130 PDK
+- 16 - OpenLane Design Configuration
+- 17 - Floorplan Configuration Parameters
+- 18 - Design for Test (DFT)
+- 19 - Physical Implementation
+- 20 - Project Execution
+- 21 - Physical Design Results
+- 22 - Verification Summary
+- 23 - Design Space Exploration
+- 24 - OpenLane Regression Testing
+- 25 - Final Physical Design Flow
+- 26 - Terminal Execution and Command Evidence
+- 27 - Key Learnings
+- 28 - Conclusion
 
 ## Physical Design Flow
 
