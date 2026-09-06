@@ -33,6 +33,15 @@ This repository contains all the modules completed during the RTL Design Worksho
 | SKY130 PDK | Standard Cell Library |
 | Ubuntu Linux | Development Environment |
 | Git & GitHub | Version Control |
+| OpenLane | RTL-to-GDSII ASIC design flow|
+| OpenRoad| PD implementation|
+| SKY130PDK| 130nm process design kit|
+| sky130_fd_sc_hd| Hign-density standard-cell library| 
+| LEF Files | physicals abstraction od standard cells,pins,layers |
+| Tcl | Configuration of OpenLane flow |
+| Verilog | Hardware description of design |
+| SDC | Timing and Clock Constrait Definition |
+| KLayout/Layout Viewer | Visualization and inspection of physical layouts |
 
 ---
 
