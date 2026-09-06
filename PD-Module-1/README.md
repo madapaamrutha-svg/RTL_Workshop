@@ -652,8 +652,8 @@ The following terminal screenshots provide evidence of the commands executed dur
 
 
 
-## 26.7 Floorplan Configuration – `floorplan.tcl`
-<img width="958" height="934" alt="less floorplan tcl  8th image" src="https://github.com/user-attachments/assets/fde3a2ed-7508-4fa4-bf86-ba7e75ba295a
+## 26.7 Floorplan Configuration 
+<img width="958" height="934" alt="less floorplan tcl  8th image" src="https://github.com/user-attachments/assets/e85fb721-a204-4c96-b3d5-51f745cbf3b8" />
 
 
 # 27. Key Learnings
