@@ -1053,3 +1053,10 @@ In addition, the 16-mask CMOS fabrication process was studied to understand how 
 
 Thus, the module successfully demonstrated the complete **RTL-to-physical-design and CMOS implementation concept**, while providing practical exposure to **SPICE, NGSPICE, Magic VLSI, SKY130A PDK, layout extraction, standard-cell design, and CMOS fabrication technology**.
 
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
+
