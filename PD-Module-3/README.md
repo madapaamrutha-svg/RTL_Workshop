@@ -1,7 +1,7 @@
-# CMOS Inverter Design, Characterization, SKY130A Standard-Cell Layout & 16-Mask CMOS Fabrication
 
-## Module 3 – RTL to Physical Design / CMOS Technology
 
+# Module 3 – RTL to Physical Design / CMOS Technology
+## CMOS Inverter Design, Characterization, SKY130A Standard-Cell Layout & 16-Mask CMOS Fabrication
 ---
 
 ## 📌 Overview
