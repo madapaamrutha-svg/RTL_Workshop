@@ -556,3 +556,393 @@ Higher-Level Metal
         ↓
 Completed CMOS Structure
 ```
+
+
+
+# 9. Layout and Abstract View
+
+The first stage of the design flow is the creation of the standard-cell layout using the SKY130A technology.
+
+The layout represents the physical implementation of the CMOS circuit using the required layers such as:
+
+- Metal layers
+- Polysilicon
+- Diffusion
+- Contacts
+- Well regions
+- Power and ground connections
+
+The corresponding abstract view represents the simplified physical information of the cell that can be used by the digital implementation flow.
+
+The layout and abstract views are checked to ensure that the cell has the required physical structure and proper connectivity.
+<img width="1372" height="611" alt="Screenshot (180)" src="https://github.com/user-attachments/assets/59d161c4-e4a5-4b98-ba5c-19cf02977397" />
+
+
+
+**Figure 1: Layout and abstract representation of the standard cell**
+
+---
+
+# 10. Defining the Cell Boundary
+
+After creating the layout, a proper cell boundary is defined.
+
+The boundary determines the physical area occupied by the standard cell. It is important because standard cells must follow a well-defined height and width so that they can be placed together during physical design.
+
+The cell boundary also helps maintain:
+
+- Consistent cell dimensions
+- Proper placement
+- Alignment with neighbouring cells
+- Correct power and ground rail positions
+- Compatibility with the standard-cell library
+
+The layout is therefore organized inside the defined cell boundary.
+<img width="1361" height="701" alt="Screenshot (181)" src="https://github.com/user-attachments/assets/0f9c2258-893a-4911-8d7c-f375712e0804" />
+
+
+
+**Figure 2: Defined standard-cell boundary**
+
+---
+
+# 11. Power and Ground Connectivity
+
+The next step is to establish the power and ground connections of the cell.
+
+For the CMOS standard cell:
+
+- **VDD** provides the positive supply voltage.
+- **GND** provides the reference/ground connection.
+
+The power and ground segments are connected to the appropriate transistor terminals and are routed through the required layout layers.
+
+Correct power and ground connectivity is essential for reliable circuit operation and for maintaining compatibility with the standard-cell architecture.
+<img width="1359" height="712" alt="Screenshot (182)" src="https://github.com/user-attachments/assets/e56ddad5-d321-4234-af24-3577a3d52301" />
+
+
+
+**Figure 3: Power and ground connections in the layout**
+
+---
+
+# 12. Layout Extraction
+
+Once the physical layout is completed, the layout information is extracted to obtain the electrical representation of the circuit.
+
+The extraction process identifies:
+
+- Devices present in the layout
+- Electrical connections
+- Nodes
+- Parasitic elements
+- Device dimensions
+- Power and ground connections
+
+The extracted information is used to generate a SPICE-compatible representation of the physical layout.
+
+This step is important because simulation of the extracted circuit provides a more realistic representation of the implemented layout than an ideal schematic-level simulation.
+<img width="958" height="934" alt="extracting 5th image" src="https://github.com/user-attachments/assets/9281895a-cdaf-43b5-bd97-fe5652ed2a41" />
+
+
+**Figure 4: Extraction of the layout**
+
+---
+
+# 13. Generating the Extracted Netlist
+
+After extraction, the generated files are checked in the working directory.
+
+The extracted netlist contains the electrical information obtained from the physical layout. It provides the connectivity and device information required for circuit simulation.
+
+The generated files are verified before proceeding to the SPICE simulation stage.
+
+Typical files generated during this stage include the extracted layout information and SPICE-compatible netlist files.
+<img width="958" height="934" alt="commands for 5th image" src="https://github.com/user-attachments/assets/6e2a0e14-19a6-499c-8211-922763a2d024" />
+
+
+
+**Figure 5: Generated extracted files and netlist**
+
+---
+
+# 14. Creating the SPICE File
+
+The extracted circuit information is then used to prepare the SPICE simulation file.
+
+The SPICE file contains:
+
+- Technology/model information
+- Cell subcircuit definition
+- Input and output nodes
+- Power supply connections
+- Ground connections
+- Transistor information
+- Simulation parameters
+
+The standard-cell subcircuit is defined using the extracted device parameters so that the physical implementation can be simulated using NGSPICE.
+<img width="958" height="934" alt="6th spice file" src="https://github.com/user-attachments/assets/71584479-2934-46cf-a0fa-99bd6f1ad115" />
+
+
+**Figure 6: SPICE file generated for simulation**
+
+---
+
+# 15. Transient Simulation using NGSPICE
+
+The extracted SPICE circuit is simulated using NGSPICE.
+
+Transient analysis is performed to observe how the output voltage changes with time when the input signal is applied.
+
+The simulation setup applies a changing input signal while the cell is powered using the required supply voltage.
+
+During simulation, the important nodes such as:
+
+- Input
+- Output
+- VDD
+- GND
+
+are observed.
+
+The initial simulation output confirms that the extracted circuit is electrically connected and can be simulated successfully.
+<img width="958" height="934" alt="7th image" src="https://github.com/user-attachments/assets/156adb31-de86-4f91-95b1-6b047d725ae7" />
+
+
+**Figure 7: NGSPICE transient analysis**
+
+---
+
+# 16. Input and Output Waveforms
+
+The final simulation result is observed using the generated transient waveform.
+
+The input signal changes between logic LOW and logic HIGH. The CMOS inverter responds by producing the complementary output.
+
+Therefore:
+
+- When the input is LOW, the output becomes HIGH.
+- When the input is HIGH, the output becomes LOW.
+
+The waveform confirms the expected inverter functionality.
+
+The simulated voltage levels are close to the expected supply and ground levels, demonstrating correct operation of the extracted standard cell.
+<img width="958" height="934" alt="8th" src="https://github.com/user-attachments/assets/462635ce-8158-4138-8edb-8b8db8b45fa1" />
+
+
+**Figure 8: Simulated input and output transient waveforms**
+
+---
+
+# 17. Physical Verification and Layout Analysis
+
+After completing the basic layout, the physical implementation is examined carefully to ensure that the required layers and connections are present.
+
+The layout is checked for correct transistor formation, diffusion regions, polysilicon structures, contacts, metal routing, and power connections.
+
+The purpose of this stage is to make sure that the physical representation corresponds to the intended CMOS circuit.
+
+A properly constructed layout should maintain:
+
+- Correct device connectivity
+- Correct power distribution
+- Proper cell boundary
+- Valid layer usage
+- Proper transistor arrangement
+
+---
+
+# 18. Standard Cell Layout Structure
+
+The standard cell follows the conventional CMOS standard-cell arrangement.
+
+The PMOS network is placed towards the upper portion of the cell and is associated with the VDD rail, while the NMOS network is placed towards the lower portion and is associated with the GND rail.
+
+The input connection controls the gates of the transistors, while the output is obtained from the common connection between the pull-up and pull-down networks.
+
+This arrangement allows the cell to provide complementary logic operation while maintaining a regular physical structure suitable for standard-cell libraries.
+
+---
+
+# 19. Extraction and Parasitic Information
+
+Layout extraction converts the physical geometry into an electrical representation.
+
+Unlike an ideal schematic, the extracted circuit can contain parasitic effects caused by the physical implementation.
+
+These effects can influence:
+
+- Propagation delay
+- Rise time
+- Fall time
+- Output transition
+- Dynamic behaviour
+
+Therefore, extracted-layout simulation is an important step in validating whether the physically implemented cell behaves as expected.
+
+---
+
+# 20. SPICE Model and Device Parameters
+
+The generated SPICE representation uses the SKY130A technology information to describe the devices used by the cell.
+
+The transistor models contain the electrical parameters required by NGSPICE to calculate the behaviour of the MOS devices.
+
+The extracted cell therefore represents the actual physical implementation more closely than an idealized circuit model.
+
+This enables realistic verification of the standard cell before it is used in a larger digital design.
+
+---
+
+# 21. Simulation Setup
+
+For transient analysis, suitable input stimulus and supply conditions are defined.
+
+The supply voltage is applied between VDD and GND, while the input is driven using a time-varying digital waveform.
+
+The simulation observes the response of the output node over time.
+
+The main objective of the transient simulation is to verify:
+
+1. Correct logic functionality
+2. Proper voltage levels
+3. Output transitions
+4. Timing behaviour
+5. Stability of the simulated circuit
+
+---
+
+# 22. CMOS Inverter Operation
+
+The operation of the CMOS inverter is based on complementary switching of PMOS and NMOS transistors.
+
+### Input LOW
+
+When the input is LOW:
+
+- PMOS turns ON.
+- NMOS turns OFF.
+- The output is connected towards VDD.
+- Therefore, the output becomes HIGH.
+
+### Input HIGH
+
+When the input is HIGH:
+
+- PMOS turns OFF.
+- NMOS turns ON.
+- The output is connected towards GND.
+- Therefore, the output becomes LOW.
+
+Hence, the output is the logical complement of the input.
+
+---
+
+# 23. Rise and Fall Behaviour
+
+During a LOW-to-HIGH input transition, the output changes from HIGH to LOW.
+
+During a HIGH-to-LOW input transition, the output changes from LOW to HIGH.
+
+The finite slope visible in the waveform is due to the charging and discharging of the capacitances associated with the circuit.
+
+Therefore, the practical output waveform does not change instantaneously.
+
+The extracted parasitic components can further influence the transition behaviour.
+
+---
+
+# 24. Timing Behaviour
+
+The transient waveform can be used to understand the timing characteristics of the standard cell.
+
+Important timing parameters include:
+
+- Rise time
+- Fall time
+- Propagation delay
+- Input transition time
+- Output transition time
+
+These parameters are important when standard cells are used to construct larger digital circuits.
+
+A faster cell provides better timing performance, while the physical implementation and transistor sizing can affect the delay and power characteristics.
+
+---
+
+# 25. Voltage Levels
+
+The simulation verifies that the output reaches the expected logic levels.
+
+The HIGH level approaches the supply voltage, while the LOW level approaches ground.
+
+This confirms that the extracted cell provides proper digital logic behaviour.
+
+The waveform therefore provides an important validation of both the logical operation and the electrical implementation of the cell.
+
+---
+
+# 26. Transistor Sizing and Performance
+
+The dimensions of the PMOS and NMOS devices influence the electrical characteristics of the cell.
+
+Device sizing affects:
+
+- Drive strength
+- Rise time
+- Fall time
+- Propagation delay
+- Power consumption
+- Switching behaviour
+
+Proper sizing is therefore required to obtain a balanced and reliable standard-cell implementation.
+
+The physical dimensions obtained during layout are also reflected in the extracted circuit used for simulation.
+
+---
+
+# 27. Layout-to-Simulation Correlation
+
+One of the important objectives of this project is to establish a complete connection between physical design and circuit simulation.
+
+The flow can be summarized as:
+
+**Layout → Extraction → SPICE Netlist → NGSPICE Simulation → Waveform Analysis**
+
+The layout defines the physical implementation.
+
+The extraction process converts the physical implementation into an electrical representation.
+
+The generated SPICE file is then simulated using NGSPICE.
+
+Finally, the transient waveforms are analyzed to verify the behaviour of the implemented cell.
+
+---
+
+# 28. Overall Design Flow
+
+The complete design flow followed in this work is:
+
+```text
+SKY130A Technology
+        ↓
+Standard Cell Layout
+        ↓
+Define Cell Boundary
+        ↓
+Power & Ground Connections
+        ↓
+Layout Verification
+        ↓
+Parasitic Extraction
+        ↓
+SPICE Netlist Generation
+        ↓
+SPICE Simulation Setup
+        ↓
+NGSPICE Transient Analysis
+        ↓
+Input / Output Waveform
+        ↓
+Functional and Timing Analysis
+```
