@@ -610,15 +610,15 @@ The source and drain provide the terminals through which current enters and leav
 After this stage, the fundamental semiconductor structure required for MOS transistor operation is established.
 �
 
-9.10 Contacts & Local Interconnect — Titanium Deposition
+## 9.10 Contacts & Local Interconnect — Titanium Deposition
 Once the transistor structures are formed, electrical connections must be created between the device terminals.
 At this stage, titanium is deposited over the wafer surface using a sputtering process.
 The deposited material prepares the structure for forming electrical connections between the semiconductor regions and the interconnect system.
 Contact formation is necessary because the source, drain and gate regions must eventually be connected to the external circuit wiring.
 This stage therefore provides the transition from isolated transistor structures to electrically connected devices.
-�
 
-9.11 Contact Formation
+
+## 9.11 Contact Formation
 The next fabrication step defines the contact regions required to connect the transistor terminals to the local interconnect structure.
 The important terminals are:
 Source
@@ -626,9 +626,9 @@ Drain
 Gate
 These contact regions provide conductive paths between the transistor structures and the metal wiring above them.
 Once the contacts are formed, the individual transistor terminals become electrically accessible and can be connected as part of a larger CMOS circuit.
-�
 
-9.12 Higher-Level Metal Formation
+
+## 9.12 Higher-Level Metal Formation
 The CMOS fabrication process continues by building additional metal interconnection levels above the contact structures.
 These metal layers provide routing paths for:
 Signal connections
@@ -637,7 +637,7 @@ Ground connections
 Higher-level metal allows different transistor and standard-cell structures to be connected across the chip.
 The interconnect hierarchy therefore transforms the individually fabricated devices into a complete and functional circuit network.
 The final metal structure provides the required electrical connectivity for the completed CMOS implementation.
-�
+
 
 ## 9.13 Complete CMOS Structure
 
