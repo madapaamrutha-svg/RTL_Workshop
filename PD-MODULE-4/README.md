@@ -603,6 +603,7 @@ The resulting MOS structure contains:
         |  Channel  |
         -------------
        Source     Drain
+```
 
 
 The source and drain provide the terminals through which current enters and leaves the transistor.
