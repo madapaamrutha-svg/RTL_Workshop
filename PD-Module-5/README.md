@@ -517,4 +517,10 @@ This module provided practical exposure to the physical design stages following 
 The experiments demonstrated how OpenLane and TritonRoute can be used to generate and verify physical routing while considering connectivity, design rules, routing guides, wire width, via spacing, and parasitic effects.
 The generated routing, DRC, parasitic extraction, and OpenLane result files provide the necessary information for subsequent timing analysis and final physical-design verification.
 
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
 
