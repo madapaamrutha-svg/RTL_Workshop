@@ -135,8 +135,9 @@ The two MOS devices operate in a complementary manner:
 SPICE converts the transistor-level circuit description into electrical
 simulation results. These results provide the required information before
 moving towards physical layout implementation.
+<img width="950" height="435" alt="image" src="https://github.com/user-attachments/assets/6296d211-ba5d-4171-8186-00f9ab236553" />
 
-<!-- INSERT YOUR IMAGE HERE -->
+
 
 ---
 
