@@ -954,5 +954,12 @@ The module particularly emphasizes that physical implementation affects timing t
 Thus, successful physical design requires both **geometrical correctness and timing correctness.**
 
 
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
+
 
 
