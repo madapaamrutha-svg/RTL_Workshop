@@ -1,804 +1,1201 @@
-Project Overview
-This project provides a detailed study of CMOS inverter design, starting from transistor-level circuit development and SPICE simulation and continuing through physical layout and CMOS fabrication concepts.
+# pd-Module 4: CMOS Inverter Design, Simulation, CMOS Fabrication
 
-The complete flow covered in this project is:
+## 📌 Project Overview
 
-CMOS Circuit → SPICE Netlist → DC Analysis → VTC → Switching Threshold → Transistor Sizing → Layout → CMOS Fabrication
+This project presents a complete study of a CMOS inverter, beginning with
+transistor-level circuit construction and SPICE-based electrical simulation.
+The study is then extended to transistor sizing, switching behaviour, physical
+layout, and CMOS fabrication concepts.
 
-The project shows how a basic CMOS inverter can be studied from both the electrical circuit perspective and the physical semiconductor implementation perspective.
+The complete flow followed in this project is:
 
-🎯 Objectives
+CMOS Circuit → SPICE Netlist → DC Analysis → VTC → Switching Threshold →
+Transistor Sizing → Layout → CMOS Fabrication
+
+The project connects the electrical behaviour of a CMOS inverter with its
+physical implementation and semiconductor fabrication process.
+
+---
+
+## 🎯 Objectives
+
 The main objectives of this project are:
 
-To understand the working of a CMOS inverter using NMOS and PMOS transistors.
-To design and analyse a transistor-level CMOS inverter using SPICE.
-To examine how transistor dimensions affect inverter performance.
-To generate and study the Voltage Transfer Characteristic (VTC).
-To identify the switching threshold voltage, (V_M).
-To analyse CMOS inverter stability and transistor sizing.
-To study the effect of (W/L) ratios on inverter operation.
-To understand the physical implementation of a CMOS standard cell.
-To study the important steps of the 16-mask CMOS fabrication process.
-To understand active-region formation, well formation, gate formation, LDD implantation, source/drain formation, contacts, and metallization.
-To relate circuit-level simulation with semiconductor manufacturing technology.
-🔧 Tools & Technologies
-Tool / Technology	Purpose
-SPICE / NGSPICE	Electrical circuit simulation
-CMOS Inverter	Circuit being analysed
-NMOS & PMOS	MOS transistor devices
-VTC Analysis	Static inverter analysis
-Magic VLSI	Physical layout design
-SKY130A PDK	CMOS technology and design rules
-Linux Terminal	Simulation and design operations
-Git & GitHub	Version control and documentation
-🔬 Project Workflow
-CMOS Inverter Design ↓ SPICE Netlist Creation ↓ DC Simulation ↓ VTC Generation ↓ Switching Threshold Analysis ↓ Transistor Sizing ↓ Physical Layout ↓ 16-Mask CMOS Fabrication Study ↓ Contacts & Local Interconnect ↓ Higher-Level Metal ↓ Complete CMOS Structure
+1. To study the operation of a CMOS inverter using complementary NMOS and
+   PMOS devices.
 
-1. SPICE CMOS Inverter Design
-image
-The first step is to create the transistor-level CMOS inverter using a SPICE netlist.
+2. To create and evaluate a transistor-level CMOS inverter using SPICE.
 
-The circuit contains:
+3. To investigate the influence of transistor dimensions on inverter
+   characteristics.
 
-One PMOS transistor connected to (V_{DD})
-One NMOS transistor connected to (V_{SS})
-A common gate input
-A common drain output
-A capacitive load connected at the output
-Specified transistor dimensions
-CMOS device model definitions
-DC simulation instructions
+4. To obtain and analyse the Voltage Transfer Characteristic (VTC) of the
+   inverter.
+
+5. To determine the switching threshold voltage (V_M) of the CMOS inverter.
+
+6. To study inverter stability and understand the importance of transistor
+   sizing.
+
+7. To examine the influence of different (W/L) ratios on inverter behaviour.
+
+8. To understand the physical realization of a CMOS standard cell.
+
+9. To explore the major stages involved in the 16-mask CMOS fabrication
+   sequence.
+
+10. To study active-region formation, well formation, gate formation, LDD
+    implantation, source/drain formation, contacts and metal interconnections.
+
+11. To establish the relationship between circuit simulation and semiconductor
+    fabrication technology.
+
+---
+
+## 🔧 Tools & Technologies
+
+| Tool / Technology | Purpose |
+|-------------------|---------|
+| SPICE / NGSPICE | Simulation of transistor-level electrical circuits |
+| CMOS Inverter | Circuit under investigation |
+| NMOS & PMOS | Complementary MOS transistor devices |
+| VTC Analysis | Analysis of static inverter characteristics |
+| Magic VLSI | Creation and inspection of physical layouts |
+| SKY130A PDK | CMOS technology files and layout design rules |
+| Linux Terminal | Running simulation and design commands |
+| Git & GitHub | Version control and project documentation |
+
+---
+
+## 🔬 Project Workflow
+
+CMOS Inverter Design ↓ SPICE Netlist Creation ↓ DC Simulation ↓ VTC Generation
+↓ Switching Threshold Analysis ↓ Transistor Sizing ↓ Physical Layout ↓
+16-Mask CMOS Fabrication Study ↓ Contacts & Local Interconnect ↓ Higher-Level
+Metal ↓ Complete CMOS Structure
+
+---
+
+# 1. SPICE CMOS Inverter Design
+
+The first stage is the construction of a transistor-level CMOS inverter using
+a SPICE circuit description.
+
+The inverter consists of:
+
+- One PMOS transistor connected to \(V_{DD}\)
+- One NMOS transistor connected to \(V_{SS}\)
+- A common input terminal for both transistor gates
+- A common output node formed by the transistor drains
+- A capacitive load connected to the output
+- Defined NMOS and PMOS dimensions
+- CMOS device model definitions
+- DC simulation commands
+
 The initial transistor dimensions are:
 
-W
-n
-=
-W
-p
-=
-0.375
-μ
-m
+\[
+W_n = W_p = 0.375\mu m
+\]
 
-L
-n
-=
-L
-p
-=
-0.25
-μ
-m
+\[
+L_n = L_p = 0.25\mu m
+\]
 
 Therefore,
 
-W
-n
-/
-L
-n
-=
-W
-p
-/
-L
-p
-=
-1.5
+\[
+\frac{W_n}{L_n} = \frac{W_p}{L_p} = 1.5
+\]
 
-The SPICE deck builds the inverter by defining the transistors, their dimensions, supply voltages, input conditions, output load, device models, and simulation environment required for electrical analysis.
+The SPICE netlist describes the complete electrical circuit by specifying the
+MOS devices, their dimensions, supply sources, input conditions, output load,
+device models and simulation instructions.
 
-2. SPICE Simulation — Initial Device Configuration
-image
-This stage represents the CMOS inverter simulation with identical NMOS and PMOS sizing.
+<!-- INSERT YOUR IMAGE HERE -->
 
-The simulation establishes the basic relationship between:
+---
+
+# 2. SPICE Simulation — Initial Device Configuration
+
+The first simulation is performed with equal NMOS and PMOS dimensions. This
+provides a reference response for studying the basic operation of the CMOS
+inverter.
+
+The fundamental signal relationship can be represented as:
 
 Input Voltage → Transistor State → Output Voltage
 
-The inverter works through complementary operation of the two transistors:
+The two MOS devices operate in a complementary manner:
 
-When the input is LOW, the PMOS turns ON and the NMOS remains OFF.
-When the input is HIGH, the NMOS turns ON and the PMOS turns OFF.
-During the transition region, both transistors affect the output.
-SPICE translates the transistor-level circuit description into measurable electrical results, making it possible to study inverter behaviour before creating the physical layout.
+- With a LOW input, the PMOS conducts while the NMOS remains switched OFF.
+- With a HIGH input, the NMOS conducts while the PMOS becomes OFF.
+- Around the transition region, both devices influence the output behaviour.
 
-3. CMOS Inverter Voltage Transfer Characteristic
-image
-The simulation generates the Voltage Transfer Characteristic (VTC) of the CMOS inverter.
+SPICE converts the transistor-level circuit description into electrical
+simulation results. These results provide the required information before
+moving towards physical layout implementation.
 
-The VTC represents the relationship:
+<!-- INSERT YOUR IMAGE HERE -->
 
-V
-o
-u
-t
-=
-f
-(
-V
-i
-n
-)
+---
 
-The curve can be divided into three major regions:
+# 3. CMOS Inverter Voltage Transfer Characteristic
+
+The DC simulation produces the Voltage Transfer Characteristic (VTC) of the
+CMOS inverter.
+
+The VTC describes the dependence of the output voltage on the applied input
+voltage:
+
+\[
+V_{out}=f(V_{in})
+\]
+
+The characteristic can be broadly divided into three regions:
 
 HIGH OUTPUT → TRANSITION → LOW OUTPUT
 
-V
-o
-u
-t
-≈
-V
-D
-D
+For the HIGH-output condition:
 
-during the HIGH-output region, while:
+\[
+V_{out} \approx V_{DD}
+\]
 
-V
-o
-u
-t
-≈
-0
+For the LOW-output condition:
 
-during the LOW-output region.
+\[
+V_{out} \approx 0
+\]
 
-The steep transition indicates that the CMOS inverter provides high voltage gain around its switching region.
+The sharp change in the transition region indicates the high voltage gain
+provided by the CMOS inverter around its switching point.
 
-A small variation in input voltage can therefore produce a significant change in output voltage, which is an important characteristic of CMOS logic.
+A relatively small change in input voltage can therefore result in a large
+change in output voltage, which is one of the important properties of CMOS
+logic circuits.
 
-4. Transistor Sizing Comparison
-image
-Two different CMOS inverter configurations are analysed.
+<!-- INSERT YOUR IMAGE HERE -->
 
-Configuration 1
-W
-n
-=
-W
-p
-=
-0.375
-μ
-m
+---
 
-W
-n
-/
-L
-n
-=
-W
-p
-/
-L
-p
-=
-1.5
+# 4. Transistor Sizing Comparison
 
-Configuration 2
-W
-n
-=
-0.375
-μ
-m
+Two different CMOS inverter sizing conditions are considered to observe the
+effect of transistor dimensions on the inverter response.
 
-W
-p
-=
-0.9375
-μ
-m
+## Configuration 1
 
-W
-n
-/
-L
-n
-=
-1.5
+\[
+W_n = W_p = 0.375\mu m
+\]
 
-W
-p
-/
-L
-p
-=
-3.75
+\[
+\frac{W_n}{L_n}=\frac{W_p}{L_p}=1.5
+\]
 
-Increasing the PMOS width changes the relative driving capability of the PMOS and NMOS devices. As a result, the switching characteristics of the inverter also change.
+In this configuration, both devices have identical width-to-length ratios.
 
-This comparison demonstrates that transistor dimensions are not only physical design parameters; they also have a direct effect on the electrical behaviour of the inverter.
+<!-- INSERT YOUR IMAGE HERE -->
 
-5. CMOS Inverter Robustness — Switching Threshold
-image
-The switching threshold voltage (V_M) is defined as the point where:
+## Configuration 2
 
-V
-i
-n
-=
-V
-o
-u
-t
+\[
+W_n = 0.375\mu m
+\]
 
-The results compare inverter characteristics for different transistor sizing conditions and show how the switching point changes according to transistor strength.
+\[
+W_p = 0.9375\mu m
+\]
 
-The observed values include approximately:
+\[
+\frac{W_n}{L_n}=1.5
+\]
 
-V
-M
-≈
-0.98
-V
+\[
+\frac{W_p}{L_p}=3.75
+\]
+
+Here, the PMOS width is increased while the NMOS dimensions remain unchanged.
+
+Increasing the PMOS width modifies the relative drive capability of the two
+transistors. Consequently, the switching characteristics of the inverter
+also change.
+
+This comparison shows that transistor dimensions influence not only the
+physical size of the device but also its electrical performance.
+
+<!-- INSERT YOUR IMAGE HERE -->
+
+---
+
+# 5. CMOS Inverter Robustness — Switching Threshold
+
+The switching threshold voltage \(V_M\) is defined as the input voltage at
+which the inverter satisfies:
+
+\[
+V_{in}=V_{out}
+\]
+
+Different transistor sizing conditions produce different switching points.
+Therefore, the switching threshold can be used to observe how the balance
+between NMOS and PMOS strength affects inverter operation.
+
+The obtained values are approximately:
+
+\[
+V_M \approx 0.98V
+\]
 
 and
 
-V
-M
-≈
-1.2
-V
+\[
+V_M \approx 1.2V
+\]
 
-depending on the transistor sizing configuration.
+depending on the selected transistor sizing configuration.
 
-The switching threshold represents the balance point at which the inverter changes between its two logic states. Transistor sizing determines the position of this balance point.
+The switching threshold represents the point where the inverter changes from
+one logic state to the other. Changing the relative strength of the PMOS and
+NMOS devices shifts this point.
 
-6. Mathematical Analysis of Switching Threshold
-image
-The switching threshold can also be determined analytically by considering the relative strengths of the NMOS and PMOS transistors.
+<!-- INSERT YOUR IMAGE HERE -->
 
-The analysis considers parameters such as:
+---
 
-(W_n/L_n)
-(W_p/L_p)
-(K_n)
-(K_p)
-Saturation voltage
-Device threshold parameters
-Therefore, the switching threshold obtained from simulation is not an arbitrary value. It depends strongly on the relative drive strengths of the two transistors.
+# 6. Mathematical Analysis of Switching Threshold
 
-The mathematical analysis helps explain why changing transistor dimensions causes the switching threshold observed in the SPICE VTC to shift.
+The switching threshold can also be evaluated mathematically by considering
+the relative drive strengths of the NMOS and PMOS transistors.
 
-7. Final Switching-Threshold Comparison
-image
-The final characterization combines the inverter VTC with transistor sizing information and timing-related results.
+The important parameters involved in the analysis include:
 
-It demonstrates the effect of changing transistor dimensions on the electrical response of the CMOS inverter.
+1. \(W_n/L_n\)
+2. \(W_p/L_p\)
+3. \(K_n\)
+4. \(K_p\)
+5. Saturation voltage
+6. Device threshold parameters
 
-An important CMOS design principle highlighted here is:
+The switching point is therefore influenced by the relative strengths of the
+two MOS devices rather than being an independent or fixed value.
 
-The relative strength of NMOS and PMOS devices determines the switching behaviour and influences timing characteristics.
+The mathematical analysis helps explain the movement of the switching
+threshold observed in the SPICE VTC when the transistor dimensions are
+modified.
 
-The characterization process therefore connects the simulation results with transistor dimensions and device-strength relationships, making the SPICE plots easier to interpret.
+This also provides a theoretical basis for understanding the simulation
+results obtained from the CMOS inverter.
 
-8. Physical CMOS Layout
-image
-After completing the electrical analysis, the project proceeds to the physical implementation of the CMOS inverter.
+<!-- INSERT YOUR IMAGE HERE -->
 
-The layout shows how the CMOS inverter is physically arranged using technology-specific layers.
+---
 
-The major physical components include:
+# 7. Final Switching-Threshold Comparison
 
-PMOS region
-NMOS region
-Polysilicon gate
-Active regions
-Contacts
-Metal interconnections
-Power and ground connections
-This step converts the transistor schematic into a geometric representation that can be used as the basis for fabrication.
+The final characterization combines the inverter VTC with the selected
+transistor sizing conditions and the corresponding timing-related results.
 
-The schematic describes the electrical operation of the circuit, while the layout defines how the circuit is physically constructed on silicon.
+The comparison demonstrates how modifications in transistor dimensions affect
+the electrical response of the CMOS inverter.
 
-9. 🏭 CMOS FABRICATION PROCESS
-The following stages describe the 16-mask CMOS fabrication sequence covered in the project.
+An important CMOS design principle observed from this analysis is that the
+relative drive strength of NMOS and PMOS devices influences the switching
+behaviour and timing characteristics of the inverter.
 
-9.1 Active Region Formation
-image
-The fabrication process begins by defining the areas in which the transistors will be created.
+Thus, transistor sizing, device strength and simulation response are closely
+related. The final SPICE plots provide a clear way to interpret these
+relationships.
 
-The figure contains:
+<!-- INSERT YOUR IMAGE HERE -->
 
-P-type silicon substrate
-Silicon nitride masking
-Photoresist
-Field oxide
-LOCOS isolation
-Bird's-beak effect
-The process used is LOCOS — Local Oxidation of Silicon.
+---
 
-Field oxide is used to isolate the active transistor regions from the surrounding silicon.
+# 8. Physical CMOS Layout
 
-Before the transistor can be constructed, the silicon surface must first be separated into active and isolation areas. LOCOS provides the necessary isolation for controlled transistor fabrication.
+After completing the electrical analysis, the CMOS inverter can be translated
+into a physical layout using the required CMOS technology rules.
 
-9.2 N-Well and P-Well Formation
-image
-CMOS technology requires regions with different conductivity types so that both NMOS and PMOS devices can be fabricated.
+The physical layout represents the actual geometric arrangement of the
+transistors and their interconnections.
 
-Ion implantation is used during this stage to create the required well regions.
+The layout includes important structures such as:
 
-The implantation process establishes the appropriate electrical regions within the silicon substrate for the formation of NMOS and PMOS transistors.
+- NMOS active region
+- PMOS active region
+- Polysilicon gate
+- Source and drain regions
+- Contacts
+- Local interconnect
+- Metal connections
+- Power and ground connections
 
-Well formation therefore provides the correct body environment in which the complementary transistors can operate.
+The layout must follow the design rules provided by the SKY130A process design
+kit.
 
-9.3 Threshold Voltage & Body Effect
-image
-This stage explains the theoretical basis of MOS threshold voltage and body effect.
+The physical representation connects the transistor-level schematic with the
+actual semiconductor structure that would be manufactured.
 
-The threshold voltage depends on several parameters, including:
+<!-- INSERT YOUR IMAGE HERE -->
 
-(V_{T0}) — threshold voltage at zero body bias
-(\gamma) — body-effect coefficient
-(V_{SB}) — source-to-body voltage
-(\Phi_F) — Fermi potential
-(N_A) — doping concentration
-(C_{ox}) — oxide capacitance
-MOS transistor behaviour is therefore affected not only by the gate voltage but also by substrate doping, oxide characteristics, and body bias.
+---
 
-9.4 Gate Formation — Initial Stage
-image
-The next fabrication step is the formation of the transistor gate structure.
+## CMOS Layout Structure
 
-The gate serves as the control terminal of a MOS transistor and determines whether a conductive channel can form between the source and drain.
+The physical CMOS inverter consists of complementary NMOS and PMOS devices
+placed in their respective regions.
 
-The figure illustrates the processing steps involved in gate formation and implantation.
+The polysilicon gate forms the common input connection, while the drain regions
+are connected to form the inverter output.
 
-Gate fabrication creates the main control structure that determines how current flows through the transistor channel.
+The PMOS source is connected towards \(V_{DD}\), whereas the NMOS source is
+connected towards \(V_{SS}\).
 
-9.5 Gate Formation — Completed Structure
-image
-This stage continues the gate-formation process and shows the resulting structure after the required processing steps.
+<!-- INSERT YOUR IMAGE HERE -->
 
-The gate separates the source and drain regions and controls the channel located underneath it.
+---
 
-At this stage, the physical structure needed to control current through the transistor channel becomes clearly defined.
+## Contacts & Local Interconnect
 
-9.6 LDD Formation — Initial Implantation
-image
-The Lightly Doped Drain (LDD) process creates lightly doped regions close to the source and drain areas.
+Contacts provide electrical connections between the diffusion regions,
+polysilicon and metal layers.
 
-LDD structures help control electric-field conditions near the drain and contribute to improved device reliability.
+Local interconnect is used to establish short electrical connections within
+the standard-cell structure.
 
-The controlled doping introduced during this stage helps manage high electric fields inside the transistor.
+Proper placement of contacts and interconnects is necessary to obtain a
+functional and design-rule-compliant layout.
 
-9.7 LDD Formation — Phosphorus Implantation
-image
-This stage shows the phosphorus implantation used as part of the LDD formation process.
+<!-- INSERT YOUR IMAGE HERE -->
 
-Ion implantation is carefully controlled to modify the conductivity of selected regions of the silicon.
+---
 
-Through controlled doping, the required conductivity profile for transistor operation is established.
+## Higher-Level Metal
 
-9.8 Side-Wall Spacer Formation
-After LDD implantation, side-wall spacers are created around the transistor gate.
+Higher metal layers are used for longer-distance routing and for connecting
+the standard cell to external power, ground, input and output connections.
 
-These spacers provide the required physical separation between the gate and the heavily doped source/drain regions formed later.
+The metal structure allows the CMOS inverter to communicate with other cells
+in a larger digital circuit.
 
-The spacer therefore controls the distance between the gate and the heavily doped regions, providing accurate transistor geometry. image
+<!-- INSERT YOUR IMAGE HERE -->
 
-9.9 Source & Drain Formation
-image
-The next fabrication stage creates the final source and drain regions using high-temperature processing.
+---
 
-At this point, the main transistor structure consists of:
+## Complete CMOS Structure
 
-        Gate
-         │
-    ┌────┴────┐
-    │ Channel │
-────┴─────────┴────
- Source       Drain
+The complete CMOS inverter combines the electrical circuit, physical layout
+and fabrication concepts into one design flow.
+
+The overall relationship can be represented as:
+
+SPICE Circuit
+↓
+Electrical Simulation
+↓
+VTC and Switching Analysis
+↓
+Transistor Sizing
+↓
+Physical Layout
+↓
+CMOS Fabrication Structure
+
+This demonstrates how a simple CMOS inverter moves from a transistor-level
+circuit description to a physical semiconductor implementation.
+
+<!-- INSERT YOUR IMAGE HERE -->
+
+---
+# 9. 🏭 CMOS FABRICATION PROCESS
+
+The following sections explain the major stages involved in the 16-mask CMOS
+fabrication sequence used to understand the physical formation of CMOS
+transistors.
+
+---
+
+## 9.1 Active Region Formation
+
+The first fabrication stage identifies and separates the silicon regions where
+the MOS transistors will eventually be formed.
+
+The structure consists of:
+
+- P-type silicon substrate
+- Silicon nitride layer
+- Photoresist layer
+- Field oxide
+- LOCOS isolation
+- Bird's-beak region
+
+The isolation technique used in this process is LOCOS, which stands for
+**Local Oxidation of Silicon**.
+
+Field oxide separates the transistor active areas from the surrounding silicon
+and prevents unwanted conduction between neighbouring devices.
+
+This step is important because it establishes the physical regions in which
+the active transistor structures will be fabricated.
+
+<!-- INSERT YOUR IMAGE HERE -->
+
+---
+
+## 9.2 N-Well and P-Well Formation
+
+CMOS circuits require both NMOS and PMOS transistors. Therefore, suitable
+well regions with different conductivity types must be created inside the
+silicon substrate.
+
+Ion implantation is used to introduce the required dopants into selected
+areas.
+
+The well-formation stage provides the required body regions for the two types
+of MOS devices.
+
+The implanted regions determine the electrical environment in which the NMOS
+and PMOS transistors are subsequently constructed.
+
+Proper well formation is essential for obtaining complementary transistor
+operation in a CMOS circuit.
+
+<!-- INSERT YOUR IMAGE HERE -->
+
+---
+
+## 9.3 Threshold Voltage & Body Effect
+
+This stage introduces the physical and electrical factors that determine the
+threshold voltage of a MOS transistor.
+
+The threshold voltage is influenced by parameters such as:
+
+- \(V_{T0}\) – threshold voltage at zero body bias
+- \(\gamma\) – body-effect coefficient
+- \(V_{SB}\) – source-to-body voltage
+- \(\Phi_F\) – Fermi potential
+- \(N_A\) – substrate doping concentration
+- \(C_{ox}\) – oxide capacitance
+
+The body effect occurs when the voltage difference between the source and body
+changes the threshold voltage of the MOS device.
+
+Therefore, transistor behaviour depends not only on the gate voltage but also
+on substrate doping, oxide properties and body bias conditions.
+
+Understanding these parameters is important for predicting the actual
+operation of MOS devices.
+
+<!-- INSERT YOUR IMAGE HERE -->
+
+---
+
+## 9.4 Gate Formation — Initial Stage
+
+The next step in the fabrication sequence is the formation of the MOS gate
+structure.
+
+The gate acts as the controlling terminal of the transistor. By applying a
+suitable voltage to the gate, the conductivity of the channel between source
+and drain can be controlled.
+
+The fabrication sequence at this stage involves the required gate-processing
+and implantation operations over the previously prepared well regions.
+
+The gate structure plays a central role in determining whether current can
+flow through the transistor channel.
+
+<!-- INSERT YOUR IMAGE HERE -->
+
+---
+
+## 9.5 Gate Formation — Completed Structure
+
+This stage represents the completed gate structure after the required
+processing operations.
+
+The gate is positioned above the channel region and separates the source and
+drain regions.
+
+The gate controls the formation of the conducting channel underneath it.
+Therefore, the physical gate structure determines how the transistor responds
+to an applied gate voltage.
+
+At the end of this stage, the essential gate-controlled structure of the MOS
+transistor has been established.
+
+<!-- INSERT YOUR IMAGE HERE -->
+
+---
+
+## 9.6 LDD Formation — Initial Implantation
+
+The Lightly Doped Drain (LDD) step introduces lightly doped regions near the
+source and drain areas.
+
+These regions are useful for controlling the electric-field intensity near
+the drain.
+
+LDD structures improve the reliability of the MOS transistor by reducing the
+effect of strong electric fields near the drain junction.
+
+Controlled implantation is therefore used to create the required lightly
+doped regions around the transistor channel.
+
+<!-- INSERT YOUR IMAGE HERE -->
+
+---
+
+## 9.7 LDD Formation — Phosphorus Implantation
+
+Phosphorus implantation is carried out as part of the LDD formation process.
+
+During ion implantation, dopant atoms are introduced into selected silicon
+regions to obtain the required conductivity characteristics.
+
+The implantation conditions determine the resulting dopant concentration and
+depth.
+
+This controlled doping step establishes the required lightly doped regions
+for proper transistor operation and helps control electric-field effects near
+the drain.
+
+<!-- INSERT YOUR IMAGE HERE -->
+
+---
+
+## 9.8 Side-Wall Spacer Formation
+
+After the LDD implantation, side-wall spacers are formed around the gate
+structure.
+
+These spacers create a controlled separation between the gate edge and the
+heavily doped source/drain regions that are formed in the next stages.
+
+The spacer dimensions determine the position of the heavily doped regions
+relative to the gate.
+
+Thus, side-wall spacer formation is important for obtaining the required
+transistor geometry and maintaining proper source/drain alignment.
+
+<!-- INSERT YOUR IMAGE HERE -->
+
+---
+
+## 9.9 Source & Drain Formation
+
+The source and drain regions are formed after the spacer formation stage.
+
+Higher-concentration doping is introduced into the selected regions to create
+the final source and drain terminals.
+
+High-temperature processing is used to activate and establish the required
+doped regions.
+
+The resulting MOS structure contains:
+
+```text
+             Gate
+              |
+        -------------
+        |  Channel  |
+        -------------
+       Source     Drain
+
+
 The source and drain provide the terminals through which current enters and leaves the transistor.
-
-With these regions formed, the basic semiconductor structure required for controlled current flow is complete.
+After this stage, the fundamental semiconductor structure required for MOS transistor operation is established.
+�
 
 9.10 Contacts & Local Interconnect — Titanium Deposition
-image
-After the transistor structures have been completed, electrical connections need to be established.
-
-This stage shows titanium deposition on the wafer surface using sputtering.
-
-The deposited material prepares the structure for forming low-resistance electrical connections between the semiconductor regions and the interconnect system.
-
-Contact technology provides the required connection between the fabricated transistor terminals and the wiring structure.
+Once the transistor structures are formed, electrical connections must be created between the device terminals.
+At this stage, titanium is deposited over the wafer surface using a sputtering process.
+The deposited material prepares the structure for forming electrical connections between the semiconductor regions and the interconnect system.
+Contact formation is necessary because the source, drain and gate regions must eventually be connected to the external circuit wiring.
+This stage therefore provides the transition from isolated transistor structures to electrically connected devices.
+�
 
 9.11 Contact Formation
-image
-The next stage defines the contact regions used to connect:
-
-Source Drain Gate
-
-to the local interconnect structure.
-
-These contacts create conductive paths between the transistor and the higher-level wiring.
-
-Contacts therefore transform individual transistor structures into electrically accessible devices that can be connected into larger circuits.
+The next fabrication step defines the contact regions required to connect the transistor terminals to the local interconnect structure.
+The important terminals are:
+Source
+Drain
+Gate
+These contact regions provide conductive paths between the transistor structures and the metal wiring above them.
+Once the contacts are formed, the individual transistor terminals become electrically accessible and can be connected as part of a larger CMOS circuit.
+�
 
 9.12 Higher-Level Metal Formation
-image
-CMOS fabrication continues by creating additional levels of metal interconnect.
+The CMOS fabrication process continues by building additional metal interconnection levels above the contact structures.
+These metal layers provide routing paths for:
+Signal connections
+Power distribution
+Ground connections
+Higher-level metal allows different transistor and standard-cell structures to be connected across the chip.
+The interconnect hierarchy therefore transforms the individually fabricated devices into a complete and functional circuit network.
+The final metal structure provides the required electrical connectivity for the completed CMOS implementation.
+�
 
-These metal layers provide pathways for:
+## 9.13 Complete CMOS Structure
 
-Signals
-Power
-Ground
-to travel throughout the chip.
+The final fabrication stage combines the individual semiconductor and
+interconnect layers into the completed CMOS structure.
 
-The interconnect hierarchy connects the individually fabricated devices into a complete circuit network.
+The final structure contains:
 
-Higher-level metal can be considered the main routing network that carries electrical connections across different areas of the integrated circuit.
+- Silicon substrate
+- N-well and P-well regions
+- Active regions
+- Gate structures
+- Source and drain regions
+- Contacts
+- Local interconnect
+- Higher-level metal layers
 
-9.13 Complete CMOS Structure
-image
-The final fabrication image shows the completed CMOS structure.
+These layers together form the complete physical CMOS implementation.
 
-The structure contains:
+The fabrication sequence demonstrates how the transistor structures and
+interconnect layers are progressively built to transform the silicon substrate
+into a functional CMOS structure.
 
-Silicon substrate
-Well regions
-Active regions
-Gate structures
-Source/drain regions
-Contacts
-Local interconnect
-Higher-level metal
-Together, these layers form a multilayer CMOS structure where semiconductor devices and metal interconnections operate as one integrated system.
+The completed structure provides the physical foundation required for
+connecting the CMOS devices into an integrated circuit.
 
-The fabrication sequence demonstrates how individual layers are gradually constructed to transform bare silicon into functional CMOS hardware.
+<!-- INSERT YOUR IMAGE HERE -->
 
-10. Layout and Abstract View
-The conversion from a circuit diagram into a physical silicon implementation begins with the standard-cell layout.
+---
 
-Using the SKY130A technology, the CMOS inverter is represented as a physical arrangement of different layers corresponding to its implementation on silicon.
+# 10. Layout and Abstract View
 
-The important layers include:
+The conversion from the transistor-level circuit into a physical silicon
+implementation begins with the standard-cell layout.
 
-Metal layers – used for electrical routing.
-Polysilicon – forms the transistor gate structures.
-Diffusion – represents the active source and drain regions.
-Contacts – connect different physical layers.
-Well regions – provide the required transistor body structures.
-Power and ground rails – distribute VDD and GND across the cell.
-Along with the detailed layout, an abstract view provides a simplified representation of the standard cell containing the physical information required by the digital design flow.
+Using the SKY130A technology, the CMOS inverter is represented using
+technology-specific physical layers required for fabrication and routing.
 
-The detailed layout and abstract view together define the physical identity of the standard cell. Both are checked to ensure that the geometry, layer arrangement, and connectivity are correctly implemented. image
+The important physical layers include:
 
-Figure: Layout and abstract representation of the standard cell
+- **Metal layers** – used for electrical routing.
+- **Polysilicon** – forms the transistor gate structures.
+- **Diffusion** – represents the active source and drain regions.
+- **Contacts** – provide connections between different physical layers.
+- **Well regions** – define the transistor body regions.
+- **Power and ground rails** – distribute VDD and GND throughout the cell.
 
-This stage gives the circuit its first physical representation, converting transistor-level logic into an organized silicon structure.
+Along with the detailed layout, the abstract view provides a simplified
+representation of the standard cell.
 
-11. Defining the Cell Boundary
-A standard cell requires a clearly specified physical area.
+The abstract view contains the essential physical information required by the
+digital physical-design flow while hiding unnecessary layout details.
 
-After the layout is completed, a cell boundary is created to identify the exact region occupied by the circuit.
+The detailed layout and abstract representation together describe the
+physical identity and connectivity of the standard cell.
 
-The boundary specifies the width and height of the cell and provides a fixed area in which the transistor and routing structures are arranged.
+<!-- INSERT YOUR IMAGE HERE -->
 
-A correctly defined boundary supports:
+**Figure: Layout and abstract representation of the standard cell**
 
-Consistent cell dimensions
-Accurate placement
-Alignment with neighbouring cells
-Correct VDD and GND rail locations
-Compatibility with the standard-cell library
-This organized structure allows multiple cells to be placed next to one another or stacked within a larger physical-design system while maintaining proper alignment. image
+This stage provides the first physical representation of the circuit and
+converts the transistor-level design into an organized silicon structure.
 
-Figure: Defined standard-cell boundary
+---
 
-The cell boundary acts as the physical framework of the standard cell and allows it to integrate smoothly with other cells in a larger digital design.
+# 11. Defining the Cell Boundary
 
-12. Power and Ground Connectivity
-After defining the cell structure, the power and ground connections are established.
+A standard cell requires a clearly defined physical area in which all of its
+transistors and routing structures are placed.
+
+After completing the layout, a cell boundary is created to specify the exact
+region occupied by the standard cell.
+
+The boundary determines the width and height of the cell and establishes the
+physical area available for device placement and routing.
+
+A properly defined cell boundary supports:
+
+- Consistent cell dimensions
+- Accurate placement
+- Alignment with neighbouring cells
+- Correct VDD and GND rail locations
+- Compatibility with the standard-cell library
+
+This organized structure allows multiple standard cells to be placed next to
+one another while maintaining proper alignment.
+
+The cell boundary therefore acts as the physical framework that allows the
+standard cell to integrate with other cells in a larger digital design.
+
+<!-- INSERT YOUR IMAGE HERE -->
+
+**Figure: Defined standard-cell boundary**
+
+---
+
+# 12. Power and Ground Connectivity
+
+After defining the cell structure, the power and ground connections are
+established.
 
 The CMOS cell uses two primary supply connections:
 
-VDD – provides the positive operating supply.
-GND – provides the ground or reference potential.
-These supply rails are connected to the appropriate transistor regions through the required physical layers.
+- **VDD** – provides the positive operating supply.
+- **GND** – provides the ground or reference potential.
 
-In a CMOS inverter, the PMOS network is connected towards the supply side, while the NMOS network is connected towards ground.
+These supply rails are connected to the appropriate transistor regions through
+the required physical layers.
 
-Proper routing is necessary to ensure that both complementary transistor networks operate correctly.
+In a CMOS inverter, the PMOS network is connected towards the supply side,
+while the NMOS network is connected towards ground.
 
-Reliable power connectivity is important for circuit operation as well as for maintaining the physical structure expected by the standard-cell library. image
+Proper routing ensures that both complementary transistor networks receive the
+required power connections and operate correctly.
 
-Figure: Power and ground connections in the layout
+Reliable power connectivity is also necessary for maintaining the expected
+physical structure of the standard-cell library.
 
-Power provides the energy required by the cell, while ground completes the electrical return path required for CMOS operation.
+<!-- INSERT YOUR IMAGE HERE -->
 
-13. Layout Extraction
-A physical layout contains geometric information, whereas circuit simulation requires an electrical representation.
+**Figure: Power and ground connections in the layout**
+
+Power provides the energy required by the cell, while ground completes the
+electrical return path required for CMOS operation.
+
+---
+
+# 13. Layout Extraction
+
+A physical layout contains geometric information, while circuit simulation
+requires an electrical representation.
 
 Layout extraction provides the connection between these two forms.
 
-After completing the layout, the extraction process interprets the physical shapes and converts them into an electrical circuit representation.
+After the layout is completed, the extraction process interprets the physical
+shapes and converts them into an electrical circuit representation.
 
-The extraction identifies:
+The extraction process identifies:
 
-Transistors present in the layout
-Electrical nodes
-Connections between devices
-Physical device dimensions
-Power and ground paths
-Parasitic elements
-This information is used to generate a SPICE-compatible representation of the implemented circuit.
+- Transistors present in the layout
+- Electrical nodes
+- Connections between devices
+- Physical device dimensions
+- Power and ground paths
+- Parasitic elements
 
-Unlike an ideal schematic, the extracted representation contains information obtained from the actual physical layout. This makes it useful for analysing the circuit after physical implementation. image
+The extracted information can be used to generate a SPICE-compatible
+representation of the implemented circuit.
 
-Figure: Extraction of the layout
+Unlike an ideal schematic, the extracted representation contains information
+obtained directly from the physical implementation.
 
-Layout extraction converts physical geometry into electrical information that can be used for circuit simulation.
+This makes layout extraction useful for analysing the circuit after physical
+implementation.
 
-14. Generating the Extracted Netlist
-After extraction, the generated files are checked to verify that the physical layout has been correctly converted into electrical connectivity.
+<!-- INSERT YOUR IMAGE HERE -->
 
-The extracted netlist provides a text-based description of the devices and connections identified in the layout.
+**Figure: Extraction of the layout**
 
-It contains the information required to reproduce the physical implementation for additional simulation and analysis.
+Layout extraction converts the physical geometry into electrical information
+that can be used for circuit simulation.
 
-The generated files are inspected before continuing to ensure that the required device and connectivity information is available.
+---
 
-Typical outputs include extracted layout information and SPICE-compatible netlist data. image
+# 14. Generating the Extracted Netlist
 
-Figure: Generated extracted files and netlist
+After layout extraction, the generated files are inspected to verify that the
+physical layout has been correctly converted into electrical connectivity.
 
-The netlist acts as an electrical representation recovered from the physical layout, describing how the devices and connections are linked together.
+The extracted netlist provides a text-based description of the devices,
+nodes, and connections identified from the layout.
 
-15. Creating the SPICE File
-The extracted information is then converted into a SPICE file that can be used for simulation.
+It contains the information required to represent the physical implementation
+for further simulation and analysis.
 
-The file combines the device models, circuit connections, and simulation parameters required by NGSPICE.
+The generated files are checked to ensure that the required device and
+connectivity information is available.
+
+Typical outputs include extracted layout information and SPICE-compatible
+netlist data.
+
+The netlist acts as an electrical representation recovered from the physical
+layout and describes how the extracted devices and connections are linked
+together.
+
+<!-- INSERT YOUR IMAGE HERE -->
+
+**Figure: Generated extracted files and netlist**
+
+---
+
+# 15. Creating the SPICE File
+
+The extracted information is converted into a SPICE file that can be used for
+electrical simulation.
+
+The SPICE file combines the device models, circuit connections, and simulation
+parameters required by NGSPICE.
 
 The SPICE representation contains:
 
-Technology and device model information
-Standard-cell subcircuit definition
-Input and output nodes
-VDD connection
-GND connection
-Extracted transistor information
-Simulation parameters
-The extracted transistor and connectivity information is organized into an appropriate subcircuit so that the physically implemented CMOS inverter can be analysed electrically. image
+- Technology and device model information
+- Standard-cell subcircuit definition
+- Input and output nodes
+- VDD connection
+- GND connection
+- Extracted transistor information
+- Simulation parameters
 
-Figure: SPICE file generated for simulation
+The extracted transistor and connectivity information is organized into an
+appropriate subcircuit so that the physically implemented CMOS inverter can be
+analysed electrically.
 
-At this stage, the extracted layout receives a simulation-ready representation that allows its physical implementation to be evaluated using SPICE.
+This step creates the simulation-ready representation of the extracted
+physical circuit.
 
-16. Transient Simulation using NGSPICE
-Once the SPICE representation is prepared, the extracted CMOS inverter is simulated using NGSPICE.
+<!-- INSERT YOUR IMAGE HERE -->
 
-Transient analysis applies a time-varying input signal and observes the corresponding output response over time.
+---
+
+# 16. Transient Simulation using NGSPICE
+
+Once the SPICE representation is prepared, the extracted CMOS inverter is
+simulated using NGSPICE.
+
+Transient analysis applies a time-varying input signal and observes the
+corresponding output response over time.
 
 The circuit is operated using the required supply conditions while monitoring:
 
-Input
-Output
-VDD
-GND
-The changing input signal allows the simulator to observe the switching behaviour of the inverter and verify that the extracted circuit is correctly connected and capable of successful simulation.
+- Input
+- Output
+- VDD
+- GND
+The changing input signal allows the simulator to observe the switching
+behaviour of the CMOS inverter.
 
-This stage connects the physical implementation back to measurable electrical behaviour. image
+The simulation also helps verify that the extracted circuit is correctly
+connected and can be successfully simulated.
 
-Figure: NGSPICE transient analysis
+This stage connects the physical implementation back to measurable electrical
+behaviour and confirms the operation of the extracted CMOS circuit.
 
-The extracted circuit is tested under switching conditions to verify whether the physical CMOS implementation behaves as the intended inverter.
+<!-- INSERT YOUR IMAGE HERE -->
+# 17. Input and Output Waveforms
 
-17. Input and Output Waveforms
-The transient simulation produces input and output waveforms that provide direct evidence of inverter operation.
+The transient simulation produces input and output waveforms that provide
+direct evidence of the CMOS inverter operation.
 
-When the input alternates between LOW and HIGH, the output changes in the opposite manner, as expected from a CMOS inverter.
+When the input alternates between LOW and HIGH, the output changes in the
+opposite manner, as expected from a CMOS inverter.
 
-Input	Output
-LOW	HIGH
-HIGH	LOW
+| Input | Output |
+|-------|--------|
+| LOW   | HIGH   |
+| HIGH  | LOW    |
+
 The fundamental inverter relationship is:
 
-Output = NOT(Input)
+**Output = NOT(Input)**
 
-The output also approaches the expected supply and ground levels, confirming that the extracted standard cell continues to provide the required digital logic behaviour. image
+The output also approaches the expected supply and ground levels, confirming
+that the extracted standard cell continues to provide the required digital
+logic behaviour.
 
-Figure: Simulated input and output transient waveforms
+<!-- INSERT YOUR IMAGE HERE -->
 
-The waveforms demonstrate the complementary relationship between the input and output during inverter switching.
+**Figure: Simulated input and output transient waveforms**
 
-18. Physical Verification and Layout Analysis
-After creating the layout, the physical structure is inspected to ensure that the CMOS cell has been implemented correctly.
+The waveforms demonstrate the complementary relationship between the input
+and output during inverter switching.
+
+---
+
+# 18. Physical Verification and Layout Analysis
+
+After creating the layout, the physical structure is inspected to ensure
+that the CMOS cell has been implemented correctly.
 
 Important layers and connections are checked, including:
 
-Transistor regions
-Diffusion
-Polysilicon
-Contacts
-Metal interconnections
-Power network
+- Transistor regions
+- Diffusion
+- Polysilicon
+- Contacts
+- Metal interconnections
+- Power network
+
 The verification process checks for:
 
-Correct electrical connectivity
-Proper VDD and GND distribution
-Correct cell boundary
-Appropriate technology-layer usage
-Correct PMOS and NMOS arrangement
-A successful physical layout must not only appear correct geometrically but should also preserve the electrical function of the original circuit.
+- Correct electrical connectivity
+- Proper VDD and GND distribution
+- Correct cell boundary
+- Appropriate technology-layer usage
+- Correct PMOS and NMOS arrangement
 
-19. Standard Cell Layout Structure
-The CMOS inverter follows the conventional organization used in standard-cell design.
+A successful physical layout must not only appear correct geometrically but
+should also preserve the electrical function of the original circuit.
 
-The PMOS network is placed in the upper portion of the cell and is connected towards the VDD rail. The NMOS network is placed below it and connects towards GND.
+---
 
-The input signal is connected to the transistor gates, while the output is obtained from the shared node between the pull-up and pull-down networks.
+# 19. Standard Cell Layout Structure
 
-This arrangement produces a compact and repeatable cell structure that can be integrated with other standard cells in a larger digital design.
+The CMOS inverter follows the conventional organization used in standard-cell
+design.
+
+The PMOS network is placed in the upper portion of the cell and is connected
+towards the VDD rail. The NMOS network is placed below it and connects
+towards GND.
+
+The input signal is connected to the transistor gates, while the output is
+obtained from the shared node between the pull-up and pull-down networks.
+
+This arrangement produces a compact and repeatable cell structure that can be
+integrated with other standard cells in a larger digital design.
 
 The physical organization directly reflects the logic structure:
 
-PMOS pulls the output upward, NMOS pulls it downward, and the shared node forms the inverter output.
+- PMOS pulls the output upward.
+- NMOS pulls the output downward.
+- The shared node forms the inverter output.
 
-20. Extraction and Parasitic Information
-A completed layout contains more than ideal transistor connections. Physical dimensions and interconnect geometry introduce additional electrical effects.
+---
 
-During layout extraction, the physical shapes are converted into an electrical representation so that these real-world effects can be considered during simulation.
+# 20. Extraction and Parasitic Information
+
+A completed layout contains more than ideal transistor connections.
+Physical dimensions and interconnect geometry introduce additional electrical
+effects.
+
+During layout extraction, the physical shapes are converted into an
+electrical representation so that these real-world effects can be considered
+during simulation.
 
 Extracted parasitic information can influence:
 
-Propagation delay
-Rise time
-Fall time
-Output transition speed
-Dynamic switching behaviour
-Therefore, post-layout simulation provides a more realistic view of circuit performance compared with an ideal schematic-level simulation.
+- Propagation delay
+- Rise time
+- Fall time
+- Output transition speed
+- Dynamic switching behaviour
 
-21. SPICE Model and Device Parameters
-The extracted CMOS inverter uses the device and technology information provided by the SKY130A PDK.
+Therefore, post-layout simulation provides a more realistic view of circuit
+performance compared with an ideal schematic-level simulation.
 
-The transistor models provide NGSPICE with the electrical parameters necessary to reproduce MOS-device behaviour during simulation.
+---
 
-Combining the extracted layout information with technology-specific device models creates a simulation that more closely represents the physically implemented circuit instead of an ideal transistor-level model.
+# 21. SPICE Model and Device Parameters
 
-This gives a better basis for evaluating the standard cell before it is integrated into a larger digital system.
+The extracted CMOS inverter uses the device and technology information
+provided by the SKY130A PDK.
 
-22. Simulation Setup
-Before transient simulation is performed, the extracted circuit must be supplied with the required operating conditions and input signal.
+The transistor models provide NGSPICE with the electrical parameters
+necessary to reproduce MOS-device behaviour during simulation.
 
-The supply is connected between VDD and GND, while the inverter input receives a time-dependent digital waveform.
+Combining the extracted layout information with technology-specific device
+models creates a simulation that more closely represents the physically
+implemented circuit instead of an ideal transistor-level model.
+
+This provides a suitable basis for evaluating the standard cell before it is
+integrated into a larger digital system.
+
+---
+
+# 22. Simulation Setup
+
+Before transient simulation is performed, the extracted circuit must be
+supplied with the required operating conditions and input signal.
+
+The supply is connected between VDD and GND, while the inverter input
+receives a time-dependent digital waveform.
 
 The simulator then observes the response of the output node.
 
 The main characteristics examined are:
 
-Correct logical operation
-Expected HIGH and LOW voltage levels
-Output switching transitions
-Timing characteristics
-Stable circuit response
-These conditions provide the basis for analysing the behaviour of the extracted CMOS inverter.
+- Correct logical operation
+- Expected HIGH and LOW voltage levels
+- Output switching transitions
+- Timing characteristics
+- Stable circuit response
 
-23. CMOS Inverter Operation
-The CMOS inverter performs its logic function through the complementary switching behaviour of PMOS and NMOS transistors.
+These conditions provide the basis for analysing the behaviour of the
+extracted CMOS inverter.
 
-Input LOW
+---
+
+# 23. CMOS Inverter Operation
+
+The CMOS inverter performs its logic function through the complementary
+switching behaviour of PMOS and NMOS transistors.
+
+## Input LOW
+
 When the input is LOW:
 
-The PMOS transistor turns ON.
-The NMOS transistor turns OFF.
-The output is pulled towards VDD.
-The output becomes HIGH.
-Input HIGH
+- The PMOS transistor turns ON.
+- The NMOS transistor turns OFF.
+- The output is pulled towards VDD.
+- The output becomes HIGH.
+
+## Input HIGH
+
 When the input changes to HIGH:
 
-The PMOS transistor turns OFF.
-The NMOS transistor turns ON.
-The output is pulled towards GND.
-The output becomes LOW.
+- The PMOS transistor turns OFF.
+- The NMOS transistor turns ON.
+- The output is pulled towards GND.
+- The output becomes LOW.
+
 Thus, the CMOS inverter always produces the logical complement of its input.
 
-24. Rise and Fall Behaviour
-The output of a CMOS inverter does not change between logic states instantaneously.
+---
+
+# 24. Rise and Fall Behaviour
+
+The output of a CMOS inverter does not change between logic states
+instantaneously.
 
 When the input changes from LOW to HIGH, the output changes from HIGH to LOW.
 
-Similarly, when the input changes from HIGH to LOW, the output moves from LOW to HIGH.
+Similarly, when the input changes from HIGH to LOW, the output moves from LOW
+to HIGH.
 
-The slope observed during these transitions is affected by the charging and discharging of capacitances within the circuit.
+The slope observed during these transitions is affected by the charging and
+discharging of capacitances within the circuit.
 
-Physical interconnections and extracted parasitic components can further influence these transition characteristics.
+Physical interconnections and extracted parasitic components can further
+influence these transition characteristics.
 
-Therefore, the rising and falling sections of the waveform provide useful information about the dynamic performance of the implemented cell.
+Therefore, the rising and falling sections of the waveform provide useful
+information about the dynamic performance of the implemented cell.
 
-25. Timing Behaviour
-Transient simulation provides information about how quickly the standard cell responds to changes at its input.
+---
+
+# 25. Timing Behaviour
+
+Transient simulation provides information about how quickly the standard cell
+responds to changes at its input.
 
 Important timing parameters include:
 
-Rise time
-Fall time
-Propagation delay
-Input transition time
-Output transition time
-These parameters become increasingly important when multiple standard cells are connected to build larger digital systems.
+- Rise time
+- Fall time
+- Propagation delay
+- Input transition time
+- Output transition time
 
-Transistor dimensions, physical layout, load conditions, and parasitic effects can all affect the final timing performance.
+These parameters become increasingly important when multiple standard cells
+are connected to build larger digital systems.
 
-Functionality explains what the cell does, while timing explains how quickly it performs the operation.
+Transistor dimensions, physical layout, load conditions, and parasitic effects
+can all affect the final timing performance.
 
-26. Voltage Levels
-The simulated waveform is also checked to determine whether the inverter reaches the expected logic voltage levels.
+Functionality explains what the cell does, while timing explains how quickly
+it performs the operation.
+
+---
+
+# 26. Voltage Levels
+
+The simulated waveform is also checked to determine whether the inverter
+reaches the expected logic voltage levels.
 
 For correct CMOS operation:
 
-The HIGH output should approach the supply voltage.
-The LOW output should approach the ground potential.
-These voltage levels indicate whether the pull-up and pull-down networks are functioning correctly.
+- The HIGH output should approach the supply voltage.
+- The LOW output should approach the ground voltage.
 
-Therefore, the waveform provides information about both the logical operation and electrical performance of the inverter.
+The voltage levels indicate whether the CMOS inverter is correctly producing
+the required digital logic states.
 
-27. Transistor Sizing and Performance
-The physical dimensions of the PMOS and NMOS transistors significantly influence CMOS inverter performance.
+The observed output levels can also be used to evaluate the quality of the
+post-layout implementation.
+
+---
+
+# 27. Transistor Sizing and Performance
+
+The physical dimensions of the PMOS and NMOS transistors significantly
+influence CMOS inverter performance.
 
 Changing transistor dimensions can affect:
 
-Drive strength
-Rise time
-Fall time
-Propagation delay
-Power consumption
-Switching characteristics
-Proper sizing is therefore required to obtain a balanced response between the pull-up and pull-down networks.
+- Drive strength
+- Rise time
+- Fall time
+- Propagation delay
+- Power consumption
+- Switching characteristics
 
-The dimensions selected during layout are also reflected in the extracted circuit, allowing their effect to be observed during post-layout simulation.
+Proper sizing is therefore required to obtain a balanced response between the
+pull-up and pull-down networks.
 
-28. Layout-to-Simulation Correlation
-One of the main goals of this project is to establish a connection between the physical implementation and the electrical behaviour of the circuit.
+The dimensions selected during layout are also reflected in the extracted
+circuit, allowing their effect to be observed during post-layout simulation.
+
+---
+
+# 28. Layout-to-Simulation Correlation
+
+One of the main goals of this project is to establish a connection between the
+physical implementation and the electrical behaviour of the circuit.
 
 The complete process can be represented as:
 
-Layout → Extraction → SPICE Netlist → NGSPICE Simulation → Waveform Analysis
+**Circuit Design → Layout → Extraction → Netlist → SPICE Model → Simulation → Verification**
 
-The layout defines the physical geometry of the standard cell.
+The layout represents the physical implementation of the CMOS inverter,
+while extraction converts the physical geometry into electrical information.
 
-The extraction stage interprets this geometry and generates the corresponding electrical representation.
+The extracted netlist and SPICE model allow the physically implemented circuit
+to be simulated using NGSPICE.
 
-The resulting SPICE netlist is prepared for NGSPICE simulation, where the circuit is tested using the required input and supply conditions.
+The simulation results can then be compared with the expected CMOS inverter
+behaviour.
 
-Finally, the simulated waveforms are analysed to determine whether the physical inverter behaves according to its intended logic.
+This correlation confirms that the physical layout, extracted electrical
+representation, and simulated circuit behaviour are consistent with the
+intended design.
 
-🔑 Key Learnings
-Understood the working principle of a CMOS inverter using complementary PMOS and NMOS transistors.
+---
 
-Learned how to perform SPICE and NGSPICE simulations to study CMOS circuit behaviour.
+# 🔑 Key Learnings
 
-Analysed input/output waveforms, voltage levels, rise time, fall time, and propagation delay.
+- Understood the working principle of a CMOS inverter using complementary PMOS and NMOS transistors.
 
-Studied how transistor sizing influences drive strength, switching speed, delay, and power consumption.
+- Learned how to perform SPICE and NGSPICE simulations to study CMOS circuit behaviour.
 
-Learned how to transform a circuit schematic into a physical CMOS standard-cell layout.
+- Analysed input/output waveforms, voltage levels, rise time, fall time, and propagation delay.
 
-Understood the importance of cell boundaries, layer arrangement, and standard-cell organization.
+- Studied how transistor sizing influences drive strength, switching speed, delay, and power consumption.
 
-Implemented and verified VDD and GND connections in the physical layout.
+- Learned how to transform a circuit schematic into a physical CMOS standard-cell layout.
 
-Learned how layout extraction converts physical geometry into an electrical netlist.
+- Understood the importance of cell boundaries, layer arrangement, and standard-cell organization.
 
-Understood the effect of parasitic elements on post-layout circuit behaviour.
+- Implemented and verified VDD and GND connections in the physical layout.
 
-Gained practical experience with the SKY130A PDK, Magic VLSI, SPICE, and NGSPICE flow.
+- Learned how layout extraction converts physical geometry into an electrical netlist.
 
-Learned how to relate physical layout results with simulated electrical behaviour.
+- Understood the effect of parasitic elements on post-layout circuit behaviour.
 
-Studied the 16-mask CMOS fabrication process, covering well formation through metallization.
+- Gained practical experience with the SKY130A PDK, Magic VLSI, SPICE, and NGSPICE flow.
 
-Understood the overall semiconductor design flow:
+- Learned how to relate physical layout results with simulated electrical behaviour.
 
-Circuit Design → Simulation → Characterization → Layout → Extraction → Post-Layout Simulation → Fabrication
+- Studied the 16-mask CMOS fabrication process, covering well formation through metallization.
 
-🚀 Developed a broader understanding of how a transistor-level circuit is converted into a verified physical silicon implementation.
-🎯 Conclusion
+- Understood the overall semiconductor design flow:
+
+**Circuit Design → Simulation → Characterization → Layout → Extraction → Post-Layout Simulation → Fabrication**
+
+- 🚀 Developed a broader understanding of how a transistor-level circuit is converted into a verified physical silicon implementation.
+
+---
+
+# 🎯 Conclusion
+
 This project provided an end-to-end understanding of the CMOS inverter, beginning with transistor-level operation and continuing through physical layout, post-layout simulation, and CMOS fabrication.
 
 The inverter was initially analysed as an electrical circuit to understand its logic operation and electrical characteristics. SPICE and NGSPICE simulations were used to examine input-output relationships, switching behaviour, voltage levels, timing characteristics, and the influence of transistor sizing.
@@ -808,3 +1205,16 @@ The circuit was then implemented as a SKY130A standard-cell layout, converting t
 The completed layout was extracted into an electrical representation, establishing the important relationship between the physical structure on silicon and the behaviour observed during simulation. Post-layout analysis also demonstrated how physical effects and parasitic elements can influence circuit performance.
 
 Finally, the study of the 16-mask CMOS fabrication process completed the overall journey by showing how carefully designed semiconductor structures can be converted into physical devices on a silicon wafer.
+
+
+
+The changing input signal allows the simulator to observe the switching
+behaviour of the CMOS inverter.
+
+The simulation also helps verify that the extracted circuit is correctly
+connected and can be successfully simulated.
+
+This stage connects the physical implementation back to measurable electrical
+behaviour and confirms the operation of the extracted CMOS circuit.
+
+<!-- INSERT YOUR IMAGE HERE -->
