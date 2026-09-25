@@ -175,8 +175,9 @@ provided by the CMOS inverter around its switching point.
 A relatively small change in input voltage can therefore result in a large
 change in output voltage, which is one of the important properties of CMOS
 logic circuits.
+<img width="850" height="732" alt="image" src="https://github.com/user-attachments/assets/3e855295-0e05-455a-855e-93510db6d6a7" />
 
-<!-- INSERT YOUR IMAGE HERE -->
+
 
 ---
 
@@ -184,6 +185,8 @@ logic circuits.
 
 Two different CMOS inverter sizing conditions are considered to observe the
 effect of transistor dimensions on the inverter response.
+<img width="844" height="392" alt="image" src="https://github.com/user-attachments/assets/57725b75-d546-4c97-8b30-1c566d6e1669" />
+
 
 ## Configuration 1
 
@@ -231,6 +234,8 @@ physical size of the device but also its electrical performance.
 ---
 
 # 5. CMOS Inverter Robustness — Switching Threshold
+<img width="847" height="393" alt="image" src="https://github.com/user-attachments/assets/66bec144-e615-4c42-a5f8-f075eab6d6c0" />
+
 
 The switching threshold voltage \(V_M\) is defined as the input voltage at
 which the inverter satisfies:
@@ -261,11 +266,12 @@ The switching threshold represents the point where the inverter changes from
 one logic state to the other. Changing the relative strength of the PMOS and
 NMOS devices shifts this point.
 
-<!-- INSERT YOUR IMAGE HERE -->
+
 
 ---
 
 # 6. Mathematical Analysis of Switching Threshold
+<img width="844" height="392" alt="image" src="https://github.com/user-attachments/assets/5b8cc541-9e97-4341-a5ae-7310af852c9f" />
 
 The switching threshold can also be evaluated mathematically by considering
 the relative drive strengths of the NMOS and PMOS transistors.
@@ -289,11 +295,13 @@ modified.
 This also provides a theoretical basis for understanding the simulation
 results obtained from the CMOS inverter.
 
-<!-- INSERT YOUR IMAGE HERE -->
+
 
 ---
 
 # 7. Final Switching-Threshold Comparison
+<img width="841" height="395" alt="image" src="https://github.com/user-attachments/assets/c247988b-b9aa-442e-9bbe-08fc6a3cbc12" />
+
 
 The final characterization combines the inverter VTC with the selected
 transistor sizing conditions and the corresponding timing-related results.
@@ -309,11 +317,12 @@ Thus, transistor sizing, device strength and simulation response are closely
 related. The final SPICE plots provide a clear way to interpret these
 relationships.
 
-<!-- INSERT YOUR IMAGE HERE -->
+
 
 ---
 
 # 8. Physical CMOS Layout
+<img width="856" height="422" alt="image" src="https://github.com/user-attachments/assets/deac7de5-a1e9-4f0c-b73e-5bcdda8cd759" />
 
 After completing the electrical analysis, the CMOS inverter can be translated
 into a physical layout using the required CMOS technology rules.
@@ -338,7 +347,7 @@ kit.
 The physical representation connects the transistor-level schematic with the
 actual semiconductor structure that would be manufactured.
 
-<!-- INSERT YOUR IMAGE HERE -->
+
 
 ---
 
@@ -353,7 +362,7 @@ are connected to form the inverter output.
 The PMOS source is connected towards \(V_{DD}\), whereas the NMOS source is
 connected towards \(V_{SS}\).
 
-<!-- INSERT YOUR IMAGE HERE -->
+
 
 ---
 
@@ -368,7 +377,7 @@ the standard-cell structure.
 Proper placement of contacts and interconnects is necessary to obtain a
 functional and design-rule-compliant layout.
 
-<!-- INSERT YOUR IMAGE HERE -->
+
 
 ---
 
@@ -380,7 +389,7 @@ the standard cell to external power, ground, input and output connections.
 The metal structure allows the CMOS inverter to communicate with other cells
 in a larger digital circuit.
 
-<!-- INSERT YOUR IMAGE HERE -->
+
 
 ---
 
@@ -439,8 +448,9 @@ and prevents unwanted conduction between neighbouring devices.
 
 This step is important because it establishes the physical regions in which
 the active transistor structures will be fabricated.
+<img width="846" height="387" alt="image" src="https://github.com/user-attachments/assets/76992ce8-1f67-466f-9418-e37ba10b07a7" />
 
-<!-- INSERT YOUR IMAGE HERE -->
+
 
 ---
 
@@ -462,7 +472,8 @@ and PMOS transistors are subsequently constructed.
 Proper well formation is essential for obtaining complementary transistor
 operation in a CMOS circuit.
 
-<!-- INSERT YOUR IMAGE HERE -->
+<img width="860" height="389" alt="image" src="https://github.com/user-attachments/assets/c8b52911-73ae-45c3-8170-18c71b653e77" />
+
 
 ---
 
@@ -489,7 +500,8 @@ on substrate doping, oxide properties and body bias conditions.
 Understanding these parameters is important for predicting the actual
 operation of MOS devices.
 
-<!-- INSERT YOUR IMAGE HERE -->
+<img width="849" height="375" alt="image" src="https://github.com/user-attachments/assets/76cc7b3b-9ce4-4374-a23d-f4151ff1499d" />
+
 
 ---
 
@@ -508,7 +520,6 @@ and implantation operations over the previously prepared well regions.
 The gate structure plays a central role in determining whether current can
 flow through the transistor channel.
 
-<!-- INSERT YOUR IMAGE HERE -->
 
 ---
 
