@@ -22,6 +22,66 @@ The work includes:
 - Physical design flow verification
 
 ---
+# Table of Contents
+
+- [Introduction](#introduction)
+- [Overview](#overview)
+- [Tools and Technologies](#tools-and-technologies)
+- [1. Routing](#1-routing)
+  - [1.1 Route](#11-route)
+- [2. Maze Routing – Lee's Algorithm](#2-maze-routing--lees-algorithm)
+- [3. Design Rule Checking](#3-design-rule-checking)
+  - [3.1 DRC Clean Layout](#31-drc-clean-layout)
+- [4. DRC – Wire Width](#4-drc--wire-width)
+- [5. DRC – Via Spacing](#5-drc--via-spacing)
+- [6. Parasitic Extraction](#6-parasitic-extraction)
+- [7. OpenLane Physical Design Flow](#7-openlane-physical-design-flow)
+- [8. Floorplanning and Power Planning](#8-floorplanning-and-power-planning)
+- [9. OpenLane Physical Design Execution](#9-openlane-physical-design-execution)
+- [10. OpenLane Configuration Parameters](#10-openlane-configuration-parameters)
+- [11. Routing Output](#11-routing-output)
+- [12. Fast Route and Detailed Route](#12-fast-route-and-detailed-route)
+- [13. TritonRoute](#13-tritonroute)
+- [14. Preprocessed Route Guides](#14-preprocessed-route-guides)
+- [15. Intra-Layer Parallel and Inter-Layer Sequential Routing](#15-intra-layer-parallel-and-inter-layer-sequential-routing)
+- [16. TritonRoute Problem Statement](#16-tritonroute-problem-statement)
+- [17. Handling Connectivity](#17-handling-connectivity)
+- [18. Routing Topology Algorithm](#18-routing-topology-algorithm)
+- [19. OpenLane TritonRoute Execution](#19-openlane-tritonroute-execution)
+- [20. Routing Data Generation](#20-routing-data-generation)
+- [21. SPEF / Parasitic Extraction](#21-spef--parasitic-extraction)
+- [22. OpenLane Synthesis and Routing Results](#22-openlane-synthesis-and-routing-results)
+- [Physical Design Flow Summary](#physical-design-flow-summary)
+- [Key Learning Outcomes](#key-learning-outcomes)
+- [Tools and Technologies](#tools-and-technologies)
+- [Conclusion](#conclusion)
+
+# Tools and Technologies
+
+| Tool / Technology | Purpose |
+|---|---|
+| **OpenLane** | Automated RTL-to-GDSII physical design flow |
+| **SKY130** | Open-source 130 nm semiconductor process technology |
+| **TritonRoute** | Detailed routing and design-rule-aware routing |
+| **OpenROAD** | Physical design implementation and optimization |
+| **OpenSTA** | Static Timing Analysis (STA) |
+| **Magic** | Layout viewing and physical verification |
+| **LEF** | Library Exchange Format containing physical library information |
+| **DEF** | Design Exchange Format containing physical design information |
+| **SPEF** | Standard Parasitic Exchange Format for extracted parasitic data |
+| **Linux / Ubuntu** | Execution environment for the physical design tools |
+| **Oracle VM VirtualBox** | Virtual machine environment used to run the Linux-based flow |
+| **GitHub** | Version control and documentation of the workshop work |
+
+# Introduction
+
+Physical Design is an important stage in the VLSI design flow where the synthesized circuit is converted into a physical layout that can be fabricated on silicon.
+
+In this module, the SKY130 technology and OpenLane-based physical design flow are explored with a focus on routing and post-routing analysis. The module covers global and detailed routing, maze routing using Lee's Algorithm, Design Rule Checking (DRC), wire-width and via-spacing verification, parasitic extraction, SPEF generation, and detailed routing using TritonRoute.
+
+The practical work also covers route-guide preprocessing, intra-layer parallel routing, inter-layer sequential routing, connectivity handling, routing topology optimization, and inspection of OpenLane-generated synthesis and routing results.
+
+The objective of this module is to understand how routing is performed while satisfying physical design rules, maintaining connectivity, and preparing the design for post-layout timing and physical verification.
 
 # 1. Routing
 
@@ -195,6 +255,7 @@ GDSII
 7th Image – OpenLane Terminal Output
 
 The terminal output shows the execution of the OpenLane physical design flow and the generation of technology and design-related files.
+
 ## 8. Floorplanning and Power Planning
 Floorplanning determines the overall physical organization of the design.
 Important elements include:
@@ -218,6 +279,7 @@ I/O and corner pads
 Macro cell
 Block halo
 Power planning ensures that the power and ground networks can reliably distribute VPWR and VGND throughout the design.
+
 ## 9. OpenLane Physical Design Execution
 The OpenLane flow generates intermediate and final physical-design files during different stages.
 9th Image – OpenLane Execution Output
@@ -225,6 +287,7 @@ The OpenLane flow generates intermediate and final physical-design files during 
 
 The terminal output shows OpenLane processing the design and generating the required physical-design information.
 The output includes technology data, design data, grid information, and routing-related information.
+
 ## 10. OpenLane Configuration Parameters
 OpenLane uses configuration parameters to control different stages of the physical design flow.
 Important categories include:
@@ -245,12 +308,14 @@ Clock-tree generation
 Routing layers
 Routing optimization
 Layout generation
+
 ## 11. Routing Output
 After the routing stage, the generated routing information can be inspected from the OpenLane run directories.
 11th Image – Routing Output
 <img width="1308" height="606" alt="Screenshot (209)" src="https://github.com/user-attachments/assets/72d4445b-8cc2-4b1e-a8cf-8da2c843a991" />
 
 The terminal output shows the generated routing-related files and the completion of the routing stage.
+
 ## 12. Fast Route and Detailed Route
 Routing can be divided into different stages.
 Fast Route
@@ -264,6 +329,7 @@ The image illustrates the routing process divided into:
 Fast Route
 Detailed Route
 Fast routing generates an approximate routing solution, while detailed routing performs the final physical implementation.
+
 ## 13. TritonRoute
 TritonRoute is a detailed routing engine used in modern physical design flows.
 It performs detailed routing while considering:
@@ -278,6 +344,7 @@ Routing constraints
 
 The image introduces TritonRoute and its role in the detailed routing stage.
 TritonRoute performs the initial detailed routing while attempting to follow the preprocessed route guides.
+
 ## 14. Preprocessed Route Guides
 Route guides provide information about the preferred regions and directions in which nets should be routed.
 Preprocessing can simplify the routing problem by transforming the original routing guides into a form suitable for detailed routing.
@@ -288,6 +355,7 @@ The image demonstrates the preprocessing of route guides.
 Important requirements include:
 Route guides should have unit width.
 Route guides should follow the preferred routing direction.
+
 
 ## 15. Intra-Layer Parallel and Inter-Layer Sequential Routing
 Routing can be performed using different strategies across and within metal layers.
@@ -426,22 +494,22 @@ Timing Analysis
 Physical Verification
 
 # Key Learning Outcomes
-Through this module, the following concepts were studied and demonstrated:
-Understanding physical design routing
-Understanding maze routing and Lee's Algorithm
-Understanding global and detailed routing
-Understanding fast routing and detailed routing
-Understanding TritonRoute
-Understanding route guides and route-guide preprocessing
-Understanding intra-layer and inter-layer routing
-Understanding access points and access point clusters
-Understanding routing topology optimization
-Understanding DRC verification
-Understanding wire-width and via-spacing constraints
-Understanding parasitic extraction
-Understanding SPEF generation
-Understanding OpenLane routing results
-Understanding OpenLane physical-design directories and outputs
+-Through this module, the following concepts were studied and demonstrated:
+-Understanding physical design routing
+-Understanding maze routing and Lee's Algorithm
+-Understanding global and detailed routing
+-Understanding fast routing and detailed routing
+-Understanding TritonRoute
+-Understanding route guides and route-guide preprocessing
+-Understanding intra-layer and inter-layer routing
+-Understanding access points and access point clusters
+-Understanding routing topology optimization
+-Understanding DRC verification
+-Understanding wire-width and via-spacing constraints
+-Understanding parasitic extraction
+-Understanding SPEF generation
+-Understanding OpenLane routing results
+-Understanding OpenLane physical-design directories and outputs
 
 
 # Conclusion
