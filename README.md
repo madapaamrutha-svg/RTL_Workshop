@@ -1,12 +1,20 @@
 # 🚀 RTL Design Workshop
 
-> Complete RTL Design Workshop using Verilog HDL, Simulation, Synthesis and Optimization.
+> Complete RTL Design Workshop using Verilog HDL, Simulation, Synthesis, Optimization and Physical Design.
 
 ---
 
 # 📖 Overview
 
-This repository contains all the modules completed during the RTL Design Workshop. It demonstrates the complete RTL design flow using Verilog HDL, simulation, synthesis, timing analysis, and optimization techniques.
+This repository contains all the modules completed during the RTL Design Workshop. It demonstrates the complete RTL design flow using Verilog HDL, simulation, synthesis, timing analysis, optimization techniques, and the physical design flow.
+
+---
+
+# 🎥 Training Video
+
+A 3 minute 50 second video explaining my RTL training experience:
+
+[▶ Watch / Download the RTL Training Video](https://github.com/madapaamrutha-svg/RTL_Workshop/blob/main/RTL_Training_Video.mp4.mp4)
 
 ---
 
@@ -19,6 +27,7 @@ This repository contains all the modules completed during the RTL Design Worksho
 - Perform logic synthesis
 - Understand timing analysis
 - Optimize digital circuits
+- Understand the physical design flow
 
 ---
 
@@ -30,18 +39,16 @@ This repository contains all the modules completed during the RTL Design Worksho
 | Icarus Verilog | Simulation |
 | GTKWave | Waveform Viewer |
 | Yosys | Logic Synthesis |
-| SKY130 PDK | Standard Cell Library |
+| SKY130 PDK | 130nm Process Design Kit / Standard Cell Library |
+| sky130_fd_sc_hd | High-density standard-cell library |
 | Ubuntu Linux | Development Environment |
 | Git & GitHub | Version Control |
-| OpenLane | RTL-to-GDSII ASIC design flow|
-| OpenRoad| PD implementation|
-| SKY130PDK| 130nm process design kit|
-| sky130_fd_sc_hd| Hign-density standard-cell library| 
-| LEF Files | physicals abstraction od standard cells,pins,layers |
+| OpenLane | RTL-to-GDSII ASIC design flow |
+| OpenROAD | Physical Design implementation |
+| LEF Files | Physical abstraction of standard cells, pins and layers |
 | Tcl | Configuration of OpenLane flow |
-| Verilog | Hardware description of design |
-| SDC | Timing and Clock Constrait Definition |
-| KLayout/Layout Viewer | Visualization and inspection of physical layouts |
+| SDC | Timing and Clock Constraint Definition |
+| KLayout / Layout Viewer | Visualization and inspection of physical layouts |
 
 ---
 
@@ -49,19 +56,24 @@ This repository contains all the modules completed during the RTL Design Worksho
 
 ```
 RTL_Workshop/
-├── Assessment-1/
+├── Assesment-1/
 ├── August-22-Class-Work/
 ├── August-23-Class-Work/
 ├── PD-Module-1/
 ├── PD-Module-2/
+├── PD-Module-3/
+├── PD-Module-4/
+├── PD-Module-5/
 ├── module-0/
 ├── module-1/
 ├── module-2/
 ├── module-3/
 ├── module-4/
 ├── module-5/
+├── RTL_Training_Video.mp4.mp4
 └── README.md
 ```
+
 ---
 
 # 📚 Table of Contents
@@ -72,10 +84,15 @@ RTL_Workshop/
 - Module 3 – Combinational and Sequential Optimization
 - Module 4 – Blocking vs Non-Blocking Assignments & Simulation Mismatch
 - Module 5 – Optimization in Synthesis
-- August 22 Class Work - RTL Design,Yosys Synthesis & GTKWave Simulation
-- August 23 Class Work - BabySoc Synthesis,SKY130 Mapping & Post-Synthesis Simulation
-- PD Module 1 - Physical Design Flow
-- PD Module 2 - Chip Floorplanning and Power Integrity
+- August 22 Class Work – RTL Design, Yosys Synthesis & GTKWave Simulation
+- August 23 Class Work – BabySoC Synthesis, SKY130 Mapping & Post-Synthesis Simulation
+- Assessment 1 – Sequence Detector RTL Design, Synthesis, GLS & Verification
+- PD Module 1 – Physical Design Flow
+- PD Module 2 – Chip Floorplanning and Power Integrity
+- PD Module 3 – RTL to Physical Design / CMOS Technology
+- PD Module 4 – Timing Analysis, Clock Tree Synthesis & Physical Design
+- PD Module 5 – SKY130 Physical Design – Routing, DRC, Parasitic Extraction & TritonRoute
+
 ---
 
 # 📘 Modules Covered
@@ -98,16 +115,29 @@ Blocking vs Non-Blocking Assignments and Synthesis-Simulation Mismatch.
 ## Module 5
 Optimization Techniques, Multiplexer, Demultiplexer and Ripple Carry Adder.
 
-## August 22 Class Work 
-RTL Design,Yosys Synthesis & GTKWave Simulation
+## August 22 Class Work
+RTL Design, Yosys Synthesis & GTKWave Simulation.
+
 ## August 23 Class Work
-BabySoc Synthesis,SKY130 Mapping & Post-Synthesis Simulation
+BabySoC Synthesis, SKY130 Mapping & Post-Synthesis Simulation.
+
 ## Assessment 1
 Sequence Detector RTL Design, Synthesis, GLS & Verification.
-## PD Module 1 
-Physical Design Flow
-## PD Module 2 
-Chip Floorplanning and Power Integrity
+
+## PD Module 1
+Physical Design Flow.
+
+## PD Module 2
+Chip Floorplanning and Power Integrity.
+
+## PD Module 3
+CMOS Inverter Design, Characterization, SKY130A Standard-Cell Layout & 16-Mask CMOS Fabrication
+
+## PD Module 4
+Timing Analysis, Clock Tree Synthesis & Physical Design
+
+## PD Module 5
+SKY130 Physical Design – Routing, DRC, Parasitic Extraction & TritonRoute
 
 ---
 
@@ -118,7 +148,8 @@ Chip Floorplanning and Power Integrity
 - Verified outputs using GTKWave.
 - Synthesized RTL using Yosys.
 - Applied optimization techniques.
-- Learned complete RTL design flow.
+- Learned the complete RTL design flow.
+- Explored the physical design flow using OpenLane and OpenROAD.
 
 ---
 
@@ -131,6 +162,7 @@ Chip Floorplanning and Power Integrity
 - Logic Synthesis
 - Timing Analysis
 - Optimization
+- Physical Design Basics
 - GitHub Documentation
 
 ---
@@ -141,13 +173,13 @@ Chip Floorplanning and Power Integrity
 - Pipelining
 - Arithmetic Units
 - Processor Design
-- ASIC Design Flow
+- Complete ASIC Design Flow
 
 ---
 
 # ✅ Conclusion
 
-This workshop provided practical experience in Verilog HDL, simulation, synthesis, timing analysis, and optimization. It strengthened my understanding of the complete RTL design flow using open-source EDA tools.
+This workshop provided practical experience in Verilog HDL, simulation, synthesis, timing analysis, optimization and physical design. It strengthened my understanding of the complete RTL design flow using open-source EDA tools.
 
 ---
 
