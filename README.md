@@ -70,7 +70,7 @@ RTL_Workshop/
 ├── module-3/
 ├── module-4/
 ├── module-5/
-├── RTL_Training_Video.mp4.mp4
+├── RTL_Training_Video.mp4
 └── README.md
 ```
 
