@@ -115,7 +115,7 @@ The floorplan configuration is controlled using the OpenLane configuration and f
 
 
 
-<img width="1792" height="971" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/ac0877fb-b69b-4be6-983e-550a19eb3485" />
+<img width="1132" height="605" alt="Screenshot 2026-09-16 185521" src="https://github.com/user-attachments/assets/55eb9132-6990-4563-8639-6ebd575cf7a8" />
 
 ## 2. Power Planning
 
@@ -130,7 +130,7 @@ The PDN provides reliable connections for:
 
 Proper power planning is important for reliable operation of the implemented design.
 
-<img width="1790" height="906" alt="Screenshot (93)" src="https://github.com/user-attachments/assets/0d50ac3f-e9c5-43fe-a05e-23882d779087" />
+<img width="1133" height="572" alt="Screenshot 2026-09-16 185529" src="https://github.com/user-attachments/assets/547aa7c6-5ed1-459f-acd5-c74f5174d35e" />
 
 
 ---
@@ -153,7 +153,7 @@ The placement is optimized to improve timing and routing characteristics.
 
 Detailed placement legalizes the cell locations according to the physical constraints of the technology.
 
-<img width="1920" height="1080" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/d2610ebf-ec28-4a70-a43a-284c3080ed6b" />
+<img width="1056" height="591" alt="Screenshot 2026-09-16 185540" src="https://github.com/user-attachments/assets/fd34340b-c25c-4d73-9b16-56ff3eb81a1b" />
 
 
 
@@ -169,7 +169,7 @@ The main objectives of CTS are:
 - Distribute the clock signal reliably to sequential cells.
 
 Clock buffers and other cells may be inserted during CTS to achieve the required clock distribution.
-<img width="1733" height="903" alt="Screenshot (95)" src="https://github.com/user-attachments/assets/f724ebf5-2401-45dd-b132-34c53b278570" />
+<img width="1130" height="573" alt="Screenshot 2026-09-16 185552" src="https://github.com/user-attachments/assets/c5c3a245-f64e-482b-bab9-4c780604e239" />
 
 
 
@@ -190,7 +190,7 @@ Detailed routing creates the final physical connections while satisfying the des
 
 Successful routing is necessary for generating a valid physical layout.
 
-<img width="1723" height="840" alt="Screenshot (96)" src="https://github.com/user-attachments/assets/2f4dc4c1-bb8c-4098-9319-d58cfae02bd7" />
+<img width="1138" height="557" alt="Screenshot 2026-09-16 185601" src="https://github.com/user-attachments/assets/5ea11db0-6e4d-4488-8476-8e24fd6c71c8" />
 
 
 
@@ -204,7 +204,7 @@ Antenna violations can be addressed using **antenna diode cells**. The diode pro
 
 The OpenLane flow supports antenna checking and repair as part of the physical implementation process.
 
-<img width="1701" height="931" alt="Screenshot (112)" src="https://github.com/user-attachments/assets/bff7060f-045a-442e-8d7b-d3eaed75469e" />
+<img width="1125" height="627" alt="Screenshot 2026-09-16 185609" src="https://github.com/user-attachments/assets/f137bb02-ff33-44d8-ad52-ac8689045255" />
 
 
 
@@ -248,7 +248,7 @@ The important timing parameters include:
 
 A positive timing slack generally indicates that the corresponding timing constraint is satisfied.
 
-<img width="1598" height="904" alt="Screenshot (115)" src="https://github.com/user-attachments/assets/e997a139-61e9-49e2-ac5f-2513f4c75a88" />
+<img width="1123" height="632" alt="Screenshot 2026-09-16 185616" src="https://github.com/user-attachments/assets/789cc91a-6139-4d09-83ec-fc15e2b46812" />
 
 
 
@@ -323,7 +323,7 @@ LVS compares the extracted layout connectivity with the intended circuit netlist
 A successful LVS indicates that the physical implementation represents the intended circuit correctly.
 
 
-<img width="1766" height="857" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/aa87ef74-8d21-4d96-8702-cf8975b6d5a6" />
+<img width="1132" height="557" alt="Screenshot 2026-09-16 185633" src="https://github.com/user-attachments/assets/74859fdb-23e3-4a79-a815-100533d3ee01" />
 
 
 
@@ -346,7 +346,7 @@ The main metrics considered during exploration include:
 The results can be compared to select a suitable configuration for the design.
 
 
-<img width="1212" height="603" alt="Screenshot (105)" src="https://github.com/user-attachments/assets/bfe05bcf-5c64-4b51-b930-442e476e1324" />
+<img width="1127" height="560" alt="Screenshot 2026-09-16 185656" src="https://github.com/user-attachments/assets/e6dbff42-c47a-436c-a8be-d94902d7e5dc" />
 
 
 
@@ -361,7 +361,7 @@ The flow is designed to simplify ASIC implementation and enable reproducible phy
 
 
 
-<img width="1219" height="589" alt="Screenshot (103)" src="https://github.com/user-attachments/assets/debfde85-d360-427a-a17c-ebb72a3355c4" />
+<img width="1126" height="532" alt="Screenshot 2026-09-16 185706" src="https://github.com/user-attachments/assets/90627d40-0aaa-4f41-98a5-eab6d16d72a6" />
 
 
 
@@ -402,7 +402,7 @@ The PDK provides the technology-specific information required by the ASIC implem
 
 These files allow the design to be synthesized, placed, routed, and verified according to the target semiconductor technology.
 
-<img width="1778" height="968" alt="Screenshot (100)" src="https://github.com/user-attachments/assets/ed3ac07d-3d18-4ac6-8b5d-6a026e70b6c7" />
+<img width="1135" height="611" alt="Screenshot 2026-09-16 185727" src="https://github.com/user-attachments/assets/54d3d6cc-c71b-4096-8f05-fe605a8a618e" />
 
 
 
@@ -457,7 +457,7 @@ Scan-based testing is commonly used to provide controllability and observability
 
 DFT is considered as part of the ASIC implementation flow before final verification.
 
-<img width="1721" height="808" alt="Screenshot (108)" src="https://github.com/user-attachments/assets/ee490ae6-ca55-47be-9799-80f8d6359be5" />
+<img width="1132" height="533" alt="Screenshot 2026-09-16 185734" src="https://github.com/user-attachments/assets/a6f86710-e44a-4f7b-8ea1-ba268a63b599" />
 
 
 
@@ -555,7 +555,7 @@ OpenLane provides design exploration capabilities to study the effect of configu
 For example, changing the core utilization or aspect ratio can influence placement density and routing congestion.
 
 The exploration process helps in selecting a configuration that provides a suitable balance between area, timing, and routability.
-<img width="1750" height="808" alt="Screenshot (106)" src="https://github.com/user-attachments/assets/e6d74730-d544-42f8-a10d-2644b5389858" />
+<img width="1137" height="526" alt="Screenshot 2026-09-16 185746" src="https://github.com/user-attachments/assets/83f8328e-1549-4a9e-9252-953067710ddc" />
 
 
 
@@ -568,7 +568,7 @@ OpenLane provides a regression testing mechanism for evaluating designs across d
 
 This helps improve the reliability and reproducibility of the ASIC implementation flow.
 
-<img width="1684" height="865" alt="Screenshot (107)" src="https://github.com/user-attachments/assets/9e52a336-587c-4242-8bfb-9a150235e13c" />
+<img width="1127" height="578" alt="Screenshot 2026-09-16 185803" src="https://github.com/user-attachments/assets/094d63c3-953e-4c53-aa46-2779e6d0cb85" />
 
 
 
@@ -624,37 +624,37 @@ The following terminal screenshots provide evidence of the commands executed dur
 
 ## 26.1 PDK Directory and Library Setup
 
-<img width="1920" height="944" alt="commands for opening files" src="https://github.com/user-attachments/assets/a8a3b5ec-b2ac-43b3-811b-9c1cd731fd47" />
+<img width="1135" height="557" alt="Screenshot 2026-09-16 185814" src="https://github.com/user-attachments/assets/d00854d4-e407-4279-80eb-ded03831a9df" />
 
 ## 26.2 Sky130 Standard Cell Library Verification
 
-<img width="1920" height="944" alt="3" src="https://github.com/user-attachments/assets/63055d56-984d-423b-b45f-b854a97b8d76" />
+<img width="1098" height="531" alt="Screenshot 2026-09-16 185824" src="https://github.com/user-attachments/assets/cf2de4c6-bd80-4476-ae69-c82919419d3b" />
 
 
 
 ## 26.3 OpenLane Environment Setup
 
-<img width="958" height="934" alt="commands4" src="https://github.com/user-attachments/assets/47d4cd2f-bf4d-400d-acea-3d675280dcab" />
+<img width="833" height="805" alt="Screenshot 2026-09-16 185838" src="https://github.com/user-attachments/assets/b9a0e003-347e-45fe-b803-8734965d7a24" />
 
 
 
 ## 26.4 LEF and Library File Verification
-<img width="958" height="934" alt="less merged lef command 5th image" src="https://github.com/user-attachments/assets/cb04b5da-6a0b-4ca3-a46d-0b51dc3d2b6f" />
+<img width="828" height="791" alt="Screenshot 2026-09-16 185846" src="https://github.com/user-attachments/assets/8e5f9598-20bd-44fe-bf44-c2f38754d32c" />
 
 
 ## 26.5 OpenLane Flow Execution
-<img width="958" height="934" alt="less cmds log 6th image" src="https://github.com/user-attachments/assets/a1c296bc-188e-4f0b-9f56-9437b015eaa1" />
+<img width="813" height="446" alt="Screenshot 2026-09-16 185855" src="https://github.com/user-attachments/assets/260e2005-3b4d-460e-ada0-ce8b2a854212" />
 
 
 ## 26.6 OpenLane Configuration
 
-<img width="958" height="934" alt="less README md  openlane danlo configuration danlo undi 7th" src="https://github.com/user-attachments/assets/821dbbb2-71aa-4183-9082-214bc288ec2f" />
+<img width="822" height="790" alt="Screenshot 2026-09-16 185905" src="https://github.com/user-attachments/assets/1e672189-d44a-47ca-ab6d-f2a08cf95153" />
 
 
 
 
 ## 26.7 Floorplan Configuration 
-<img width="958" height="934" alt="less floorplan tcl  8th image" src="https://github.com/user-attachments/assets/e85fb721-a204-4c96-b3d5-51f745cbf3b8" />
+<img width="732" height="800" alt="Screenshot 2026-09-16 185914" src="https://github.com/user-attachments/assets/16df7403-c38b-47fc-902b-3d86b284a1e1" />
 
 
 # 27. Key Learnings
