@@ -9,6 +9,15 @@
 This repository contains all the modules completed during the RTL Design Workshop. It demonstrates the complete RTL design flow using Verilog HDL, simulation, synthesis, timing analysis, optimization techniques, and the physical design flow. The workshop ends with a final project, the **Digital Equipment Status and Fault Indicator**, which is taken from RTL to a final GDS layout.
 
 ---
+# 🎥 Training Video
+
+A 3 minute 50 second video explaining my RTL training experience:
+
+[▶️ Watch / Download the RTL Training Video](https://github.com/madapaamrutha-svg/RTL_Workshop/blob/main/RTL_Training_Video.mp4.mp4)
+
+
+
+
 
 # 🎥 Training Video
 
