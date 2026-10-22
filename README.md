@@ -6,7 +6,7 @@
 
 # 📖 Overview
 
-This repository contains all the modules completed during the RTL Design Workshop. It demonstrates the complete RTL design flow using Verilog HDL, simulation, synthesis, timing analysis, optimization techniques, and the physical design flow.
+This repository contains all the modules completed during the RTL Design Workshop. It demonstrates the complete RTL design flow using Verilog HDL, simulation, synthesis, timing analysis, optimization techniques, and the physical design flow. The workshop ends with a final project, the **Digital Equipment Status and Fault Indicator**, which is taken from RTL to a final GDS layout.
 
 ---
 
@@ -15,6 +15,28 @@ This repository contains all the modules completed during the RTL Design Worksho
 A 3 minute 50 second video explaining my RTL training experience:
 
 [▶ Watch / Download the RTL Training Video](https://github.com/madapaamrutha-svg/RTL_Workshop/blob/main/RTL_Training_Video.mp4.mp4)
+
+---
+
+# 🏆 Final Project
+
+### [Digital Equipment Status and Fault Indicator Using Verilog HDL](Equipment-Status-Fault-Indicator/README.md)
+
+A compact synthesizable digital circuit that monitors an equipment fault signal, confirms a fault only if it persists for a set number of clock cycles, latches it, and shows normal, warning, and fault states on three LEDs until the operator acknowledges it.
+
+| Stage | Result |
+|-------|--------|
+| Simulation | All 18 self-checks passed |
+| Synthesis | Yosys (SKY130) |
+| Physical design | OpenLane: floorplan, placement, CTS, routing |
+| DRC | 0 violations |
+| LVS | Match |
+| Antenna | 0 violations |
+| WNS / TNS | 0.00 / 0.00 |
+| Final output | GDS layout |
+| Extra check | ngspice (tphl, tplh) |
+
+👉 Full documentation with commands and screenshots: [Equipment-Status-Fault-Indicator](Equipment-Status-Fault-Indicator/README.md)
 
 ---
 
@@ -28,6 +50,7 @@ A 3 minute 50 second video explaining my RTL training experience:
 - Understand timing analysis
 - Optimize digital circuits
 - Understand the physical design flow
+- Take a design from RTL to GDS with DRC, LVS, and timing signoff
 
 ---
 
@@ -45,10 +68,14 @@ A 3 minute 50 second video explaining my RTL training experience:
 | Git & GitHub | Version Control |
 | OpenLane | RTL-to-GDSII ASIC design flow |
 | OpenROAD | Physical Design implementation |
+| OpenSTA | Static timing analysis |
 | LEF Files | Physical abstraction of standard cells, pins and layers |
 | Tcl | Configuration of OpenLane flow |
 | SDC | Timing and Clock Constraint Definition |
+| Magic | Layout viewing and DRC |
+| Netgen | LVS |
 | KLayout / Layout Viewer | Visualization and inspection of physical layouts |
+| ngspice | Circuit-level simulation of the layout netlist |
 
 ---
 
@@ -70,6 +97,7 @@ RTL_Workshop/
 ├── module-3/
 ├── module-4/
 ├── module-5/
+├── Equipment-Status-Fault-Indicator/
 ├── RTL_Training_Video.mp4
 └── README.md
 ```
@@ -92,6 +120,7 @@ RTL_Workshop/
 - PD Module 3 – RTL to Physical Design / CMOS Technology
 - PD Module 4 – Timing Analysis, Clock Tree Synthesis & Physical Design
 - PD Module 5 – SKY130 Physical Design – Routing, DRC, Parasitic Extraction & TritonRoute
+- Final Project – Digital Equipment Status and Fault Indicator (RTL to GDS)
 
 ---
 
@@ -139,6 +168,9 @@ Timing Analysis, Clock Tree Synthesis & Physical Design
 ## PD Module 5
 SKY130 Physical Design – Routing, DRC, Parasitic Extraction & TritonRoute
 
+## Final Project
+Digital Equipment Status and Fault Indicator: RTL, simulation, synthesis, STA, OpenLane physical design, GDS and ngspice verification. See [Equipment-Status-Fault-Indicator](Equipment-Status-Fault-Indicator/README.md).
+
 ---
 
 # 📊 Overall Results
@@ -150,6 +182,7 @@ SKY130 Physical Design – Routing, DRC, Parasitic Extraction & TritonRoute
 - Applied optimization techniques.
 - Learned the complete RTL design flow.
 - Explored the physical design flow using OpenLane and OpenROAD.
+- Completed the final project from RTL to GDS with DRC 0, LVS match, antenna 0, and zero WNS/TNS.
 
 ---
 
@@ -163,6 +196,7 @@ SKY130 Physical Design – Routing, DRC, Parasitic Extraction & TritonRoute
 - Timing Analysis
 - Optimization
 - Physical Design Basics
+- DRC and LVS Signoff
 - GitHub Documentation
 
 ---
@@ -179,7 +213,7 @@ SKY130 Physical Design – Routing, DRC, Parasitic Extraction & TritonRoute
 
 # ✅ Conclusion
 
-This workshop provided practical experience in Verilog HDL, simulation, synthesis, timing analysis, optimization and physical design. It strengthened my understanding of the complete RTL design flow using open-source EDA tools.
+This workshop provided practical experience in Verilog HDL, simulation, synthesis, timing analysis, optimization and physical design. The final project demonstrated the complete journey from a real-world application idea to a verified RTL design and a successfully generated GDS layout. It strengthened my understanding of the complete RTL design flow using open-source EDA tools.
 
 ---
 
