@@ -3,7 +3,9 @@
 A compact synthesizable digital circuit that monitors the status of an equipment unit and shows normal, warning, and fault conditions on three LEDs. The design is taken from RTL through simulation, synthesis, static timing analysis, physical design (OpenLane), and signoff to a final GDS layout, with an ngspice check at the end.
 
 **Author:** MADAPA AMRUTHA
+
 **College:** ANURAG UNIVERSITY
+
 **Environment:** Ubuntu on VirtualBox, Icarus Verilog, GTKWave, Yosys, OpenSTA, OpenLane (Sky130 PDK), Magic, KLayout, ngspice
 
 ---
