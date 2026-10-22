@@ -3,7 +3,7 @@
 A compact synthesizable digital circuit that monitors the status of an equipment unit and shows normal, warning, and fault conditions on three LEDs. The design is taken from RTL through simulation, synthesis, static timing analysis, physical design (OpenLane), and signoff to a final GDS layout, with an ngspice check at the end.
 
 **Author:** MADAPA AMRUTHA
-**College:** Your College Name
+**College:** ANURAG UNIVERSITY
 **Environment:** Ubuntu on VirtualBox, Icarus Verilog, GTKWave, Yosys, OpenSTA, OpenLane (Sky130 PDK), Magic, KLayout, ngspice
 
 ---
@@ -147,8 +147,9 @@ vvp sim.out
 ```
 
 **Result:** All 18 self-checks passed.
+<img width="1300" height="934" alt="gds simulation 28th image" src="https://github.com/user-attachments/assets/39c78034-c0d7-4907-8519-2f3e76b3a566" />
 
-![Simulation result](images/34.png)
+
 
 ---
 
@@ -161,8 +162,9 @@ gtkwave dump.vcd
 ```
 
 The waveform shows `ack`, `persist_cnt`, and the three LED outputs.
+<img width="1300" height="934" alt="gtkwave gds 29th image" src="https://github.com/user-attachments/assets/8e6fed38-40bf-4321-a92e-8111b420faa4" />
 
-![Waveform](images/35.png)
+
 
 ---
 
@@ -183,14 +185,14 @@ run_synthesis
 ```
 
 The synthesis report shows the cell count and area.
+<img width="1259" height="934" alt="synthesized netlist 6th" src="https://github.com/user-attachments/assets/b54c1386-f538-4123-ac9c-ba99239e3ed3" />
 
-![Synthesis 12](images/12.png)
+<img width="1259" height="934" alt="schematic yosys 7th" src="https://github.com/user-attachments/assets/b938ab37-6a6e-4cb1-bb1e-ad3d4fcd2e10" />
 
-![Synthesis 13](images/13.png)
+<img width="1259" height="934" alt="8th" src="https://github.com/user-attachments/assets/43765503-ecb8-4bcb-bc1d-8ce7acdbb415" />
 
-![Synthesis 14](images/14.png)
+<img width="1259" height="934" alt="21st yosys stat count cells" src="https://github.com/user-attachments/assets/0c439c86-6aa2-44ac-832f-e12812a5640e" />
 
-![Synthesis 27](images/27.png)
 
 ---
 
@@ -201,8 +203,9 @@ The synthesis report shows the cell count and area.
 ```tcl
 run_sta
 ```
+<img width="1259" height="934" alt="22nd prelayout slack" src="https://github.com/user-attachments/assets/d5274955-898b-4a9a-ab78-abe5405547da" />
 
-![Pre-layout STA](images/28.png)
+
 
 ---
 
@@ -224,30 +227,37 @@ run_routing
 ```
 
 ### 13.1 Floorplan
+<img width="1259" height="934" alt="25th" src="https://github.com/user-attachments/assets/22058f24-efdc-46a2-b18b-8180b246a996" />
 
-![Floorplan](images/31.png)
+
+
+
 
 ### 13.2 Placement
+<img width="1259" height="934" alt="placement 24th" src="https://github.com/user-attachments/assets/58c9323e-192f-40ae-8c71-9a589cf6534f" />
 
-![Placement](images/30.png)
 
 ### 13.3 Clock Tree Synthesis (CTS)
 
-![CTS](images/29.png)
+<img width="1259" height="934" alt="floorplan  23rd" src="https://github.com/user-attachments/assets/e568626c-3267-4c4a-9be7-c41e0eeb7d71" />
+
+
 
 ### 13.4 Routing
+<img width="1259" height="934" alt="26th" src="https://github.com/user-attachments/assets/37232991-1db6-4f0c-a239-2a04e5ca0912" />
 
-![Routing](images/32.png)
+
 
 ---
 
 ## 14. Post-Route STA
 
 Timing is checked at three corners after routing. Reports are in `runs/run2/reports/`.
+<img width="1259" height="934" alt="17 sta running 3 corners" src="https://github.com/user-attachments/assets/c6a2da84-c084-4931-88b3-c90cdb4dbd62" />
 
-![Post-route STA 23](images/23.png)
+<img width="1259" height="934" alt="18th image detailed path report" src="https://github.com/user-attachments/assets/af23a051-0c02-4d63-afff-9b2b85761528" />
 
-![Post-route STA 24](images/24.png)
+
 
 ---
 
@@ -267,8 +277,9 @@ Or with KLayout:
 ```bash
 klayout equipment_status_indicator.gds
 ```
+<img width="1259" height="934" alt="layout 9th" src="https://github.com/user-attachments/assets/b7f72a17-d565-4eb4-bda8-8db7570ba997" />
 
-![Final layout](images/15.png)
+
 
 ---
 
@@ -282,7 +293,9 @@ cat runs/run2/reports/final_summary_report.csv
 
 The report is saved in `physical_design/run2_final_summary_report.csv`.
 
-![Signoff summary](images/21.png)
+<img width="1259" height="934" alt="antenna log 15" src="https://github.com/user-attachments/assets/0c30ca6f-0c00-48e5-8fac-159955961f8c" />
+
+
 
 | Check | Result |
 |-------|--------|
@@ -302,15 +315,19 @@ Reports from Run 3 (LVS, DRC, and report files). Its summary is saved in `physic
 ls runs
 ```
 
-![Run 3 - 16](images/16.png)
+<img width="1259" height="934" alt="10" src="https://github.com/user-attachments/assets/b93c468c-a486-4b88-a9ce-df116e01e7f6" />
 
-![Run 3 - 17](images/17.png)
+<img width="1259" height="934" alt="11 layout results" src="https://github.com/user-attachments/assets/db7cd09c-ac49-417d-9005-f980151be159" />
 
-![Run 3 - 18](images/18.png)
+<img width="1259" height="934" alt="layout final 12th" src="https://github.com/user-attachments/assets/af346b0d-268c-46d0-8314-d373c321be15" />
 
-![Run 3 - 19](images/19.png)
+<img width="1259" height="934" alt="lvs report verify 13" src="https://github.com/user-attachments/assets/a0a39e2d-37fc-483b-96a7-98651cbfc9ba" />
 
-![Run 3 - 20](images/20.png)
+<img width="1259" height="934" alt="drc report check 13th" src="https://github.com/user-attachments/assets/7a2b2cf1-3db3-4bd8-9ddf-28352634b06e" />
+
+<img width="1259" height="934" alt="antenna log 15" src="https://github.com/user-attachments/assets/179da6d0-4e3e-4458-8ed6-8cd1656710ab" />
+
+
 
 ---
 
@@ -330,10 +347,9 @@ Inside ngspice:
 run
 plot v(in) v(out)
 ```
+<img width="1259" height="934" alt="20th image ngspice" src="https://github.com/user-attachments/assets/e0d42e93-6660-4a84-bd4c-8129496798f7" />
 
-![ngspice netlist and delays](images/26.png)
-
-![ngspice waveform](images/37.png)
+<img width="1300" height="934" alt="gdk ngspice 31st image" src="https://github.com/user-attachments/assets/4cb2a5ae-b3e6-47ab-ae68-5628b9753468" />
 
 ---
 
