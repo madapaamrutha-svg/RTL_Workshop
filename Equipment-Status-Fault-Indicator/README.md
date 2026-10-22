@@ -2,12 +2,6 @@
 
 A compact synthesizable digital circuit that monitors the status of an equipment unit and shows normal, warning, and fault conditions on three LEDs. The design is taken from RTL through simulation, synthesis, static timing analysis, physical design (OpenLane), and signoff to a final GDS layout, with an ngspice check at the end.
 
-**Author:** MADAPA AMRUTHA
-
-**College:** ANURAG UNIVERSITY
-
-**Environment:** Ubuntu on VirtualBox, Icarus Verilog, GTKWave, Yosys, OpenSTA, OpenLane (Sky130 PDK), Magic, KLayout, ngspice
-
 ---
 
 ## Table of Contents
@@ -368,3 +362,13 @@ plot v(in) v(out)
 ## 20. Conclusion
 
 The Digital Equipment Status and Fault Indicator detects persistent faults, filters short glitches, latches the fault until acknowledged, and displays the state on three LEDs. The design passes all self-checking simulation tests and completes the full flow from RTL to GDS with clean DRC, LVS, and antenna results.
+
+
+
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+**Environment**: Ubuntu on VirtualBox, Icarus Verilog, GTKWave, Yosys, OpenSTA, OpenLane (Sky130 PDK), Magic, KLayout, ngspice
+
