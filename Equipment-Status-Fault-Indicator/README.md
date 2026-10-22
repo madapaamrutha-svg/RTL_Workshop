@@ -111,10 +111,10 @@ Equipment-Status-Fault-Indicator/
 ## 7. RTL Design
 
 File: `rtl/equipment_status_indicator.v`
+<img width="1920" height="944" alt="rtl 1st" src="https://github.com/user-attachments/assets/ef106002-ec24-43e6-9e17-bd435773733d" />
 
-![RTL code 1](images/1.png)
+<img width="1920" height="944" alt="rtl 2nd" src="https://github.com/user-attachments/assets/065fa59e-b595-44da-a319-7218b64dbd01" />
 
-![RTL code 2](images/2.png)
 
 ---
 
@@ -122,13 +122,13 @@ File: `rtl/equipment_status_indicator.v`
 
 File: `tb/tb_equipment_status_indicator.v`. It is self-checking and prints PASS or FAIL for every check.
 
-![Testbench 3](images/3.png)
+<img width="1920" height="944" alt="tb 1st" src="https://github.com/user-attachments/assets/6078a929-53fd-4eb4-aabe-2715c5d0e3a0" />
 
-![Testbench 4](images/4.png)
+<img width="1920" height="944" alt="tb 2nd" src="https://github.com/user-attachments/assets/746ced09-1de4-472f-9c6c-1146ad35537d" />
 
-![Testbench 5](images/5.png)
+<img width="1920" height="944" alt="tb 3rd" src="https://github.com/user-attachments/assets/d1408673-4053-4aa8-8998-b66fe5c1846f" />
 
-![Testbench 6](images/6.png)
+<img width="1920" height="944" alt="tb 4th" src="https://github.com/user-attachments/assets/bcb662e9-3eb8-44f1-a028-d6ec2a06833f" />
 
 ---
 
