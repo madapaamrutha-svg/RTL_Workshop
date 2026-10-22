@@ -23,7 +23,7 @@ A 3 minute 50 second video explaining my RTL training experience:
 
 A 3 minute 50 second video explaining my RTL training experience:
 
-[▶ Watch / Download the RTL Training Video](https://github.com/madapaamrutha-svg/RTL_Workshop/blob/main/RTL_Training_Video.mp4.mp4)
+[▶ Watch / Download the RTL Training Video](https://github.com/madapaamrutha-svg/RTL_Workshop/blob/main/RTL_Training_Video.mp4)
 
 ---
 
