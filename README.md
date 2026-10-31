@@ -231,8 +231,8 @@ This section documents the hands-on experience of working with the VSD BabySoC d
 
 
 
-## Final Project
-Digital Equipment Status and Fault Indicator: RTL, simulation, synthesis, STA, OpenLane physical design, GDS and ngspice verification. See [Equipment-Status-Fault-Indicator](Equipment-Status-Fault-Indicator/README.md).
+# Final Project
+Digital Equipment Status and Fault Indicator: RTL, simulation, synthesis, STA, OpenLane physical design, GDS and ngspice verification. See [Equipment-Status-Fault-Indicator](FINAL-PROJECT-Equipment-Status-Fault-Indicator/README.md).
 
 ---
 
