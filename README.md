@@ -20,7 +20,7 @@ A 3 minute 50 second video explaining my RTL training experience:
 
 # 🏆 Final Project
 
-### [Digital Equipment Status and Fault Indicator Using Verilog HDL](Equipment-Status-Fault-Indicator/README.md)
+### [Digital Equipment Status and Fault Indicator Using Verilog HDL](FINAL-PROJECT-Equipment-Status-Fault-Indicator/README.md)
 
 A compact synthesizable digital circuit that monitors an equipment fault signal, confirms a fault only if it persists for a set number of clock cycles, latches it, and shows normal, warning, and fault states on three LEDs until the operator acknowledges it.
 
@@ -36,7 +36,7 @@ A compact synthesizable digital circuit that monitors an equipment fault signal,
 | Final output | GDS layout |
 | Extra check | ngspice (tphl, tplh) |
 
-👉 Full documentation with commands and screenshots: [Equipment-Status-Fault-Indicator](Equipment-Status-Fault-Indicator/README.md)
+👉 Full documentation with commands and screenshots: [Equipment-Status-Fault-Indicator](FINAL-PROJECT-Equipment-Status-Fault-Indicator/README.md)
 
 ---
 
