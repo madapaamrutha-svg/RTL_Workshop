@@ -228,7 +228,7 @@ The `VSDBabySoC-PhysicalDesign` folder contains practical work related to VSD Ba
 
 This section documents the hands-on experience of working with the VSD BabySoC design and understanding the physical implementation flow using open-source VLSI tools.
 
-
+---
 
 
 # Final Project
