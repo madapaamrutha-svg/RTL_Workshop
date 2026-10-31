@@ -190,3 +190,12 @@ The results show why setup timing must be checked across multiple PVT corners be
 
 
 
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
+
+
+
