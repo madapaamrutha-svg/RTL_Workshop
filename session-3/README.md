@@ -314,3 +314,11 @@ GTKWave Waveform Analysis
       ↓
 Final Verification
 ```
+
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
+
