@@ -169,3 +169,12 @@ In Session 1, I learned the basic RISC-V design and verification flow in GitHub 
 
 This session showed me how software instructions get executed, and how digital hardware designs are simulated, verified and synthesized.
 
+
+
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
+
