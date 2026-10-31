@@ -81,26 +81,44 @@ A compact synthesizable digital circuit that monitors an equipment fault signal,
 
 # 📂 Repository Structure
 
-```
+
+```text
 RTL_Workshop/
-├── Assesment-1/
+│
+├── Assessment-1/
+│
 ├── August-22-Class-Work/
+│
 ├── August-23-Class-Work/
+│
+├── FINAL-PROJECT-Equipment-Status-Fault-Indicator/
+│
 ├── PD-Module-1/
 ├── PD-Module-2/
 ├── PD-Module-3/
 ├── PD-Module-4/
 ├── PD-Module-5/
+│
+├── VSDBabySoC-PhysicalDesign/
+│
 ├── module-0/
 ├── module-1/
 ├── module-2/
 ├── module-3/
 ├── module-4/
 ├── module-5/
-├── Equipment-Status-Fault-Indicator/
-├── RTL_Training_Video.mp4
-└── README.md
+│
+├── session-1/
+├── session-2/
+├── session-3/
+│
+├── README.md
+│
+└── RTL_Training_Video.mp4
 ```
+
+
+
 
 ---
 
@@ -121,6 +139,12 @@ RTL_Workshop/
 - PD Module 4 – Timing Analysis, Clock Tree Synthesis & Physical Design
 - PD Module 5 – SKY130 Physical Design – Routing, DRC, Parasitic Extraction & TritonRoute
 - Final Project – Digital Equipment Status and Fault Indicator (RTL to GDS)
+- Session 1 – RTL Design Workshop Practical Activities
+- Session 2 – RTL Design Workshop Practical Activities
+- Session 3 – RTL Design Workshop Practical Activities
+- VSD BabySoC Physical Design – SoC Implementation and Physical Design Flow
+- Final Project – Digital Equipment Status and Fault Indicator (RTL to GDS)
+
 
 ---
 
@@ -167,6 +191,45 @@ Timing Analysis, Clock Tree Synthesis & Physical Design
 
 ## PD Module 5
 SKY130 Physical Design – Routing, DRC, Parasitic Extraction & TritonRoute
+# 🖥️ Session-wise Practical Work
+
+## Session 1
+
+Contains practical activities, implementation files, design exercises and supporting screenshots completed during Session 1 of the workshop.
+
+## Session 2
+
+Contains hands-on RTL design activities, simulation exercises, implementation files and related documentation completed during Session 2.
+
+## Session 3
+
+Documents the practical activities, design implementation work, learning materials and supporting screenshots completed during Session 3.
+
+
+
+# 🔬 VSD BabySoC Physical Design
+
+The `VSDBabySoC-PhysicalDesign` folder contains practical work related to VSD BabySoC and its physical design implementation.
+
+### Topics Covered
+
+- BabySoC Architecture and Design Understanding
+- RTL Design and Synthesis
+- Technology Mapping
+- SKY130 Standard Cell Library
+- Floorplanning
+- Power Planning
+- Placement
+- Clock Tree Synthesis (CTS)
+- Routing
+- Static Timing Analysis
+- Physical Design Reports
+- Physical Design Implementation
+
+This section documents the hands-on experience of working with the VSD BabySoC design and understanding the physical implementation flow using open-source VLSI tools.
+
+
+
 
 ## Final Project
 Digital Equipment Status and Fault Indicator: RTL, simulation, synthesis, STA, OpenLane physical design, GDS and ngspice verification. See [Equipment-Status-Fault-Indicator](Equipment-Status-Fault-Indicator/README.md).
@@ -182,6 +245,21 @@ Digital Equipment Status and Fault Indicator: RTL, simulation, synthesis, STA, O
 - Applied optimization techniques.
 - Learned the complete RTL design flow.
 - Explored the physical design flow using OpenLane and OpenROAD.
+- Completed the final project from RTL to GDS with DRC 0, LVS match, antenna 0, and zero WNS/TNS.
+
+---
+
+# 📊 Overall Results
+
+- Successfully completed all workshop modules.
+- Simulated RTL designs using Icarus Verilog.
+- Verified outputs using GTKWave.
+- Synthesized RTL using Yosys.
+- Applied optimization techniques.
+- Learned the complete RTL design flow.
+- Explored the physical design flow using OpenLane and OpenROAD.
+- Completed additional hands-on activities through Session 1, Session 2 and Session 3.
+- Explored VSD BabySoC Physical Design and its implementation flow.
 - Completed the final project from RTL to GDS with DRC 0, LVS match, antenna 0, and zero WNS/TNS.
 
 ---
