@@ -279,3 +279,13 @@ I also covered Liberty standard-cell files, synthesis optimization, technology m
 
 Overall, the session gave me a clear picture of the flow from Verilog RTL to synthesized digital hardware and its verification.
 
+
+
+## 👤 Author
+
+**Amrutha Madapa**  
+B.Tech – Electronics & Communication Engineering  
+Anurag University  
+[RTL Workshop Repository](https://github.com/madapaamrutha-svg/RTL_Workshop)
+
+
